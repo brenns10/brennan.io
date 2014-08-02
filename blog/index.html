@@ -1,0 +1,28 @@
+---
+title: Blog
+layout: default
+---
+<h1>Blog</h1>
+{% for post in paginator.posts %}
+
+  <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+  <h4><small>{{ post.date | date_to_long_string }}</small></h4>
+  {{ post.excerpt }}
+  <a href="{{ post.url }}">Read more</a>
+  <hr />
+{% endfor %}
+
+<div class="pull-left">
+  {% if paginator.previous_page %}
+    <a class="btn btn-primary" href="{{ paginator.previous_page_path }}">Previous</a>
+  {% else %}
+    <button type="button" class="btn btn-primary" disabled="disabled">Previous</button>
+  {% endif %}
+</div>
+<div class="pull-right">
+  {% if paginator.next_page %}
+    <a class="btn btn-primary" href="{{ paginator.next_page_path }}">Next</a>
+  {% else %}
+    <button type="button" class="btn btn-primary" disabled="disabled">Next</button>
+  {% endif %}
+</div>

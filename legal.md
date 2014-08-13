@@ -21,5 +21,5 @@ they deserve recognition for their work.
 - RSS Icon:
   - Artist: [SimekOneLove](http://simekonelove.deviantart.com/)
   - License: [CC Atribute-Share Alike 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
-  - Retrived: [IconArchive](http://www.iconarchive.com/show/modern-web-icons-by-simekonelove/rss-icon.html)
+  - Retrieved: [IconArchive](http://www.iconarchive.com/show/modern-web-icons-by-simekonelove/rss-icon.html)
   - This content was not modified from the original source.

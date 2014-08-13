@@ -19,6 +19,13 @@
       p {
         font-size: 16px;
       }
+      .footer {
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        background-color: #eee;
+      }
     </style>
 
     <title>{{ page.title }} | {{ site.name }}</title>
@@ -58,6 +65,14 @@
 
       {{ content }}
 
+    </div>
+
+    <div class="footer container">
+        <ul class="list-inline text-center">
+          <li><a href="/legal/">Legal</a></li>
+          <li><a href="mailto:stephen@stephen-brennan.com">Contact</a></li>
+          <li><a href="/blog/rss.xml"><img src="/img/rss.png" /> RSS</a></li>
+        </ul>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

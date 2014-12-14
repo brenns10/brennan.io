@@ -49,12 +49,11 @@ So, I switched to XFCE, in order to get a little more of the freedom I was
 expecting.  I chose it because it is GTK based, lightweight, and pretty heavily
 configurable.  I enjoyed it for a while.  I exercised the customizability to
 make my desktop my own.  I learned GTK theming, found good applications, and
-learned how to tweak thing how I liked them.  But at the end of the day, I
+learned how to tweak things how I liked them.  But at the end of the day, I
 still felt like something was lacking.  Despite my theming and customization,
 XFCE still looked like something straight from the late 90s or early 2000s.
 It's just a lightweight desktop environment, and I wanted a pretty interface
-that was both customizable and modern.  My criteria were getting more
-selective.
+that was both customizable and modern.  My criteria were getting more selective.
 
 I took a shot with Cinnamon, which was my last DE before KDE.  Like XFCE, I
 really liked it.  Cinnamon has a traditional interface layout, but with a

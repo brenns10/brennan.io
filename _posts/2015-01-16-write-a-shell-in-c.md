@@ -397,6 +397,10 @@ int (*builtin_func[]) (char **) = {
   &lsh_exit
 };
 
+int lsh_num_builtins() {
+  return sizeof(builtin_str) / sizeof(char *);
+}
+
 /*
   Builtin function implementations.
 */

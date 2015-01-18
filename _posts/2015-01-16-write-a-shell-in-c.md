@@ -18,7 +18,7 @@ walkthrough on how I wrote my own simplistic Unix shell in C, in the hopes that
 it makes other people feel that way too.
 
 The code for the shell described here, dubbed `lsh`, is available on
-[GitHub](https://github.com/brenns10/lsh/tree/486ec6dcdd1e11c6dc82f482acda49ed18be11b5).
+[GitHub](https://github.com/brenns10/lsh).
 
 ## Basic lifetime of a shell
 
@@ -113,6 +113,11 @@ char *lsh_read_line(void)
   char *buffer = malloc(sizeof(char) * bufsize);
   int c;
 
+  if (!buffer) {
+    fprintf(stderr, "lsh: allocation error\n");
+    exit(EXIT_FAILURE);
+  }
+
   while (1) {
     // Read a character
     c = getchar();
@@ -165,7 +170,7 @@ becomes trivial:
 {% highlight C %}
 char *lsh_read_line(void)
 {
-  char *line;
+  char *line = NULL;
   ssize_t bufsize = 0; // have getline allocate a buffer for us
   getline(&line, &bufsize, stdin);
   return line;
@@ -195,6 +200,11 @@ char **lsh_split_line(char *line)
   int bufsize = LSH_TOK_BUFSIZE, position = 0;
   char **tokens = malloc(bufsize * sizeof(char*));
   char *token;
+
+  if (!tokens) {
+    fprintf(stderr, "lsh: allocation error\n");
+    exit(EXIT_FAILURE);
+  }
 
   token = strtok(line, LSH_TOK_DELIM);
   while (token != NULL) {
@@ -509,14 +519,13 @@ know where each function comes from.
     * `perror()`
 * `#include <string.h>`
     * `strcmp()`
-    * `strcpy()`
     * `strtok()`
 
 Once you have the code and headers, it should be as simple as running `gcc -o
 main main.c` to compile it, and then `./main` to run it.
 
 Alternatively, you can get the code from
-[GitHub](https://github.com/brenns10/lsh/tree/486ec6dcdd1e11c6dc82f482acda49ed18be11b5).
+[GitHub](https://github.com/brenns10/lsh/tree/407938170e8b40d231781576e05282a41634848c).
 That link goes straight to the current revision of the code at the time of this
 writing-- I may choose to update it and add new features someday in the future.
 If I do, I'll try my best to update this article with the details and
@@ -552,8 +561,15 @@ And finally, thanks for reading this tutorial (if anyone did).  I enjoyed
 writing it, and I hope you enjoyed reading it.  Let me know what you think in
 the comments!
 
-**Edit** In an earlier version of this article, I had a couple nasty bugs in
+**Edit:** In an earlier version of this article, I had a couple nasty bugs in
 `lsh_split_line()`, that just happened to cancel each other out.  Thanks to
 /u/munmap on Reddit (and other commenters) for catching them!  Check
 [this diff](https://github.com/brenns10/lsh/commit/486ec6dcdd1e11c6dc82f482acda49ed18be11b5)
 to see exactly what I did wrong.
+
+**Edit 2:** Thanks to user ghswa on GitHub for contributing some null checks for
+  `malloc()` that I forgot.  He/she also pointed out that the
+  [manpage](http://pubs.opengroup.org/onlinepubs/9699919799/functions/getline.html)
+  for `getline()` specifies that the first argument should be freeable, so
+  `line` should be initialized to `NULL` in my `lsh_read_line()` implementation
+  that uses `getline()`.

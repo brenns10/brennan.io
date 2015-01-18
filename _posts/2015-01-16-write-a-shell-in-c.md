@@ -18,7 +18,7 @@ walkthrough on how I wrote my own simplistic Unix shell in C, in the hopes that
 it makes other people feel that way too.
 
 The code for the shell described here, dubbed `lsh`, is available on
-[GitHub](https://github.com/brenns10/lsh/tree/9f2b98a74992f2837903f0ed91f4c6cb69784ab4)
+[GitHub](https://github.com/brenns10/lsh/tree/486ec6dcdd1e11c6dc82f482acda49ed18be11b5).
 
 ## Basic lifetime of a shell
 
@@ -82,7 +82,7 @@ void lsh_loop(void)
     status = lsh_execute(args);
 
     free(line);
-    lsh_free_args(args);
+    free(args);
   } while (status);
 }
 {% endhighlight %}
@@ -192,22 +192,18 @@ function `strtok` to do some of the dirty work for us.
 #define LSH_TOK_DELIM " \t\r\n\a"
 char **lsh_split_line(char *line)
 {
-  int bufsize = LSH_TOK_BUFSIZE, position = 0, toklen;
-  char **tokens = malloc(bufsize * sizeof(char));
-  char *token, *token_copy;
+  int bufsize = LSH_TOK_BUFSIZE, position = 0;
+  char **tokens = malloc(bufsize * sizeof(char*));
+  char *token;
 
   token = strtok(line, LSH_TOK_DELIM);
   while (token != NULL) {
-    toklen = strlen(token);
-    token_copy = malloc((toklen + 1) * sizeof(char));
-    strcpy(token_copy, token);
-
-    tokens[position] = token_copy;
+    tokens[position] = token;
     position++;
 
-    if (position <= bufsize) {
+    if (position >= bufsize) {
       bufsize += LSH_TOK_BUFSIZE;
-      tokens = realloc(tokens, bufsize);
+      tokens = realloc(tokens, bufsize * sizeof(char*));
       if (!tokens) {
         fprintf(stderr, "lsh: allocation error\n");
         exit(EXIT_FAILURE);
@@ -227,11 +223,14 @@ it.  But this time, we're doing it with a null-terminated array of pointers
 instead of a null-terminated array of characters.
 
 At the start of the function, we begin tokenizing by calling `strtok`.  It
-returns a pointer to the first token.  Since this pointer is actually pointing
-inside of `line`, we need to make a copy of it.  Then, we store the copy in the
-array (buffer) of character pointers.  Finally, we reallocate the array of
-pointers if necessary.  The process repeats until no token is returned by
-`strtok`, at which point we null-terminate the list of tokens.
+returns a pointer to the first token.  What `strtok()` actually does is return
+pointers to within the string you give it, and place `\0` bytes at the end of
+each token.  We store each pointer in an array (buffer) of character
+pointers.
+
+Finally, we reallocate the array of pointers if necessary.  The process repeats
+until no token is returned by `strtok`, at which point we null-terminate the
+list of tokens.
 
 So, once all is said and done, we have an array of tokens, ready to execute.
 Which begs the question, how do we do that?
@@ -479,28 +478,6 @@ The one caveat is that `args` might just contain NULL, if the user entered an
 empty string, or just whitespace.  So, we need to check for that case at the
 beginning.
 
-## Cleaning up
-
-That's all the really interesting code, but we haven't quite implemented all the
-functions in `lsh_loop()` yet.  The last one was called `lsh_free_args()`, and
-it just freed the argument list created by `lsh_split_line()`.  Thankfully, this
-is also an easy one:
-
-{% highlight C %}
-void lsh_free_args(char **args)
-{
-  char **iter = args;
-  while (*iter != NULL) {
-    free(*iter);
-    iter++;
-  }
-  free(args);
-}
-{% endhighlight %}
-
-We simply free every string in the arg list, until we get to the null
-terminator.  Then, we free the arg list too.
-
 ## Putting it all together
 
 That's all the code that goes into the shell.  If you've read along, you should
@@ -539,7 +516,7 @@ Once you have the code and headers, it should be as simple as running `gcc -o
 main main.c` to compile it, and then `./main` to run it.
 
 Alternatively, you can get the code from
-[GitHub](https://github.com/brenns10/lsh/tree/9f2b98a74992f2837903f0ed91f4c6cb69784ab4).
+[GitHub](https://github.com/brenns10/lsh/tree/486ec6dcdd1e11c6dc82f482acda49ed18be11b5).
 That link goes straight to the current revision of the code at the time of this
 writing-- I may choose to update it and add new features someday in the future.
 If I do, I'll try my best to update this article with the details and
@@ -574,3 +551,9 @@ with success, drop me a line in the comments below, I'd love to see the code.
 And finally, thanks for reading this tutorial (if anyone did).  I enjoyed
 writing it, and I hope you enjoyed reading it.  Let me know what you think in
 the comments!
+
+**Edit** In an earlier version of this article, I had a couple nasty bugs in
+`lsh_split_line()`, that just happened to cancel each other out.  Thanks to
+/u/munmap on Reddit (and other commenters) for catching them!  Check
+[this diff](https://github.com/brenns10/lsh/commit/486ec6dcdd1e11c6dc82f482acda49ed18be11b5)
+to see exactly what I did wrong.

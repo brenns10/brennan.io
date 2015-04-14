@@ -14,7 +14,7 @@ command line argument parsing, lightweight unit testing, and memory leak
 detection.  I continue to rethink and improve its architecture, so it is not yet
 at a place where other people should use it in their own programs.
 
-[Visit it at Bitbucket](//bitbucket.org/brenns10/libstephen)
+[Visit it at GitHub](https://github.com/brenns10/libstephen)
 
 ### `cky` -- A Parser
 
@@ -29,7 +29,7 @@ foundation of the scanner.
 
 `cky` is based on the `libstephen` library.
 
-[Visit it at Bitbucket](//bitbucket.org/brenns10/cky)
+[Visit it at GitHub](https://github.com/brenns10/cky)
 
 ## Past
 

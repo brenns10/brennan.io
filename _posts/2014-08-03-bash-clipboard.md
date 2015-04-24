@@ -26,22 +26,22 @@ it 'filters' the text--copies it, and then prints it to stdout.  So, with these
 flags, you can come up with Bash equivalents for your typical cut, copy, and
 paste operations.
 
-{% highlight bash %}
+```bash
 $ xclip -selection c -i    # Cut (does not filter)
 $ xclip -selection c -i -f # Copy (does filter)
 $ xclip -selection c -o    # Paste
-{% endhighlight %}
+```
 
 Of course, with a few simple lines in your `.bashrc`, you can do even better.
 Take the keyboard shortcuts for cut, copy, and paste, and turn them into Bash
 aliases!  (You could try to use the words cut, copy, and paste for the aliases,
 but paste is already a command).
 
-{% highlight bash %}
+```bash
 $ alias x='xclip -selection c -i'
 $ alias c='xclip -selection c -i -f'
 $ alias v='xclip -selection c -o'
-{% endhighlight %}
+```
 
 Once you have that in your `.bashrc` and sourced that in your terminal, you can
 start piping from `v`, and piping to `c` and `x`.  There are quite a few ways

@@ -1,11 +1,12 @@
 name: "Stephen Brennan"
-description: "A totally not boring blog."
+description: "C and Python programmer extraordinaire"
+logo: "/images/me.jpg"
 
 url: "http://stephen-brennan.com"
 
 paginate: 10
 paginate_path: "blog/page:num"
 
-markdown: kramdown
-permalink: pretty
+markdown: redcarpet
 highlighter: pygments
+permalink: pretty

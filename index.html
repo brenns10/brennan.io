@@ -1,191 +1,39 @@
 ---
-title: Home
-layout: default
+layout: base
 ---
-<img src="/img/me.jpg" class="img-circle center-block">
-<h1 class="text-center">About Me</h1>
-<p class="text-center">
-  I'm a college student and computer science major.  I love solving problems
-  with code.  I love C, Python, and Emacs.  But most of all, I love learning
-  more about the amazing world of computers.
-</p>
+<div class="wrapper">
+    <header>
+        <div class="logo-container">
+          <a class="logo" href="{{ page.baseurl }}" style="background-image: url('{{ site.baseurl }}{{ site.logo }}')"></a>
+        </div>
 
-<p class="text-center">
-  This blog is a place for me to advertise myself, and share anything cool I
-  come across.
-</p>
+        <div class="author-container"><h1>{{ site.name }}</h1></div>
 
-<h3 class="text-center">Find Me</h3>
+        <div class="tagline-container"><p>{{ site.description }}</p></div>
+    </header>
+    <main>
+      <div class="content">
+        <h2>About</h2>
 
-<ul class="list-inline text-center">
-  <li><a href="//bitbucket.org/brenns10">Bitbucket</a></li>
-  <li><a href="//github.org/brenns10">Github</a></li>
-</ul>
-
-<p class="text-center">
-  Most of my projects are hosted on Bitbucket, so check there first!
-</p>
-
-<h3 class="text-center">Contact Me</h3>
-
-<p class="text-center">
-  You can contact me
-  at: <a href="mailto:stephen@stephen-brennan.com">stephen@stephen-brennan.com</a>
-</p>
-
-<div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#pgp">
-          PGP
-        </a>
-      </h4>
-    </div>
-    <div id="pgp" class="panel-collapse collapse">
-      <div class="panel-body">
         <p>
-          I use PGP, so you can send me signed and encrypted mail!  My key is
-          available
-          at <a href="//pgp.mit.edu/pks/lookup?op=vindex&search=0xEAE01F0F0EC665D8">the
-          MIT keyserver</a>.  Alternatively, you can copy it below.
+          Stephen Brennan is a blah blah who enjoys blah de blah do dad.  He is
+          often seen being a bitch, and complaining a lot.
         </p>
-        <p>
-          If you don't know what PGP
-          is, <a href="//phildev.net/pgp/gpgwhy.html">this</a> is a good
-          explanation of why it's beneficial,
-          and <a href="//phildev.net/pgp/">this</a> can help you get started!
-        </p>
-        <pre>-----BEGIN PGP PUBLIC KEY BLOCK-----
-Version: GnuPG v2
 
-mQINBFMx6fgBEADgNN7DTLTas2WYigeUgEEyo/5emwGuvDvbq3o+dtQU4/xBmAj5
-cMUx1oVK34H08Wc7c7DI0ZO/cWrod2ExRPMPoN9ayLJaoAX3/ApmqL+rvKuSrw1u
-7958KLdAkatjtIi+CdtSxQnj62gFhKPlR3UH/GScCs+px0Jlu/t2Yx0h1/ZaXwDG
-zVMQmO/IjcFfNy5nam1MsMz1wqmLDdztlkcsU+ZEPdLuCMMVo82QGwX7KRQ6yuWP
-MLA+MtRUZAKHQBqZARIk1/ktkP6CoyjusQvvBSPuoxTA9Z+EpJ6o52mAU7Jx+oFz
-XoxNJjjJ5pBuGMZmq9Pz058yfyOocx9CTak6BqgDfsthd3BAolznYhuFqOdCoFCh
-X9M1fnF3y9EK49KMa1hTLcbrRKbTl4Omygx609lwBqDmTUJmD+KXV55E2NK/weHX
-yIatPUH5X7DGspgpKpGoQSWORkfZ9h8dOfxPk0ZBwYUAvhqaGwpxLHeOnbRHH96J
-xX82WEEIztnRqpwgBUGYwysMX+FKfwnihjbRBVXxRLlYdffwpCUM1JG4dPjWump8
-LCDJ1FHFTmhfrsfBIP2TJS/twGuhpMf+6DkhF62oBn3LTMzmUoIaziYq9jpmlf4w
-fT5p4muPNZc0xusG35cxFJ8ZoSDOCyTLqGxvX4Nd8wTLX8qpV9wFribZTwARAQAB
-tC5TdGVwaGVuIEJyZW5uYW4gPHdlYm1hc3RlckBnbG9iYWxtb2xkdGVjaC5jb20+
-iQI5BBMBAgAjBQJT2kCFAhsDBwsJCAcDAgEGFQgCCQoLBBYCAwECHgECF4AACgkQ
-6uAfDw7GZdizxA//Sree2aRRA7hwvtbcFdFUEL2In73GUs9rj6oBLMV8M+zMgIVz
-jKQSbo1guLd0bzWzGcB3lrtHErEPTBTSE4F4xe61aEbtt03YcjKxuna+eGrqCbdX
-m+jg6BvGir0eOUK7UH6frYNmv78WquQlpcuSPBZJMqMgCOcrfEX2pJwVCJHV10KV
-YjHJ/WTpqr/3WhXCjfLeTEVt1j4th9dafrHWzdHBzYumyShDnE0h+ySVLhN7XwBf
-lFDmnVXX8rMlnFIdCbfFiWEjmTEEPua2glVcuNQtHBD08rTW12mQPUuL50aJcWTS
-HTtVRb/E2KBdPYYiTgIRunjfPsCVQa7aA7rOH6dRPE7RlbTgzdukZZL0pScys0dc
-WeaeuQZJdKjumj9EIxi8GIMSO6P79GitZyrMTTqKPbpoiZ9V9kL/ITLBNTkosFbV
-yIcywm2tLMqbo4ycIM99dWimn30iCCNmSaebqDBdWxeImV2JlfdFq6H7/xxQK8rf
-fYiHA1wXKc29vScXT266MLANof70JnGeakQT0vHucaS2hhNCNMDHCqrtEFae2k2S
-OhPEisNXWyrXGst0naW0OXLm4bURFtczfoFVWcCJVYCA73Rg8ZRPC8wDO7sXuor/
-5rMeBKiFOkRYEwqlejBXsIC9y6TKuWq17ZAt6VUJk2zUFwkROE3YHWBQepq0IVN0
-ZXBoZW4gQnJlbm5hbiA8c21iMTk2QGNhc2UuZWR1PokCPgQTAQIAKAIbAwIeAQIX
-gAUCUzIi+AoLCQ0IDAcLCgMCBxUKCQgLAgMFFgIDAQAACgkQ6uAfDw7GZdgTGA/+
-IbmEPEe1byvG/GhkwCnnIxaWnc0uXnYfLuhnlAzPnKy2jgKoMi9MImmJlvay68ej
-qvewYFgWPm+8DbueKEvLEWpTSXvZHlT1LF+/N1dqyTL1/6LDe4E4DeY044k+q+sp
-3ojJvtZ8sP5wuujPL3r7n/y07z/i7j+Qr5CMN+s2p638pKDZFLxwh1C6an9ycTVn
-AoO/x2zcp/9iEA//7SHiAuMrPsNMbj3l01tXyxxWM8LDVkhbmf03my8LCSNmQB8f
-u29QoU+P3soEGJk23wwig6GbyvEdZ2DUAqzLh5PN2NLpfcdIWAJfYyD0Lv1sPJcN
-m0zFoWF1iMP4hWScJAk2lUXk4vXcFvBxXu4XdHu3N+XpVbuFNFekfnfpmZh8IycK
-rsYJt8GNbH4LeM/uCPM6H5yb9gGl+GtclffdcnW8w4H8fhzM5OvleX9lJyrN6a8A
-Wo6FwwzF/l7lmwtbyUCH3Qo7lgwRLrq3eDXM0gRhNxLvz5rVfRk0WtKKoxVKKDWp
-oAzAYEBX5Vs8l+eYRKv2qPVPFEOzTDDv4jrt2XOOtBnAnP8NcTwCM3bQBet3CYwt
-fdS9my9f4prCf03TTxweefETjcgI1V+pkBbMN/89C5av1NDuvVReVYp6yHhb6InQ
-lSxFUHpUDGfPlc7TNM8WnP5y/2m3qME1JV27w/adFS60QVN0ZXBoZW4gQnJlbm5h
-biAoQ1dSVSBSZWFsIE5hbWUgQWxpYXMpIDxzdGVwaGVuLmJyZW5uYW5AY2FzZS5l
-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
-91rgga+ImfQh4RnjbAM8Tja/Lu7+4g==
-=IOqa
------END PGP PUBLIC KEY BLOCK-----</pre>
+        <hr>
+        <ul class="fa-ul main-list">
+            <li class="main-list-item">
+                <span class="fa fa-github fa-lg main-list-item-icon"></span>
+                <a href="https://github.com/brenns10">GitHub</a>
+            </li>
+            <li class="main-list-item">
+                <span class="fa fa-bitbucket fa-lg main-list-item-icon"></span>
+                <a href="https://bitbucket.org/brenns10">Bitbucket</a>
+            </li>
+            <li class="main-list-item">
+                <span class="fa fa-stack-overflow fa-lg main-list-item-icon"></span>
+                <a href="http://stackoverflow.com/users/820319/brenns10">StackOverflow</a>
+            </li>
       </div>
-    </div>
-  </div>
+    </main>
 </div>

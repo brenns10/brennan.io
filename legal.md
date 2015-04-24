@@ -1,6 +1,6 @@
 ---
 title: Legal
-layout: default
+layout: contentbase
 ---
 # Legal
 

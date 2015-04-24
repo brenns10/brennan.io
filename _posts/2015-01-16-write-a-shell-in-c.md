@@ -39,7 +39,7 @@ So, we'll just call the looping function and then terminate.  But in terms of
 architecture, it's important to keep in mind that the lifetime of the program is
 more than just looping.
 
-{% highlight C %}
+```C
 int main(int argc, char **argv)
 {
   // Load config files, if any.
@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 
   return EXIT_SUCCESS;
 }
-{% endhighlight %}
+```
 
 Here you can see that I just came up with a function, `lsh_loop()`, that will
 loop, interpreting commands.  We'll see the implementation of that next.
@@ -68,7 +68,7 @@ handle commands is with three steps:
 
 Here, I'll translate those ideas into code for `lsh_loop()`:
 
-{% highlight C %}
+```c
 void lsh_loop(void)
 {
   char *line;
@@ -85,7 +85,7 @@ void lsh_loop(void)
     free(args);
   } while (status);
 }
-{% endhighlight %}
+```
 
 Let's walk through the code.  The first few lines are just declarations.  The
 do-while loop is more convenient for checking the status variable, because it
@@ -104,7 +104,7 @@ it.  Instead, you need to start with a block, and if they do exceed it,
 reallocate with more space.  This is a common strategy in C, and we'll use it to
 implement `lsh_read_line()`.
 
-{% highlight C %}
+```c
 #define LSH_RL_BUFSIZE 1024
 char *lsh_read_line(void)
 {
@@ -142,7 +142,7 @@ char *lsh_read_line(void)
     }
   }
 }
-{% endhighlight %}
+```
 
 The first part is a lot of declarations.  If you hadn't noticed, I prefer to
 keep the old C style of declaring variables before the rest of the code.  The
@@ -167,7 +167,7 @@ learn it this way first before using `getline`.  You'd be robbing yourself of a
 learning opportunity if you didn't!  Anyhow, with `getline`, the function
 becomes trivial:
 
-{% highlight C %}
+```c
 char *lsh_read_line(void)
 {
   char *line = NULL;
@@ -175,7 +175,7 @@ char *lsh_read_line(void)
   getline(&line, &bufsize, stdin);
   return line;
 }
-{% endhighlight %}
+```
 
 ## Parsing the line
 
@@ -192,7 +192,7 @@ With those simplifications, all we need to do is "tokenize" the string using
 whitespace as delimiters.  That means we can break out the classic library
 function `strtok` to do some of the dirty work for us.
 
-{% highlight C %}
+```c
 #define LSH_TOK_BUFSIZE 64
 #define LSH_TOK_DELIM " \t\r\n\a"
 char **lsh_split_line(char *line)
@@ -225,7 +225,7 @@ char **lsh_split_line(char *line)
   tokens[position] = NULL;
   return tokens;
 }
-{% endhighlight %}
+```
 
 If this code looks suspiciously similar to `lsh_read_line()`, it's because it
 is!  We are using the same strategy of having a buffer and dynamically expanding
@@ -285,7 +285,7 @@ children, using the system call `wait()`.
 Phew!  That's a lot of information, but with all that background, the following
 code for launching a program will actually make sense:
 
-{% highlight C %}
+```c
 int lsh_launch(char **args)
 {
   pid_t pid, wpid;
@@ -310,7 +310,7 @@ int lsh_launch(char **args)
 
   return 1;
 }
-{% endhighlight %}
+```
 
 Alright.  This function takes the list of arguments that we created earlier.
 Then, it forks the process, and saves the return value.  Once `fork()` returns,
@@ -374,7 +374,7 @@ So, it makes sense that we need to add some commands to the shell itself.  The
 ones I added to my shell are `cd`, `exit`, and `help`.  Here are their function
 implementations below:
 
-{% highlight C %}
+```c
 /*
   Function Declarations for builtin shell commands:
  */
@@ -435,7 +435,7 @@ int lsh_exit(char **args)
 {
   return 0;
 }
-{% endhighlight %}
+```
 
 There are three parts to this code.  The first part contains *forward
 declarations* of my functions.  A forward declaration is when you declare (but
@@ -466,7 +466,7 @@ function that will either launch either a builtin, or a process.  If you're
 reading this far, you'll know that we've set ourselves up for a really simple
 function:
 
-{% highlight C %}
+```c
 int lsh_execute(char **args)
 {
   int i;
@@ -484,7 +484,7 @@ int lsh_execute(char **args)
 
   return lsh_launch(args);
 }
-{% endhighlight %}
+```
 
 All this does is check if the command equals each builtin, and if so, run it.
 If it doesn't match a builtin, it calls `lsh_launch()` to launch the process.

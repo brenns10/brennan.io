@@ -14,12 +14,9 @@ employers (past or present) or school.
 This website makes use of quite a few resources created by other people, and
 they deserve recognition for their work.
 
-- Stylesheet: [Twitter Bootstrap](http://getbootstrap.com)
-- CDN for Stylesheet: [Bootstrap CDN](http://www.bootstrapcdn.com)
-- Hosting: [Github Pages](//github.com)
+- Theme: this site theme is adapted from the
+  [Compass theme](https://github.com/excentris/compass), by Eduardo Rubio.
+- Icons: [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
+- Color Theme: [Solarized](http://ethanschoonover.com/solarized)
+- Hosting: [Github Pages](https://github.com)
 - Static Content Generation: [Jekyll](http://jekyllrb.com)
-- RSS Icon:
-  - Artist: [SimekOneLove](http://simekonelove.deviantart.com/)
-  - License: [CC Atribute-Share Alike 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
-  - Retrieved: [IconArchive](http://www.iconarchive.com/show/modern-web-icons-by-simekonelove/rss-icon.html)
-  - This content was not modified from the original source.

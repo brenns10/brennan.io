@@ -17,6 +17,11 @@ $blue:      #268BD2;
 $cyan:      #2AA198;
 $green:     #859900;
 
+code {
+    font-size: 16px;
+    color: $green;
+}
+
 .highlight {
   background-color: $base2;
   padding: 7px 7px 7px 10px;

@@ -18,9 +18,12 @@ $cyan:      #2AA198;
 $green:     #859900;
 
 code {
-    font-size: 16px;
     color: $green;
+
 }
+p code {
+    font-size: 16px;
+ }
 
 .highlight {
   background-color: $base2;

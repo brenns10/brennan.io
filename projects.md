@@ -4,7 +4,41 @@ layout: contentbase
 ---
 # Projects
 
-## Active
+## Future
+
+### Using Prior Biological Information to Select Features for Predicting Cancer Phenotypes
+
+This is a 10-week bioinformatics research project scheduled for the summer
+of 2015.  I will be working in conjunction with Dr. Mehmet Koyuturk to develop
+an algorithm for selecting combinations of somatic mutations which are
+correlated with cancer phenotypes.
+
+[View the Proposal](https://dl.dropboxusercontent.com/u/24472738/proposal.pdf)
+
+## Current
+
+### `PyWall` -- A Python Firewall
+
+My EECS 444 project group (Jeff Copeland, Andrew Mason, Yigit Kucuk) implemented
+a firewall in Python.  While obviously not practical for normal use, this
+firewall illustrates the basics of packet filtering (including TCP connection
+tracking) in a high-level lanugage, which is much easier to understand and
+extend than C.
+
+A GitHub link will be available once the project report is submitted, April 27.
+
+### `yams` -- YAMS: Awesome MIPS Server
+
+My EECS 314 project group (Jeff Copeland, Andrew Mason, Thomas Murphy, Katherine
+Cass, Aaron Neyer, and myself) created a HTTP 1.0 web server, written entirely
+in MIPS assembly.  In addition to serving static pages, it also comes with
+"dynamic content" courtesy of a Brainf*** interpreter also written in assembly.
+
+A GitHub link will be available once the project report is submitted, May 1.
+
+## Works in Progress
+
+I may never decide these projects are *done,* since I'm always improving them.
 
 ### `libstephen` -- A C Library
 
@@ -14,7 +48,9 @@ command line argument parsing, lightweight unit testing, and memory leak
 detection.  I continue to rethink and improve its architecture, so it is not yet
 at a place where other people should use it in their own programs.
 
-[Visit it at Bitbucket](//bitbucket.org/brenns10/libstephen)
+[Visit it at GitHub](https://github.com/brenns10/libstephen)
+
+[Visit the webpage!](/libstephen/)
 
 ### `cky` -- A Parser
 
@@ -29,9 +65,36 @@ foundation of the scanner.
 
 `cky` is based on the `libstephen` library.
 
-[Visit it at Bitbucket](//bitbucket.org/brenns10/cky)
+[Visit it at GitHub](https://github.com/brenns10/cky)
 
 ## Past
+
+### Minesweeper
+
+A minesweeper game written entirely in C, with both a command line and graphical
+interface.  This was a fun and short project to apply my C knowledge, as opposed
+to my more ambitious, long running projects above.
+
+[Visit it at GitHub](https://github.com/brenns10/minesweeper)
+
+### `caseid` -- Python module for Case IDs
+
+This Python module aims to provide a plain and simple way for a programmer to
+retrieve information about the owner of a Case ID.  It supports scraping CWRU
+web services, as well as accessing the public LDAP server in order to find
+people by their Case ID, and vice versa.
+
+[Visit it at GitHub](https://github.com/brenns10/caseid)
+
+[Also, visit its cousin, implemented by Andrew Mason in Ruby!](https://github.com/ajm188/cwru_directory)
+
+### `lsh` -- A Simplistic Shell in C
+
+I wrote this to illustrate the system calls and basic mechanics behind a Unix
+shell.  The [accompanying blog post]({% post_url 2015-01-16-write-a-shell-in-c%})
+had a modest positive audience response.
+
+[Visit it at GitHub](https://github.com/brenns10/lsh)
 
 ### `wepa-linux` -- A CUPS Printer Driver
 

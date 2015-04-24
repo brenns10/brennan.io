@@ -15,8 +15,8 @@ This website makes use of quite a few resources created by other people, and
 they deserve recognition for their work.
 
 - Theme: this site theme is adapted from the
-  [Compass theme](https://github.com/excentris/compass), by Eduardo Rubio.
-- Icons: [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
+  [Compass theme](http://excentris.net/compass), by Eduardo Rubio.
+- Icons: Font Awesome by Dave Gandy - <http://fontawesome.io>
 - Color Theme: [Solarized](http://ethanschoonover.com/solarized)
 - Hosting: [Github Pages](https://github.com)
 - Static Content Generation: [Jekyll](http://jekyllrb.com)

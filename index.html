@@ -11,30 +11,28 @@ layout: base
         <div class="author-container"><h1>{{ site.name }}</h1></div>
 
         <div class="tagline-container"><p>{{ site.description }}</p></div>
+        <hr>
+        <ul class="fa-ul main-list">
+            <li class="main-list-item">
+                <a href="https://github.com/brenns10">GitHub</a>
+                <span class="fa fa-github fa-lg main-list-item-icon"></span>
+            </li>
+            <li class="main-list-item">
+                <a href="https://bitbucket.org/brenns10">Bitbucket</a>
+                <span class="fa fa-bitbucket fa-lg main-list-item-icon"></span>
+            </li>
+            <li class="main-list-item">
+                <a href="http://stackoverflow.com/users/820319/brenns10">StackOverflow</a>
+                <span class="fa fa-stack-overflow fa-lg main-list-item-icon"></span>
+            </li>
     </header>
     <main>
       <div class="content">
         <h2>About</h2>
 
-        <p>
-          Stephen Brennan is a blah blah who enjoys blah de blah do dad.  He is
-          often seen being a bitch, and complaining a lot.
-        </p>
+        {% capture biosketch %}{% include biosketch.md %}{% endcapture %}
+        {{ biosketch | markdownify }}
 
-        <hr>
-        <ul class="fa-ul main-list">
-            <li class="main-list-item">
-                <span class="fa fa-github fa-lg main-list-item-icon"></span>
-                <a href="https://github.com/brenns10">GitHub</a>
-            </li>
-            <li class="main-list-item">
-                <span class="fa fa-bitbucket fa-lg main-list-item-icon"></span>
-                <a href="https://bitbucket.org/brenns10">Bitbucket</a>
-            </li>
-            <li class="main-list-item">
-                <span class="fa fa-stack-overflow fa-lg main-list-item-icon"></span>
-                <a href="http://stackoverflow.com/users/820319/brenns10">StackOverflow</a>
-            </li>
       </div>
     </main>
 </div>

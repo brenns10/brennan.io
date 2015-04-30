@@ -33,7 +33,9 @@ after April 27.
 My EECS 314 project group (Jeff Copeland, Andrew Mason, Thomas Murphy, Katherine
 Cass, Aaron Neyer, and myself) created a HTTP 1.0 web server, written entirely
 in MIPS assembly.  In addition to serving static pages, it also comes with
-"dynamic content" courtesy of a Brainf*** interpreter also written in assembly.
+"dynamic content" courtesy of a
+[Brainf***](https://en.wikipedia.org/wiki/Brainfuck) interpreter also written in
+assembly.
 
 A GitHub link will be available once the project report is graded, sometime
 after May 1.

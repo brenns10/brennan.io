@@ -25,7 +25,8 @@ firewall illustrates the basics of packet filtering (including TCP connection
 tracking) in a high-level lanugage, which is much easier to understand and
 extend than C.
 
-A GitHub link will be available once the project report is submitted, April 27.
+A GitHub link will be available once the project report is graded, sometime
+after April 27.
 
 ### `yams` -- YAMS: Awesome MIPS Server
 
@@ -34,7 +35,8 @@ Cass, Aaron Neyer, and myself) created a HTTP 1.0 web server, written entirely
 in MIPS assembly.  In addition to serving static pages, it also comes with
 "dynamic content" courtesy of a Brainf*** interpreter also written in assembly.
 
-A GitHub link will be available once the project report is submitted, May 1.
+A GitHub link will be available once the project report is graded, sometime
+after May 1.
 
 ## Works in Progress
 

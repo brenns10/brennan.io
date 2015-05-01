@@ -37,8 +37,7 @@ in MIPS assembly.  In addition to serving static pages, it also comes with
 [Brainf***](https://en.wikipedia.org/wiki/Brainfuck) interpreter also written in
 assembly.
 
-A GitHub link will be available once the project report is graded, sometime
-after May 1.
+[Visit it at GitHub](https://github.com/brenns10/yams)
 
 ## Works in Progress
 

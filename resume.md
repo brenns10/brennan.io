@@ -19,6 +19,7 @@ Research
 * Applying knowledge of information theory, graph algorithms, and data
   visualization.
 
+<hr>
 
 Experience
 ----------
@@ -40,6 +41,7 @@ Experience
 * Developed Windows Installers for the company's main products.
 * Wrote Python build scripts.
 
+<hr>
 
 Education
 ---------
@@ -58,6 +60,8 @@ Education
 
 * National AP Scholar
 * Cum. GPA: 3.975 / 4.0
+
+<hr>
 
 Coursework
 ----------
@@ -79,6 +83,7 @@ Coursework
 * Algorithms
 * Data Structures
 
+<hr>
 
 Skills
 ------
@@ -97,6 +102,7 @@ Skills
 * Windows Installer XML
 * .NET
 
+<hr>
 
 Leadership
 ----------
@@ -108,6 +114,7 @@ Leadership
   Authentication Service (CAS).  Used Python and Django framework.
 * Lead study sessions for undergraduate Data Structures and Algorithms classes.
 
+<hr>
 
 Awards
 ------
@@ -117,6 +124,7 @@ Awards
 * 2012 - National Merit Scholar
 * 2012 - National AP Scholar
 
+<hr>
 
 Societies
 ---------

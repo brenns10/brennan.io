@@ -4,7 +4,7 @@ layout: contentbase
 ---
 # Projects
 
-## Future
+## Current
 
 ### Using Prior Biological Information to Select Features for Predicting Cancer Phenotypes
 
@@ -14,29 +14,6 @@ an algorithm for selecting combinations of somatic mutations which are
 correlated with cancer phenotypes.
 
 [View the Proposal](https://dl.dropboxusercontent.com/u/24472738/proposal.pdf)
-
-## Current
-
-### `PyWall` -- A Python Firewall
-
-My EECS 444 project group (Jeff Copeland, Andrew Mason, Yigit Kucuk) implemented
-a firewall in Python.  While obviously not practical for normal use, this
-firewall illustrates the basics of packet filtering (including TCP connection
-tracking) in a high-level lanugage, which is much easier to understand and
-extend than C.
-
-[Visit it at GitHub](https://github.com/brenns10/pywall)
-
-### `yams` -- YAMS: Awesome MIPS Server
-
-My EECS 314 project group (Jeff Copeland, Andrew Mason, Thomas Murphy, Katherine
-Cass, Aaron Neyer, and myself) created a HTTP 1.0 web server, written entirely
-in MIPS assembly.  In addition to serving static pages, it also comes with
-"dynamic content" courtesy of a
-[Brainf***](https://en.wikipedia.org/wiki/Brainfuck) interpreter also written in
-assembly.
-
-[Visit it at GitHub](https://github.com/brenns10/yams)
 
 ## Works in Progress
 
@@ -70,6 +47,29 @@ foundation of the scanner.
 [Visit it at GitHub](https://github.com/brenns10/cky)
 
 ## Past
+
+### `PyWall` -- A Python Firewall
+
+My EECS 444 project group (Jeff Copeland, Andrew Mason, Yigit Kucuk) implemented
+a firewall in Python.  While obviously not practical for normal use, this
+firewall illustrates the basics of packet filtering (including TCP connection
+tracking) in a high-level lanugage, which is much easier to understand and
+extend than C.
+
+[Visit it at GitHub](https://github.com/brenns10/pywall)
+
+### `yams` -- YAMS: Awesome MIPS Server
+
+My EECS 314 project group (Jeff Copeland, Andrew Mason, Thomas Murphy, Katherine
+Cass, Aaron Neyer, and myself) created a HTTP 1.0 web server, written entirely
+in MIPS assembly.  In addition to serving static pages, it also comes with
+"dynamic content" courtesy of a
+[Brainf***](https://en.wikipedia.org/wiki/Brainfuck) interpreter also written in
+assembly.
+
+[Visit it at GitHub](https://github.com/brenns10/yams)
+
+[Read the blog post]({% post_url 2015-05-17-yams %})
 
 ### Minesweeper
 

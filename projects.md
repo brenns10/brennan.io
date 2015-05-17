@@ -25,8 +25,7 @@ firewall illustrates the basics of packet filtering (including TCP connection
 tracking) in a high-level lanugage, which is much easier to understand and
 extend than C.
 
-A GitHub link will be available once the project report is graded, sometime
-after April 27.
+[Visit it at GitHub](https://github.com/brenns10/pywall)
 
 ### `yams` -- YAMS: Awesome MIPS Server
 

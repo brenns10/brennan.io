@@ -1,4 +1,4 @@
-Stephen Brennan is a computer science student finishing up his third of five
+Stephen Brennan is a computer science student fresh out of his third of five
 years in the BS/MS program at Case Western Reserve University.
 
 As a student, Stephen consistently achieves high grades, achieving Dean's High

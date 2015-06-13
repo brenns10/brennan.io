@@ -1,13 +1,12 @@
 ---
 title: Resume
 layout: contentbase
+pdf: <span class="fa fa-file-pdf-o fa-lg"></span>
 ---
 Resume
 ======
 
-[Download my resume as a PDF.](https://dl.dropboxusercontent.com/u/24472738/Resume.pdf)
-
-[Download my bio-sketch as a PDF.](https://dl.dropboxusercontent.com/u/24472738/biosketch.pdf)
+[{{page.pdf}} Download my resume](https://dl.dropboxusercontent.com/u/24472738/Resume.pdf)
 
 Research
 ---------

@@ -1,6 +1,10 @@
 ---
 title: Projects
 layout: contentbase
+gh: <span class="fa fa-github fa-lg"></span>
+bb: <span class="fa fa-bitbucket fa-lg"></span>
+web: <span class="fa fa-globe fa-lg"></span>
+pdf: <span class="fa fa-file-pdf-o fa-lg"></span>
 ---
 # Projects
 
@@ -13,7 +17,7 @@ of 2015.  I will be working in conjunction with Dr. Mehmet Koyuturk to develop
 an algorithm for selecting combinations of somatic mutations which are
 correlated with cancer phenotypes.
 
-[View the Proposal](https://dl.dropboxusercontent.com/u/24472738/proposal.pdf)
+[{{page.pdf}} View the Proposal](https://dl.dropboxusercontent.com/u/24472738/proposal.pdf)
 
 ## Works in Progress
 
@@ -27,9 +31,9 @@ command line argument parsing, lightweight unit testing, and memory leak
 detection.  I continue to rethink and improve its architecture, so it is not yet
 at a place where other people should use it in their own programs.
 
-[Visit it at GitHub](https://github.com/brenns10/libstephen)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/libstephen)
 
-[Visit the webpage!](/libstephen/)
+[{{page.web}} Visit the webpage!](/libstephen/)
 
 ### `cky` -- A Parser
 
@@ -44,9 +48,21 @@ foundation of the scanner.
 
 `cky` is based on the `libstephen` library.
 
-[Visit it at GitHub](https://github.com/brenns10/cky)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/cky)
+
+- - -
 
 ## Past
+
+### Tetris in C!
+
+A 24 hour Tetris implementation written in C, using the `ncurses` library.  I
+wrote an accompanying blog post about it, which also touched on how important I
+find my personal projects, even if some are reimplementations.
+
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tetris)
+
+[{{page.web}} Read the blog post]({% post_url 2015-06-12-tetris-reimplementation %})
 
 ### `PyWall` -- A Python Firewall
 
@@ -56,7 +72,7 @@ firewall illustrates the basics of packet filtering (including TCP connection
 tracking) in a high-level lanugage, which is much easier to understand and
 extend than C.
 
-[Visit it at GitHub](https://github.com/brenns10/pywall)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/pywall)
 
 ### `yams` -- YAMS: Awesome MIPS Server
 
@@ -67,9 +83,9 @@ in MIPS assembly.  In addition to serving static pages, it also comes with
 [Brainf***](https://en.wikipedia.org/wiki/Brainfuck) interpreter also written in
 assembly.
 
-[Visit it at GitHub](https://github.com/brenns10/yams)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/yams)
 
-[Read the blog post]({% post_url 2015-05-17-yams %})
+[{{page.web}} Read the blog post]({% post_url 2015-05-17-yams %})
 
 ### Minesweeper
 
@@ -77,7 +93,7 @@ A minesweeper game written entirely in C, with both a command line and graphical
 interface.  This was a fun and short project to apply my C knowledge, as opposed
 to my more ambitious, long running projects above.
 
-[Visit it at GitHub](https://github.com/brenns10/minesweeper)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/minesweeper)
 
 ### `caseid` -- Python module for Case IDs
 
@@ -86,17 +102,18 @@ retrieve information about the owner of a Case ID.  It supports scraping CWRU
 web services, as well as accessing the public LDAP server in order to find
 people by their Case ID, and vice versa.
 
-[Visit it at GitHub](https://github.com/brenns10/caseid)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/caseid)
 
-[Also, visit its cousin, implemented by Andrew Mason in Ruby!](https://github.com/ajm188/cwru_directory)
+[{{page.gh}} Visit its Ruby cousin by Andrew Mason](https://github.com/ajm188/cwru_directory)
 
-### `lsh` -- A Simplistic Shell in C
+### `lsh` -- A Simple Shell in C
 
 I wrote this to illustrate the system calls and basic mechanics behind a Unix
-shell.  The [accompanying blog post]({% post_url 2015-01-16-write-a-shell-in-c%})
-had a modest positive audience response.
+shell.  The accompanying blog post had a modest positive audience response.
 
-[Visit it at GitHub](https://github.com/brenns10/lsh)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/lsh)
+
+[{{page.web}} Read the blog post]({% post_url 2015-01-16-write-a-shell-in-c%})
 
 ### `wepa-linux` -- A CUPS Printer Driver
 
@@ -109,7 +126,7 @@ that problem.  It is a CUPS printer driver that allows rudimentary printing to
 WEPA.  While the solution is not elegant (the security model of CUPS seriously
 limits what a driver can do), it is effective.
 
-[Visit it at Bitbucket](//bitbucket.org/brenns10/wepa-linux)
+[{{page.bb}} Visit it at Bitbucket](//bitbucket.org/brenns10/wepa-linux)
 
 ### `chat` -- A Quick and Dirty Chat System
 
@@ -118,4 +135,4 @@ It served as my introduction to socket programming in both languages.  It is
 intended to be used as a local chat server over SSH, instead of constantly
 sending `wall` messages to other logged in users.
 
-[Visit it at Bitbucket](//bitbucket.org/brenns10/chat)
+[{{page.bb}} Visit it at Bitbucket](//bitbucket.org/brenns10/chat)

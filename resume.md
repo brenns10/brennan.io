@@ -131,3 +131,4 @@ Societies
 * 2014 - IEEE-Eta Kappa Nu EECS Honor Society
 * 2013 - Tau Beta Pi Engineering Honor Society
 * 2010 - National Honor Society
+

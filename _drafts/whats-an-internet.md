@@ -588,3 +588,117 @@ OK, so that was a ton of new information.  Let's recap:
 Recap done!  If you kinda followed all of those points, then you have a basic
 understanding of how the Network layer of the Internet works!  Congratulations!
 
+### The Transport Layer
+
+We're over the hump.  Three layers down, and two more to go.  Now that we can
+send a packet from one place in the network to anywhere else, what more is there
+to do?  Plenty!  While the network layer was all about communicating between two
+different computers, the transport layer is all about communicating between two
+programs on those two computers.  Let's make an analogy!  At your house, you may
+have multiple people living there.  You all have the same street and apartment
+addresses, but you are different people.  Mail that has your housemate's name on
+it goes to your housemate, not you.  You don't need to read their mail, and you
+don't want them reading your mail.  In the same way, you don't want your web
+browser to get interference if you run it at the same time as you listen to
+music on Spotify!
+
+The other problem that the transport layer tries to solve is something we've
+been pointedly ignoring so far: reliable data transfer.  I told you that the
+Network Layer can get your data from one end of the network.  What I didn't say
+is that it can do it 100% reliably (*spoiler alert: it can't!*).  There are tons
+of reasons that the Network Layer might fail to deliver your packets.  There
+could be an error in communication, corrupting your packet.  Or, the network
+could be really congested along the path from you to your destination.  In order
+to cope, the routers along the path might have just "dropped" your strange!
+
+In addition, you have no guarantee that the network layer can deliver your
+packets in the same order that you sent them!  Due to the way that routing
+protocols work, a router's table could be updated at any time, sending two
+packets with the same destination careening down completely different paths.
+It's entirely possible that one would arrive before the other.
+
+This all makes it difficult to make useful programs using the network layer.
+Who would browse the web if chunks of the pages were swapped around and garbled
+randomly?  Nobody.  So, another thing that the transport layer tries to provide,
+beyond delivering messages between programs, is doing it 100% reliably!
+
+It's worth mentioning that "reliable data transfer" doesn't *have* to be done by
+the transport layer.  It *is* done that way on the Internet, but you could also
+make a link- or network- layer protocol that can guarantee reliable data
+transfer.  However, the good folks responsible for designing the Internet, the
+Internet Engineering Task Force (IETF) weighed the options and decided that the
+Internet would be most scalable if it left that up to the transport layer to do.
+And that's what we do!
+
+Down to business!  What are the major protocols of the transport layer, and how
+do they work?  Well, when you talk about network layer protocols, there are
+really only two names in the game: TCP and UDP.  TCP, or Transmission Control
+Protocol, is by far the dominant protocol of the Internet.  It provides all of
+the services I just described: communication between applications, and reliable
+data transfer.  On the other hand, UDP (User Datagram Protocol) simply provides
+communication between applications, and error detection mechanisms (**not**
+error *correction* mechanisms).
+
+Both of these protocols use something called "ports".  These are simply
+transport layer addresses, similar to how IP addresses are network layer
+addresses.  TCP and UDP both allow you to have port numbers ranging from 0 to
+65,536.  However, TCP ports are different from UDP ports (a message to TCP port
+22 will not get picked up on UDP port 22 as well).  And, it's important to keep
+in mind that these are not actual physical ports like your USB port.  They only
+exist in the code on your computer and the minds of programmers!
+
+#### TCP
+
+TCP accounts for a huge majority of Internet traffic.  The reasons are simple:
+it provides incredibly convenient reliable transfer guarantees.  TCP provides
+applications with an ordered stream of bytes (just a unit of computer data).
+Whatever you put into the TCP stream (often called a socket) will come out
+unharmed and in order on the other end.  Webpages, audio and video streams,
+email, and files are all usually sent over TCP (using their corresponding
+application layer protocols, which we'll cover soon enough).  How does it do it?
+By applying a couple of strategies, which are summarized below:
+
+* Numbering and acknowledging bytes.  Each byte has a number in TCP, so that the
+  application on the other end knows where the bytes belong in the message.
+  When a TCP connection receives bytes, it will respond with an acknowledgement
+  saying something like "I've received everything up to byte *n* just fine!".
+* A send and receive window.  TCP pretends to have a window of information it
+  can be sending at any given time.  At the beginning of the window is the stuff
+  that it has sent, but hasn't heard an acknowledgment about.  Anything from
+  there to the end of the window can be sent, but nothing after that can be sent
+  (until a new acknowledgement arrives, shifting the window).
+* Retransmitting bytes that are inferred to be lost.
+
+There is a lot more complexity to how the acknowledgement system works, but
+that's the idea in a nutshell.  While this system does an excellent job
+addressing the problems of packet loss due to corruption, and packets arriving
+out of order.  Hoewever, there are types of packet loss that don't happen due to
+corruption.  Sometimes, routers become overwhelmed with traffic, and just can't
+handle any more packets.  So, they ignore them.  If TCP just resends those lost
+packets, it'll just cause those routers to continue to be overwhelmed, failing
+to address the root cause of the packet loss.  This will make everybody's
+connections slow to a crawl.  So, in addition to the error prevention strategies
+above, TCP also will scale back the rate at which it sends data when it detects
+lots of packet loss.  Once the packet loss dies down, it tries to gradually
+increase it to find the best speed to send at.
+
+By combining the reliable data transfer mechanisms with flow control, TCP
+provides a very valuable tool for making Internet programs.  It's great for
+things like sending web pages and files, but it's not perfect for everything.
+One problem with TCP is that, in order to provide all these features, it's
+rather complicated.  Some programs don't need that complexity.  Plus, TCP's
+reliable data transfer can sometimes slow down connections when errors are
+present (because it has to resend data).  Real-time programs like online games
+and video conferencing programs might prefer to just ignore those errors so that
+they can send data faster, and so TCP is not right for them.
+
+#### UDP
+
+For those applications where TCP isn't right, we have UDP.  There's actually not
+very much to say about it.  Like TCP, UDP uses port numbers to identify
+applications.  It also can detect errors in transmission, like TCP, but it
+doesn't fix them.  Additionally, it doesn't provide you with the "byte stream"
+interface TCP does.  You simply send "datagrams" that will (maybe) arrive at
+their destination.
+
+### The Application Layer

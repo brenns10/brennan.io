@@ -1,6 +1,18 @@
 ---
 title: What's an Internet?
 layout: post
+todo:
+  - Formally define a router (somewhere? - in the structure section?)
+  - Clean up the discussion in the physical layer, where I say I won't explain
+    the multiple access problem, but then I do in the physical layer.
+  - In the link layer, I really need to center my discussion around an analogy,
+    like the dinner party one.  The link and network layers are heavily complex,
+    and having analogies is kinda what this article is all about.
+  - Also, at the end of the link layer, I start to get really rushed.  I'll
+    definitely want to go over than and smooth out my writing.
+  - The explanation of TCP could use an analogy - perhaps page numbering.
+  - Similarly, DNS is pretty much like a phone book or address book.
+
 ---
 
 Some days it shocks me how much people rely on things they don't understand.
@@ -702,3 +714,69 @@ interface TCP does.  You simply send "datagrams" that will (maybe) arrive at
 their destination.
 
 ### The Application Layer
+
+Congratulations, everyone!  We've reached the top layer of the Internet, the
+Application Layer.  The Application Layer is where the magic happens, as far as
+users of the Internet are concerned.  Most of the Internet applications you love
+are an application layer protocol!  Quite simply, the job of the application
+layer is to use the program-to-program communication provided by the transport
+layer and below to make cool programs!  So, I'll take this time to give a brief
+overview of a few application layer programs, to give you a picture of how
+everything works together.  Without a doubt, the most famous application layer
+program of the Internet is called "the World Wide Web".
+
+#### The World Wide Web
+
+At this point, you may be pumping the breaks.  After all, isn't the "world wide
+web" just a nineties style way of saying the Internet?  The answer to that is a
+resounding *no*!  Technically, there is a huge difference between the Internet
+and the Web!  I have spent this entire blog post so far discussing the Internet:
+a layered set of protocols that make a bunch of connected computers into a true
+network that can send and receive information.  The Web is a set of
+application-level protocols that *use* the Internet.  It allows people to browse
+"web pages" on computers all over the Internet.  The Web defines the languages
+and protocols these programs use to communicate pages, and the Internet is the
+set of protocols the Web relies on to communicate!
+
+This is a major distinction, but it's also a pretty technical one.  After this
+whole novel about how the Internet works, the distinction is pretty clear, but
+in normal conversation, nobody really cares (including me) when you use the two
+terms interchangably!
+
+So, how is it that when you type `www.google.com` into your browser, you see
+Google?  There are a number of application-level protocols that work together to
+make this possible.  The first one you interact with is called DNS, for the
+Domain Name System!
+
+##### DNS
+
+To us, `www.google.com` is the name of a website.  However, nowhere in the
+entire internet protocol stack did we ever use text names to address computers!
+The Domain Name System is what is responsible for translating these names into
+the IP addresses that the Internet uses for routing.
+
+DNS is one of those "simple" protocols that doesn't need the complexity of TCP.
+So, it operates on UDP port 53.  When you want to go to a domain, like
+`stephen-brennan.com`, your computer sends a question ("DNS query") to the local
+DNS server.  The DNS server (which is just a computer) figures out what IP
+address that stands for, and sends back a response to your computer.
+
+The DNS server figures it out by consulting its own internal table.  If the name
+isn't in its table, the server then consults the rest of the DNS network.  There
+is a whole hierarchy of authoritative domain name servers that contain the true
+information, as published by the people who own the domain names.  When somebody
+registers a domain name, they either set up a DNS server to be the authoritative
+source for information about their domain (complex), or they have somebody else
+be the authoritative source about their domain, and tell them what to list in
+their DNS server (simple).
+
+Inside pretty much every home router, there is a local DNS server that does all
+of your lookups for you.  Your ISP generally provides another local DNS server
+that your home router probably talks to.  Your computer knows where to find the
+DNS server because, when you initially connected it to the network, you either
+told it the DNS server address, or it was automatically detected through a
+protocol called DHCP.
+
+##### HTTP
+
+Once your computer knows the IP address of the website you'd like to visit, 

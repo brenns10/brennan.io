@@ -310,3 +310,281 @@ protocol called ARP (Address Resolution Protocol) that basically broadcasts the
 question, "who has the address xx.xx.xx.xx?", and waits for a response.  ARP is
 a strange beast that straddles the link and network layers, but it's necessary
 in order to know the MAC address you want to send to.
+
+### The Network Layer
+
+Whew!  That link layer was hard, for something that seemed so simple.  What did
+we gain from it?  Now, we know that we can send messages addressed to somebody
+we share a connection with.  What do we do with it?
+
+Well, like I mentioned way earlier, the fun thing about networks is being able
+to get messages to places in the network that you aren't even directly connected
+to.  So, it would be nice if we had a way to get messages across the network.
+That is what the network layer is there for!  The network layer enables
+computers that are connected with each other to forward information along the
+network toward its destination.  Get ready for some fun!
+
+#### Routing, Part 1
+
+Imagine that you would like to send a message from your computer to a computer
+on the other end of the Internet.  You don't have a direct connection to that
+computer, but you are connected to the Internet.  Presumably, there is a path
+from your computer to the destination.  How do you send your message so that it
+will reach the other computer?
+
+One potential way would be for your computer to know the entire layout of the
+Internet.  It could determine what the best route through the network is, put
+all that information along with the message, and send it on its way (now that
+we're on the network layer, we typically refer to these messages as packets or
+datagrams).  All the intermediate computers (routers) would simply need to know
+how to follow the instructions your computer put in the packet, and eventually
+it should show up at its destination.
+
+Well, that's not a bad way of doing it.  It would mean that all the computers
+along the way could be pretty dumb.  All they'd have to do is know how to follow
+instructions.  They wouldn't need to know anything about what paths were the
+best way to get from one place to another along the network, because your
+computer would do that for them.  Unfortunately, there are some serious
+drawbacks to that:
+
+* The Internet is pretty huge.  A map of the Internet (which your computer would
+  need in order to plan the packet's "road trip") would take up a significant
+  amount of space.  How would you like it if your smartphone was so full of
+  "Internet roadmaps" that you couldn't take any more pictures or download more
+  music?
+* Internet companies would rather not tell you all about the road map inside
+  their networks.  How an ISP structures its network is part of what makes them
+  different from another ISP.  So, in a sense, it's proprietary information.
+* What if an ISP's router broke?  Everyone else on the Internet would have a map
+  showing that router still works, and they'd continue sending their packets to
+  what is, in effect, a broken bridge!  You would have to constantly update
+  everyone's road map with every change to its structure.  Since the Internet is
+  constantly changing, this is a terrible problem.
+
+So, unfortunately, we can't all keep road maps of the Internet and send our
+packets out with a set of instructions.  Back to the drawing board!
+
+Instead of treating the stuff we want to send across the network as a car going
+across roads, maybe we ought to think of it more like mail.  When you want to
+mail a letter to somebody, all you need to know is their address.  You drop the
+addressed envelope into a mailbox, and your job is done.  The postal *network*
+takes care of the rest.
+
+#### Addressing
+
+This strategy sounds promising!  It sounds like we're going to need a way to
+address computers.  Let's take the analogy further.  A normal street address
+(here in America) looks something like this:
+
+> Johnny Appleseed  
+> 123 Maple Road, Apt. 5  
+> Cleveland, OH, 44106
+
+(If there is indeed a Johnny Appleseed residing at this address, you have my
+sincerest apologies!)
+
+This address has some interesting qualities that make it useful for postal
+workers to get it to where it needs to go.  Notice how it goes from specific to
+general.  It starts out with the most specific identifier, the street and
+apartment number.  Then, it names the street, then the city, and state.  Anybody
+could deliver a letter with this address.  They may not know where to find
+Johnny Appleseed, but they certainly can find Ohio.  Once they get near Ohio,
+they can probably get pointed towards Cleveland.  Once they arrived in
+Cleveland, they could probably get directions toward Maple Road.  Once on the
+road, they could certainly look for the correct house and apartment numbers, and
+deliver the letter successfully to our friend Johnny.  The wonderful thing about
+addresses is that almost anybody can point you in the direction of the most
+general part of the address, and once there, you can find the more specific
+parts.
+
+If we wanted the Internet to have a delivery system similar to the post office
+(hint: *it does!*), then we need to have an address system that's organized in a
+similar way!  We already know of MAC addresses from our discussion of the link
+layer.  These addresses are assigned uniquely by manufacturers to our devices.
+Unfortunately, a MAC address tells you nothing about where in the network a
+device is.  Two devices made by the same manufacturer with nearly identical MAC
+addresses are not guaranteed to be near each other.  Really, a MAC address is
+more like a Social Security Number in the US.  These numbers, assigned at birth,
+tell us nothing about where a person resides.  That's why we use a street
+address to send mail, and not a SSN.
+
+So, from the looks of it, we'll need a new way to "address" devices.  This
+address is called an Internet Protocol (IP) address!  These addresses are
+carefully designed to mimic street addresses.  Whenever the first numbers of an
+IP address are the same, you know that the addresses are within a network
+together.  If more numbers at the beginning of the address are the same, then
+these devices are within an even smaller network, and therefore closer together.
+This makes sense when you think about the street address analogy.  My next door
+neighbors share most of my address, and we're next door.  My relatives in other
+states don't have any parts of their street address in common with me, because
+we live so far away.  Of course, IP addresses are slightly different than cities
+and states.  There is a central organization that gives ranges of IP addresses
+out to companies (like ISPs).  This organization is called the Internet Assigned
+Numbers Authority (IANA), and it's a part of a larger organization called the
+Internet Corporation for Assigned Names and Numbers (ICANN).  We'll meet ICANN
+again later on!
+
+IP addresses are numbers that look like this: `12.34.56.78`.  Each of the four
+numbers can range from 0 to 255.  When IP addresses were created, the plan was
+to give them to organizations in blocks of different sizes.  Class A blocks were
+networks that shared only one number at the beginning (the "prefix").  The three
+remaining numbers (a total of around 16 million addresses) were given to the
+organization to do whatever they'd like with.  For instance, Google might have
+been given the Class A network `12.x.x.x`.  That would mean that they were given
+all the IP addresses that start with 12, to do whatever they wanted with.
+Similarly, Class B networks share the first two numbers, and the last two vary
+(65,536 addresses).  Finally, Class C networks hold the first three numbers
+constant, and let the last one vary.  There are only 256 addresses in a Class C
+network.
+
+Somewhere along the line, people realized that this wasn't the best idea.  The
+gap between the size of a Class C network (256 addresses) and a Class B network
+(65,536 addresses) was pretty big.  If I'm a company that wants a few thousand
+addresses for my employees, I would have to get a Class B network, wasting
+around 60,000 addresses.  So, Classless Inter-Domain Routing (CIDR) was
+introduced.  It works like this: IP addresses can also be represented in binary
+(in fact, that's how they're always represented within computers!).  For
+instance, the address `12.34.56.78` would be
+`00001100.00100010.00111000.01001110` in binary.  Instead of giving people class
+A, B, or C IP ranges, CIDR gives people a prefix of a certain amount of bits.  A
+prefix of 24 bits leaves the remaining 8 bits to vary, which is the same as a
+Class C network.  But, you could instead change the prefix to 22, giving 1024 IP
+addresses, and allowing much more conservative allocation of IP addresses.
+There is even a way of writing this out without using binary, called CIDR
+notation.  However, to explain that would be going down a rabbit trail!  Suffice
+to say, IP addresses always have prefixes that indicate what network they belong
+to.
+
+So, with addresses like these, we can begin to imagine what life must be like as
+a router!  Your physical layer starts receiving bits.  Your link layer reads the
+frame, and discovers that it was meant for your MAC address.  So, it takes the
+data and sends it up to your network layer.  Your network layer reads the
+packet's *headers* (which are like the outside of an envelope) to see where it
+is going.  You don't know where that exact address is in the world, but you have
+a list of IP address prefixes, and you know the general direction of where those
+prefixes live on the network.  You find whatever prefix matches the address on
+the packet, and send the packet out in that direction.
+
+Keep in mind that this is no different than somebody asking you for directions
+to an address!  You tell them that you don't know where that address is exactly,
+but you know where to find the city (or the street).  By using this same power
+of IP addresses, routers can do the same thing.
+
+#### Routing, Part 2
+
+Well, this is exciting!  Assuming every router on the Internet has a list of
+prefixes and their corresponding "directions" (which we call a "routing table"),
+they can send packets along their merry way!  If you think about how these
+"routing tables" will look, it's somewhat similar to a human's understanding of
+driving directions around them.  For instance, here is my "routing table":
+
+* I could tell you how to get to a few places in Cleveland, where I live.  If
+  you told me the area or the street, there's a decent chance I could get you
+  there.
+* I know a few of the outlying suburbs and cities around Cleveland.  Chances
+  are, I could tell you how to get on a freeway that might take you there.
+* Similarly, for the big cities around Cleveland, I could tell you what freeways
+  would get you there.
+* For more distant places, I could probably give you a compass direction toward
+  that city or country.  But that's pretty much it!
+
+I learned my routing table doing a number of things.  I drove around a lot with
+a GPS.  I planned some routes while looking at Google Maps so I would understand
+how the roads connect.  Eventually, I got comfortable enough with my area that I
+didn't need to have a GPS with me if I knew where my destination was.  The
+knowledge about the more distant places, I got mostly from geography in school.
+
+Unfortunately, routers don't spend much time "driving around" the Internet, and
+they certainly don't go to school to learn "Internet geography"!  We made a big
+assumption in thinking that routers have a "routing table".  It turns out, each
+router having one of these tables is pretty darn difficult.  So, how do we make
+it happen on the Internet?
+
+This is a huge, mind-numbingly complex topic.  So, I'm going to skim over it,
+enough to explain the simple concepts.  The Internet, like I mentioned at the
+beginning of this post, is a giant "graph".  A guy named Edsger Dijkstra came up
+with this neat method ("algorithm") for finding the shortest path from one node
+in a network to another.  His algorithm (conveniently named "Dijkstra's
+Algorithm") is so important, that it's actually what Google Maps and your GPS
+use to plan your routes on the road network!  It's also what powers the ideas
+behind building up routing tables.
+
+There are two main strategies for building routing tables.  The first one is
+called a "link-state" protocol.  This is where each router keeps an internal map
+of the network.  It uses Dijkstra's Algorithm on this map to come up with a list
+of shortest paths for different prefixes, and makes a routing table like this.
+In order to keep maps up to date, the routers will periodically broadcast a
+message to everyone else about the "state" of their links.  If they got any new
+connections, or lost any old ones, they'll tell everyone else in the network, so
+everyone can update their maps!  This strategy is pretty good, but it is
+difficult to use in a large-scale way, because holding an entire Internet map is
+difficult.  You can think of this strategy like keeping your own map at your
+house.  When a neigbor tells you about a road closing, you update your map to
+reflect it.  When a road near you closes, you tell everyone you meet about it so
+they know to update their maps.
+
+The second strategy is called a "distance-vector" protocol.  In these protocols,
+a router just keeps track of its routing table (that is, prefixes, directions,
+and distances).  Periodically, routers will "advertise" to each other how
+quickly they can get a packet to a destination.  When a router hears an
+advertisement for a faster time, it updates its table with a new distance and
+direction.  In essence, all a router ever knows is its routing table, and it
+just updates it with new information.  If I were under the impression that the
+fastest way to get to Chicago from Cleveland was through Columbus, I would be
+very pleased to hear that I could get there faster through Toledo, and I would
+update my routing table accordingly.
+
+While these strategies sound similar, they're subtlely different, and they have
+different strengths and weaknesses.  As such, one isn't really better than the
+other.  Therefore, the Internet actually has two different types of routing
+protocols.  One (the external one) is for finding paths from one big network to
+another, and the other (the internal) is for finding paths within the same
+network.  Remember how I said way earlier in this post that ISPs like to call
+their networks "autonomous systems"?  Well, this is why.  Inside their own AS,
+the ISP gets to decide what routing protocol they use to build their routing
+tables.  However, in order to share information between all of the different
+AS's on the Internet, there has to be a single universal protocol.  This
+protocol is called the Border Gateway Protocol (BGP).  It's called this because
+it is used at the borders between AS's, in order to tell other networks where
+you can go by going through your network.  BCP uses the distance-vector strategy
+from above.
+
+Internal routing protocols are used within a AS to give all the routers within
+the AS their routing tables.  They use information gained from BGP, along with
+the structure of the AS and the rules imposed by the ISP, to construct routing
+tables.  There are quite a few of them, since it is up to the people who
+administer the AS to decide what they want to use.  Here are the names of a few:
+
+* Routing Information Protocol (RIP) - uses the distance-vector strategy.
+* Open Shortest Path First (OSPF) - uses the link-state strategy
+* Intermediate System to Intermediate System (IS-IS) - uses the link-state
+  strategy.
+* Internal BGP (iBGP) - there is a version of the BGP protocol that can be used
+  within an AS.  Like its external version (eBGP), iBGP also uses the
+  distance-vector strategy.
+
+#### Network Layer: Putting it all Together
+
+OK, so that was a ton of new information.  Let's recap:
+
+1. The link layer gave us the ability to send information across a link to
+   somebody else who is listening.
+2. The network layer aims to allow us to send information through a series of
+   links to a destination you're not directly connected to.
+3. The network layer uses IP addresses, which are similar to street addresses,
+   in that different parts of them tell us more or less general information
+   about where a computer is.
+4. Routers can use "routing tables", or lists of IP prefixes and directions, to
+   figure out which way to send a packet they receive.
+5. In order to compute routing tables, routers use routing protocols to
+   communicate information about how to get to places.
+6. There are two types of routing strategies, link-state and distance-vector.
+7. External routing protocols are used between Autonomous Systems (AS's) as a
+   standard way of communicating routing information across the Internet.  The
+   only standard Internet external routing protocol is BGP.
+8. Internal routing protocols are used within AS's.  There are many of these,
+   since there is no standard one.
+
+Recap done!  If you kinda followed all of those points, then you have a basic
+understanding of how the Network layer of the Internet works!  Congratulations!
+

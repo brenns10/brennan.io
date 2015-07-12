@@ -802,22 +802,92 @@ address that stands for, and sends back a response to your computer.
 The DNS server figures it out by consulting its own internal table.  If the name
 isn't in its table, the server then consults the rest of the DNS network.  There
 is a whole hierarchy of authoritative domain name servers that contain the true
-information, as published by the people who own the domain names.  When somebody
-registers a domain name, they either set up a DNS server to be the authoritative
-source for information about their domain (complex), or they have somebody else
-be the authoritative source about their domain, and tell them what to list in
-their DNS server (simple).
-
-Inside pretty much every home router, there is a local DNS server that does all
-of your lookups for you.  Your ISP generally provides another local DNS server
-that your home router probably talks to.  Your computer knows where to find the
-DNS server because, when you initially connected it to the network, you either
-told it the DNS server address, or it was automatically detected through a
-protocol called DHCP.
+information, as published by the people who own the domain names.  People can
+buy these domain names from companies called "registrars", who will allow them
+to set their website's IP address in the authoritative DNS servers.
 
 ##### HTTP
 
-Once your computer knows the IP address of the website you'd like to visit, 
+Once your computer knows the IP address of the website you'd like to visit, it
+needs to talk with the website computer in order to get the page you want.  In
+order to do so, your computer and the website need to speak the same language,
+and this language is called HTTP (HyperText Transfer Protocol).  HTTP is a
+protocol built on top of TCP.  In HTTP, your computer sends a message to the
+website that looks something like this:
+
+```
+GET /resume.html
+Host: stephen-brennan.com
+
+```
+
+The website will receive this message and respond back, usually like this:
+
+```
+200 OK
+
+<!doctype html>
+<html>
+...
+```
+
+The message your computer sent is called a request.  It has a "method", which
+tells the website what you want it to do.  The most common one is "GET", which
+tells the website that you'd like it to send you a page.  The remainder of that
+line specifies the URL, or path, to the file.  The rest of the request contains
+things called "headers" telling the server more information about who you are
+and what you want.
+
+The message the website sends back is called a response.  It starts with a
+status code.  The most common one is 200, meaning "everything went well".
+Responses can also include headers, which tell you more about the server, and
+can even give your computer instructions on what to do with the response.  After
+the status code and header comes the response "body", which contains the web
+page you asked for.
+
+This web page is written in "the language of the web", HTML, which stands for
+HyperText Markup Language.  This is just a text file that gives web browsers
+detailed instructions on how to display information.  Web pages can also list
+additional resources your computer should get, such as images, fonts, style
+sheets, and scripts.  Your computer may have to make additional HTTP requests
+until it has everything required.  Then, it displays the page for you!
+
+#### Email
+
+Another classic "application" on the Internet is Email.  It actually is older
+than the Web.  In essence, you have many different "mail servers" run by people
+like Yahoo, Google, Microsoft, etc.  Each one corresponds for a type of email
+address (`@yahoo.com`, `@gmail.com`, `@hotmail.com`, etc).  When you'd like to
+send a message to somebody, your mail program logs into your mail server using a
+protocol called SMTP (Simple Mail Transfer Protocol).  Here's an example
+exchange between you and a mail server to send a message.  Lines starting with
+`>` are you sending to the mail server, and lines starting with `<` are you
+receiving.  The `>` and `<` aren't actually part of the protocol, they just make
+it easier to read.
+
+```
+> HELO smtp.example.com
+< 250 smtp.example.com at your service!
+> MAIL FROM:me@example.com
+< 250 2.1.0 Ok
+> RCPT TO:friend@another-example.com
+< 250 2.1.5 Ok
+> DATA
+< 354 End data with <CR><LF>.<CR><LF>
+> To: friend@another-example.com
+> From: me@example.com
+> Subject: Test message
+>
+> Hello friend, this is a test message.
+> From,
+> me
+> .
+< 250 2.0.0 Ok: queued as 0B2F3E0115
+> QUIT
+> 221 2.0.0 Bye
+```
+
+In this exchange, you log into your mail server and tell it you'd like to 
 
 [graph]: https://en.wikipedia.org/wiki/Graph_(mathematics)
 [superfish]: {% post_url 2015-02-20-superfish-explained %}

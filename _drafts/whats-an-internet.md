@@ -2,9 +2,6 @@
 title: What's an Internet?
 layout: post
 todo:
-  - In the link layer, I really need to center my discussion around an analogy,
-    like the dinner party one.  The link and network layers are heavily complex,
-    and having analogies is kinda what this article is all about.
   - Also, at the end of the link layer, I start to get really rushed.  I'll
     definitely want to go over than and smooth out my writing.
   - The explanation of TCP could use an analogy - perhaps page numbering.
@@ -281,13 +278,14 @@ send the bits correctly.  It'll obviously be designed to do its best at it, but
 there are no guarantees.
 
 So what does our link layer do?  Its job is deceptively simple: get a message to
-somebody else that is on the same link as us.  All of last section, I talked
-about the physical layer as connecting two devices, but the fact is, there may
-be more.  After all, many people use a single WiFi hotspot.  And, believe it or
+somebody else that is on the same "link" (that is, connection) as us.  All of
+last section, I talked about the physical layer as connecting two devices, but
+the fact is, many devices can be connected together at once by the physical
+layer.  After all, many people use a single WiFi hotspot.  And, believe it or
 not, you can have more than two computers connected with each other on a single
-Ethernet connection.  All we figured out last section was how to send bits.  So,
-the link layer has to be able to make those bits into a message directed to a
-single device on the link.
+Ethernet connection.  All we figured out last section was how we could send
+bits.  So, the link layer has to be able to send a message to any of the people
+that share a link with us.
 
 So, how do we send a message to a specific device?  The simplest way is by
 putting the recipient's name on the envelope!  After all, you don't just stick a
@@ -306,42 +304,43 @@ So, in the simplest link layer, when a device wants to send a message to another
 device it shares a link with, it simply wraps the message up in a frame, slaps
 the correct MAC address on it, and gives the frame to the physical layer to put
 those bits onto the wire.  The other devices would receive that, and if the MAC
-address on the frame matched their own, they would open it up and read it.  But,
-things aren't usually that simple.  If you have multiple devices on the same
-link, there's no guarantee that someone else won't start sending a message at
-the same time you do.  This is the multiple access problem again.  There are a
-number of ways of dealing with this.  One way is by splitting the available
-connection.  For instance, if there are 5 devices on a WiFi network, each device
-could get 1/5 of the time to send messages.  But, that just means that you could
-only use 1/5 of the available connection speed, and that's nowhere near enough
-for Netflix!  We can do better!  Usually, the strategies for solving multiple
-access involve a few things:
+address on the frame matched their own, they would open it up and read it.
 
-* If you hear somebody else sending a message, don't start sending your own!
-  This is called collision avoidance.
-* If you are sending a message, and you hear somebody else starting to send a
-  message, stop sending!  Your message is probably corrupted already, so you'll
-  need to start over anyway.  (Although this is an obvious strategy, it's not
-  always possible.  For instance, WiFi devices are usually not capable of
-  sending and receiving at the same time.  Once you start sending a message, you
-  have no idea if someone else started sending one too.)  This is called
-  collision detection.
-* When you do stop due to a collision, wait a random amount of time!  That way,
-  there's a decent chance that you and the person you collided with will go at
-  different times.  This can be done in a lot of ways, and is typically referred
-  to as random backoff.
-* Finally, some link layers use acknowledgements, just little messages that say
-  "hey, I got your message, it's all good".  WiFi has lots of interference, so
-  it uses these.  It also retransmits if there was an error in the message.
-  Ethernet, on the other hand, does not (since errors are uncommon in Ethernet).
+Sadly, things aren't usually that simple.  Since multiple devices can be
+connected to the same link, it'll probably happen that two of them will try to
+talk at the same time.  If they do, the other devices on the link won't be able
+to understand either of their messages, because they'll interfere with each
+other.  This is called the multiple access problem.  A simple way to think of
+the multiple access problem is to imagine a small dinner party where everyone is
+sitting around the table talking.  In small groups like this, only one person
+can talk at a time.  The strategies we use in networks to solve this problem are
+remarkably similar to strategies people us in these "dinner party" situations.
 
-Note that this isn't a description of any particular multiple access protocol.
+*   The most obvious rule: if you hear that somebody else is talking, don't
+    start talking!  In networking, this is called collision avoidance.
+*   If you are talking, and you hear somebody else starting to talk, stop
+    talking!  They should probably stop talking as well, and then you can figure
+    out who should talk from there.  (Although this makes sense as a strategy,
+    it's not always possible.  For instance, WiFi devices are usually not
+    capable of sending and receiving at the same time.  Once you start sending a
+    message, you have no idea if someone else started sending one too.)  This is
+    called collision detection.
+*   When you do "collide" with somebody in conversation, you typically wait a
+    moment and then try again.  In human conversation, there's usually some
+    negotiation about who should talk first, but in networking, devices just
+    wait a random amount of time before trying.  That way, there's a decent
+    chance that the two devices that colleded will go at different times.  This
+    is typically referred to as random backoff.
+*   Finally, people frequently acknowledge that they've understood what you've
+    said by nodding.  Some link layers use acknowledgements just like this.
+    WiFi has lots of interference, so it uses these.  It also retransmits if
+    there was an error in the message.  Ethernet, on the other hand, does not
+    (since errors are uncommon in Ethernet).
+
+This isn't really a description of any particular multiple access protocol.
 Each link layer typically combines these elements as well as other ones in a way
-that can ensure that messages get across the link quickly.  In the end though,
-all of these strategies can be compared to how you would engage in conversation
-in a large group of people (say, at a dinner party).  If you reread the list
-above, you can easily see the similarities.  This is pretty much all I want to
-say on the topic of multiple access.  It's a tricky problem to solve right.
+that can ensure that collisions will be handled and messages will get across the
+link quickly.
 
 OK, so with MAC addresses, and a properly designed multiple access protocol, the
 link layer is mostly complete.  However, there are a few other issues to solve!
@@ -357,14 +356,10 @@ message.  But not all.  The link layer, in general, doesn't guarantee that it
 will reliably get a message across to the other person.  But, if it does, it
 will get it there pretty much intact, due to checksums.
 
-The last thing that may be weighing on your mind right now is, how do you know
-what MAC address you want to send messages to?  Unfortunately, the other layers
-don't know or care about MAC addresses.  They do have their own address schemes
-though.  Most importantly, the network layer above has IP addresses.  There is a
-protocol called ARP (Address Resolution Protocol) that basically broadcasts the
-question, "who has the address xx.xx.xx.xx?", and waits for a response.  ARP is
-a strange beast that straddles the link and network layers, but it's necessary
-in order to know the MAC address you want to send to.
+In conversation, humans *sort of* use checksums too.  You have no guarantee that
+the person you talk to will hear you correctly.  But, we generally talk in
+complete sentences.  If somebody misheard you, it wouldn't make sense, and
+they'd probably stop you to ask what you actually said.  Checksums in action!
 
 ### The Network Layer
 

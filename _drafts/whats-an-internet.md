@@ -2,7 +2,6 @@
 title: What's an Internet?
 layout: post
 todo:
-  - Formally define a router (somewhere? - in the structure section?)
   - Clean up the discussion in the physical layer, where I say I won't explain
     the multiple access problem, but then I do in the physical layer.
   - In the link layer, I really need to center my discussion around an analogy,
@@ -20,14 +19,15 @@ Billions of people use the Internet.  They use it to communicate, socialize,
 learn, explore, and entertain themselves.  Business communication relies on it.
 A huge portion of the economy relies on it.  The Internet is a major part of the
 lives of untold millions of people, and so it can really come as surprise to me
-when I realize nearly none of them know how it works.
+when I realize most of them have no clue how it all works!
 
-Of course, those are the days when I *know* I'm being a snob.  After all, the
-whole world is complicated these days.  I don't understand a whole lot more than
-I do understand about the world.  The only reason I know anything about the
-Internet is because I'm a programmer, and I've even taken classes about the
-Internet.  So it's a bit unreasonable to think that people should know anything
-about how the Internet, even if they use it every day.
+Of course, those are the days when I *know* I'm being a tech snob.  After all,
+the whole world is complicated these days.  There are a whole lot more things
+that I don't understand than things I do understand about the world.  The only
+reason I know anything about the Internet is because I'm a programmer, and I've
+even taken classes about the Internet.  So it's a bit unreasonable to think that
+people should know anything about how the Internet, even if they use it every
+day.
 
 But just because I don't understand everything in the world doesn't mean I don't
 want to try to learn.  The world would be a sad place if there was nobody to
@@ -42,27 +42,29 @@ and understandable way.  I hope I have some success in doing so!
 
 Computer scientists talk about networks a lot.  Not all of them are "internet"
 type networks (that is, networks of computers).  A network is really just a
-nicer name for something computer scientists call a
-[graph](https://en.wikipedia.org/wiki/Graph_(mathematics)).  And that's just a
-collection of "things" and connections between the "things".  One type of
-network you're probably familiar with is a "social network".  In that case, the
-"things" are people, and the connections are friendships.  Another one you're
-probably familiar with is a road map.  With roads, the "things" are
-intersections, and the connections are roads.
+nicer name for something computer scientists call a [graph][].  And that's just
+a collection of "things" and connections between the "things".  One type of
+network you're probably familiar with is a "social network".  (When I say
+"social network", I don't mean Facebook or Twitter, just the underlying people
+and their friendships).  In the case of a social network, the "things" are
+people, and the connections are friendships.  Another network you're probably
+familiar with is a road map.  With roads, the "things" are intersections, and
+the connections are roads.
 
 Well, the Internet is just another one of those networks.  The "things" are
-computers, and the connections are, well, connections.  Anything that allows the
-two computers to communicate.  Cables and radio waves are common connections in
-the Internet.
+computers, and the connections are, well, connections.  They can be anything
+that allows the two computers to communicate.  Cables and radio waves are common
+connections in the Internet.
 
 In a social network, information can spread from person to person through
-friendships.  Rumors, jokes, and stories are common.  On the road network, mail,
-packages, and people can be delivered through the roads.  The interesting thing
-about networks is that you can usually get information from one part of the
-network to another, without them even being directly connected.  For instance,
-there's probably not a road running directly from your house to the grocery
-store, but you still can get there on the roads.  And when you start a rumor
-about someone who isn't your friend, that rumor *always* manages to reach them.
+friendships.  Rumors, jokes, and stories are common examples of this.  On the
+road network, mail, packages, and people can be delivered through the roads.
+The interesting thing about networks is that you can usually get information
+from one point of the network to another, without them even being directly
+connected.  For instance, there's probably not a road running directly from your
+house to the grocery store, but you still can get there on the roads.  And when
+you start a rumor about someone who isn't your friend, that rumor *always*
+manages to reach them.
 
 The Internet works precisely because of those same qualities of other networks.
 You can't physically connect every computer to every other computer, any more
@@ -76,39 +78,86 @@ road network has neighborhoods, with roads connecting them.  Then there are
 cities that contain all of those neighborhoods, and highways connect the cities.
 Social networks are a bit less organized, but there are still friend groups.
 Some people are social butterflies, and they connect all the groups together.
-The Internet is also like this.  We typically think about the Internet not as
+The Internet also has structure.  We typically don't think about the Internet as
 "one big network", but rather as "a network of networks".  I'll explain more
 about this a little later.
 
 The social and road network analogies are getting old, but I'd like to make one
 final observation, and then we'll move on from them for a while.  When you think
-about these example networks, you'll notice that they have some rules.  Social
+about these example networks, you'll notice that they all have rules.  Social
 networks have social rules.  For instance, you don't talk while somebody else is
-talking, that's just rude.  On the road, you have a whole set of motor vehicle
-laws telling you how to behave.  There are all sorts of kinds of rules.  Some
-tell you when you can use the roads, like stop signs, traffic lights, etc.  Some
-regulate the extent to which you use them, like speed limits.
+talking... that's just rude!  On the road, you have a whole set of motor vehicle
+laws telling you how to behave.  The Internet is the same way.  There are tons
+of very detailed rules about how computers talk to each other.  They're called
+*protocols*.  I will also talk more about these later on.
 
-The Internet is the same way.  There are tons of very detailed rules about how
-computers talk to each other.  They're called *protocols*.  I will also talk
-more about these later on.
+## Terms
+
+While computer terms like "graph", "network", and "protocol" can be intimidating
+to you, the reality (which you may be realizing) is that they're just dressed-up
+words for concepts we see every day.  If you have ever had friends, driven a
+car, made a phone call, or sent a letter, you are equipped with the knowledge
+and experience to understand the basics of the Internet, since these are all
+very good analogies for how the different parts of the Internet work.
+Unfortunately, like any technical field, computer scientists have filled up the
+the computer world with jargon.  Jargon is important for us to quickly and
+accurately convey our meaning to other specialists.  But jargon also intimidates
+and alienates non-specialists.  So I'm going to pause to explain some pieces of
+"jargon" that I'll be using throughout this article.
+
+*   **Protocols:** These are sets of rules describing how computers should
+    "talk" with each other.  As I wrote in an
+    [older article about the Lenovo/Superfish vulnerability][superfish]:
+
+    > In order for the internet to work, computers need to know how to talk to
+    > each other.  Protocols are like sets of instructions for how computers
+    > behave when they interact with each other.  For instance, humans know that
+    > when they walk into a restaurant, they wait to be seated, read their
+    > menus, order food, wait, eat, pay, and tip their waiter or waitress.  This
+    > is a protocol for eating out.
+
+    There are protocols *everywhere* in the Internet, and they are just like the
+    traffic rules of the road.  They enable everything to function smoothly
+    safely -- without them, everything would "crash and burn".  Just like
+    traffic laws, protocols aren't really "things", just rules that were agreed
+    upon and written down by experts (we hope).  What makes them powerful is
+    that (for the most part) people and computers follow them.
+
+*   **Routers:** A router is "just" a computer.  But unlike your computer, a
+    router's purpose in life is to help shove other people's information around
+    the Internet.  They go through life receiving bits of data, looking at them,
+    and sending them in the correct direction.
+
+    In the "road map" analogy, a router is like a traffic light or a stop sign.
+    The traffic light organizes the cars going through the intersection,
+    ensuring that nobody crashes, and everyone can go in the direction they
+    need.  Routers do the same thing, except that the cars are Internet
+    communications, and the roads are connections to other routers.
+
+    On a road map, the opposites of traffic lights are the destinations.  You
+    don't go on the road to visit a traffic light, but you might drive to the
+    grocery store, or your friend's house.  These are the "points of interest"
+    on the roads.  Similarly, everything that's not a router on the Internet is
+    probably some sort of "computer of interest" - either a PC that's using the
+    Internet to get content, or a "server" that provides content (like a
+    website).
+
+With these bits of jargon under our belts, we can start our explanation of the
+Internet, beginning with its structure!  After that, we'll move on to the "Nitty
+Gritty", an overview of each part of the Internet and how they all work
+together.
 
 ## Structure
 
-So far, we've seen how the Internet isn't all that different from other networks
-that we deal with every day.  It's a bunch of "things" connected together in an
-organized manner.  Information can flow through the network, and there are rules
-("protocols") about how the information goes from place to place.
-
-But that doesn't explain why the Internet is capable of providing us with
-unlimited pictures of cats, while social networks and roads obviously fail at
-that task.  So let's start talking about what makes the Internet different from
-other networks.  We'll start with the structure of the Internet, and then talk
-about the nitty gritty of how the pieces work together.
+As you hopefully recall, we've seen how the Internet isn't all that different
+from other networks that we deal with every day.  It's a bunch of "things"
+connected together in an organized manner.  Information can flow through the
+network, and there are rules (protocols) about how the information goes from
+place to place.
 
 Like I mentioned before, we usually think of the Internet as "a network of
 networks".  So, there are a bunch of smaller networks hooked together to form
-the Internet.  Your home and work networks are probably one of them.  At home,
+the Internet.  Your home and work networks are probably among them.  At home,
 you probably have a router (wireless or wired) that all of your Internet
 connected devices use to access the Internet.  Well, that means you have a "home
 network".  At work, your IT people probably have created a work network that
@@ -780,3 +829,6 @@ protocol called DHCP.
 ##### HTTP
 
 Once your computer knows the IP address of the website you'd like to visit, 
+
+[graph]: https://en.wikipedia.org/wiki/Graph_(mathematics)
+[superfish]: {% post_url 2015-02-20-superfish-explained %}

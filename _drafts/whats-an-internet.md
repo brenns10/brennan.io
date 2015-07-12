@@ -2,8 +2,6 @@
 title: What's an Internet?
 layout: post
 todo:
-  - Clean up the discussion in the physical layer, where I say I won't explain
-    the multiple access problem, but then I do in the physical layer.
   - In the link layer, I really need to center my discussion around an analogy,
     like the dinner party one.  The link and network layers are heavily complex,
     and having analogies is kinda what this article is all about.
@@ -161,8 +159,8 @@ the Internet.  Your home and work networks are probably among them.  At home,
 you probably have a router (wireless or wired) that all of your Internet
 connected devices use to access the Internet.  Well, that means you have a "home
 network".  At work, your IT people probably have created a work network that
-provides everyone with Internet as well.  Both home and work networks are good
-examples of "border", "edge", or "access" networks.  These are parts of the
+provides everyone with Internet access as well.  Both home and work networks are
+good examples of "border", "edge", or "access" networks.  These are parts of the
 Internet that exist mainly so that end users can communicate with other people
 located on other "sides" of the Internet.
 
@@ -204,7 +202,7 @@ Creating a computer network on the scale of the Internet is massively complex,
 so we typically treat the Internet as an ogre.  Or an onion.  Or maybe a
 parfait.  The point is, it has layers.  These layers serve as "levels of
 abstraction".  Abstraction is a big word that gets thrown around a lot in the
-computer world.  It's pretty darn important.  It simply means, "getting rid of
+computer world, and it's pretty darn important.  It simply means, "getting rid of
 the little details to focus on the big picture."  You probably do it all the
 time.  When you tell somebody how to get to your house, you don't instruct them
 to stop at each stop light, or what gear to use as they drive.  You probably
@@ -262,17 +260,13 @@ One thing you need to do when you have digital signals is decide on a "clock
 rate".  Basically, you need to know how long each digit lasts.  Otherwise, how
 could you tell the difference between 11111, and just 1?  Making sure that both
 devices have their clock rates the same, and synchronized, is a difficult task.
-Plus, you might have to agree upon a way that both sides of the connection could
-send and receive without talking over each other.  This problem is called the
-"multiple access problem", and it's an extremely common problem in networking.
-
-I'm not going to go into the solutions to these problems.  Each physical layer
-has its own unique set of problems to address: radio waves are different from
-copper wires, or fiber optic cables.  There could be books written on the
-solutions to these problems for all the different types of physical layers you
-could have.  Suffice to say that, while it's the lowest level of the network,
-the physical layer is definitely not the easiest one.  The fact is, none of the
-layers have easy problems to solve.
+I'm not going to go into the solutions to this problem.  Each type of physical
+layer has its own unique set of problems like this to address: radio waves are
+different from copper wires, or fiber optic cables.  There could be books
+written on the solutions to these problems for all the different types of
+physical layers you could have.  Suffice to say that, while it's the lowest
+level of the network, the physical layer is definitely not the easiest one.  The
+fact is, none of the layers have easy problems to solve.
 
 ### The Link Layer
 

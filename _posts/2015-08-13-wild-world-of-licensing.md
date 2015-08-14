@@ -314,7 +314,7 @@ without you having any say in how they do it.  It's as simple as putting a
 notice in your README saying that your code is in the public domain.  Legally
 speaking, this may not mean much, since some copyright laws do not allow
 copyright holders to relinquish their copyright.  So, you are better off with
-using a license called CC0.  But remember, this relinquishes *all* right you
+using a license called CC0.  But remember, this relinquishes *all* rights you
 ever have over your creation!
 
 ## What about everything that's not code?

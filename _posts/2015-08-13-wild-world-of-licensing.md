@@ -232,6 +232,23 @@ Of course, any other modifications or derivative works of an LGPL'd library must
 also be made available under the terms of the LGPL, so for any use other than
 linking, the LGPL is still copyleft.
 
+### AGPL For Web Services
+
+Imagine that you wrote an awesome web application, and made it open source.
+Someone else could download your code, improve it, and host it themselves.
+Since they're not distributing their derivative work (only hosting it), they
+wouldn't have to share their improvements to your code!  This means that they
+could make a knockoff of your web application with a few new features, and start
+stealing your customers!
+
+The AGPL is a solution to this loophole.  If you use the AGPL, in addition to
+all the terms of the GPL, you must provide a download link to anyone who uses
+your code over a network (e.g. the Internet).  Any derivative work must provide
+this download link as well, thereby ensuring that derivatives become open
+source, even if they don't redistribute your code.  It's a pretty niche license,
+but useful if you are creating an open source web application and you're
+passionate about copyleft.
+
 ## Making your code open source
 
 After all that discussion about open source, license types, linking, and
@@ -289,6 +306,26 @@ onto potential users and developers.  If you need anything more than these four
 basic licenses, chances are you are a company, and could hire a lawyer to help
 you decide.
 
+Of course there is one option that I haven't mentioned so far, which you could
+do if you really don't want to deal with licenses at all.  You could just place
+your code in the public domain.  In essence, this means that you give up your
+copyright as the creator of the work, and allow anyone to do anything with it,
+without you having any say in how they do it.  It's as simple as putting a
+notice in your README saying that your code is in the public domain.  Legally
+speaking, this may not mean much, since some copyright laws do not allow
+copyright holders to relinquish their copyright.  So, you are better off with
+using a license called CC0.  But remember, this relinquishes *all* right you
+ever have over your creation!
+
+## What about everything that's not code?
+
+While it's a giant topic to get into, other types of media don't really mix well
+with code licenses.  If you're looking for an open-source type license for your
+non-code creations (text, images, music, etc), please see the
+[Creative Commons][] licenses.  Their website has an interactive questionnaire
+to help you choose the right license.  Just keep in mind that when they use the
+term Share-Alike, they mean copyleft!
+
 ## Wrap-Up
 
 This is pretty much all the knowledge I can impart about open source licenses.
@@ -325,3 +362,4 @@ you have any questions or comments (or errors), please leave them below!
 [copyleft]: https://en.wikipedia.org/wiki/Copyleft
 [osi]: http://opensource.org/licenses
 [gpl-howto]: http://www.gnu.org/licenses/gpl-howto.html
+[Creative Commons]: https://creativecommons.org/

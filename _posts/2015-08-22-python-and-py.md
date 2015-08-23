@@ -10,11 +10,12 @@ classes".  Student organizations have historically led their own SatCos to
 advertise themselves to the incoming freshmen.  Today, Hacker's Society led our
 very own SatCo, Python and Pie!
 
-[Andrew Mason](ajm188.github.io) and I co-taught a sparse (but experienced)
-group of freshmen the basics of Python, and moved on to showing them one cool
-use of Python: writing a Twitter bot!  We even moved on and discussed how Python
-can be used to do web scraping and efficiently compute factorials.  All of this
-as we shared 16 delicious pies provided generously by Hacker's Society!
+[Andrew Mason](https://ajm188.github.io) and I co-taught a sparse (but
+experienced) group of freshmen the basics of Python, and moved on to showing
+them one cool use of Python: writing a Twitter bot!  We even moved on and
+discussed how Python can be used to do web scraping and efficiently compute
+factorials.  All of this as we shared 16 delicious pies provided generously by
+Hacker's Society!
 
 If you missed it, you can see the code for my example Twitter bot,
 [@pypie15bot](https://twitter.com/pypie15bot), at

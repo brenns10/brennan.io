@@ -24,7 +24,7 @@ Experience
 ----------
 
 ### Global Mold Tech Management
-*Webmaster, June 2011 - Present*
+*Webmaster, June 2011 - June 2015*
 
 * Self taught PHP and SQL to build secure upload and download system.
 * Researched, selected, and implemented commercial grade solutions for file
@@ -51,7 +51,7 @@ Education
 * Dean's High Honors (All Semesters)
 * University Scholar
 * National Merit Scholar
-* Cum. GPA: 3.961 / 4.0
+* Cum. GPA: 3.967 / 4.0
 * Major GPA: 4.0 / 4.0
 
 ### St. Joseph High School
@@ -67,13 +67,14 @@ Coursework
 
 ### Current
 
-* Computer Architecture
-* Programming Language Concepts
-* Computer Security
-* Bioinformatics
+* Machine Learning
+* Advanced Algorithms
+* Software Engineering
 
 ### Completed
 
+* Computer Architecture
+* Computer Security
 * Software Craftsmanship
 * Networking
 * Operating Systems
@@ -90,11 +91,12 @@ Skills
 ### Programming Languages
 
 * Over 5000 lines: Python, C, C++, Java, LaTeX
-* Over 1000 lines: Javascript, PHP, C#
+* Over 1000 lines: Javascript, PHP, C#, Scheme
 * Familiar: SQL, Bash, HTML, CSS, Batch, C++/CLI
 
 ### Technologies
 
+* Git
 * NumPy, SciPy, Pandas
 * Django
 * Flask
@@ -107,7 +109,7 @@ Leadership
 ----------
 *President (December 2014 - Present), Webmaster (March 2014 - December 2014)*
 
-* Created new website from scratch: [hkn.case.edu](https://hkn.case.edu).
+* Created a new website from scratch: [hkn.case.edu](https://hkn.case.edu).
   Implemented a professor-approved online exam archive based on student uploads.
   Restricted upload and access rights to CWRU students through Central
   Authentication Service (CAS).  Used Python and Django framework.

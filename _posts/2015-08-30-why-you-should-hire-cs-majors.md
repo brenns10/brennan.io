@@ -149,11 +149,12 @@ If you're interested in hearing more about this organization, the
 
 ## Conclusion
 
-I don't think my college teaches computer science perfectly.  I could talk your
-ear off about the problems in the department.  But I do think that a computer
-science program in combination with the genuine hacker spirit is the most
-effective way to produce the best developers, period.  Sure, some smart ones
-didn't have to go to college, but they're the exception, not the rule.
+I definitely don't mean to say that being self taught makes you a bad candidate
+for a job.  Self teaching got me very far before I came to college.  Good
+candidates come from everywhere, and you don't have to be ruling people out
+either way.  That being said, I do think that a computer science program in
+combination with the genuine hacker spirit is the most effective way to produce
+the best developers.
 
 [article]: http://www.wsj.com/articles/why-im-not-looking-to-hire-computer-science-majors-1440804753
 [Dittach]: http://dittach.com

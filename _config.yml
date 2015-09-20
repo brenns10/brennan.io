@@ -1,5 +1,9 @@
-name: "Stephen Brennan"
-description: "C and Python programmer extraordinaire"
+name: Stephen Brennan
+author: Stephen Brenann
+title: Stephen Brennan's Blog
+description: Stephen Brennan's personal website and blog.
+keywords: blog programming student resume technology talks
+tagline: C and Python programmer extraordinaire
 logo: "/images/me.jpg"
 
 url: "http://stephen-brennan.com"

@@ -3,25 +3,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} &#8226; {{ site.name }}</title>
 
-  <link rel="apple-touch-icon" href="{{ site.compass.logo }}"/>
+  <link rel="apple-touch-icon" href="{{ site.logo }}"/>
   <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="{{ site.url }}/favicon.ico" />
 
+  <!-- Styles -->
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/normalize.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/solarized.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
-
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-  <meta name="author" content="{{ site.compass.author }}">
-  <meta name="description" content="{{ site.compass.tagline }}"/>
+  <!-- Meta information -->
+  <meta name="author" content="{{ site.author }}">
+  <meta name="description" content="{{ site.description }}"/>
+  <meta name="keywords" content="{% if page.keywords %}{{page.keywords}} {% endif %}{{site.keywords}}">
 
-  <meta property="og:title" content="{{ site.compass.tagline }}"/>
+  <!-- Open Graph tags (Facebook meta-info) -->
+  <meta property="og:title" content="{{ page.title }} - {{ site.name }}"/>
   <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
-  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.compass.logo }}"/>
-  <meta property="og:description" content="{{ site.compass.description }}"/>
-  <meta property="og:site_name" content="{{ site.compass.tagline }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.logo }}"/>
+  <meta property="og:description" content="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}"/>
+  <meta property="og:site_name" content="{{ site.title }}"/>
+  <meta property="og:see_also" content="{{site.url}}"/>
+
+  <!-- Twitter meta-info -->
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:url" content="{{site.url}}{{page.url}}"/>
+  <meta name="twitter:title" content="{{page.title}} - {{site.name}}"/>
+  <meta name="twitter:description" content="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}"/>
+  <meta name="twitter:image" content="{{site.url}}{{site.baseurl}}{{site.logo}}"/>
 
   <!-- HN Button -->
   <script type="text/javascript">var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>

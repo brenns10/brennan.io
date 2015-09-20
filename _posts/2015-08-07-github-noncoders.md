@@ -1,6 +1,10 @@
 ---
 title: GitHub for Non-Coders
 layout: post
+description: >
+  An explanation of what GitHub does, beyond being the "Facebook of
+  Programmers."
+keywords: github git beginner
 ---
 
 I've heard the phrase "GitHub is like Facebook for programmers" a lot.  In fact,

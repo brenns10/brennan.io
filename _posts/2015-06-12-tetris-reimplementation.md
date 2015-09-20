@@ -1,6 +1,10 @@
 ---
 title: On Tetris and Reimplementation
 layout: post
+description: >
+  A short description of my Tetris implementation of C, along with my opinions
+  on the value of personal reimplementation projects.
+keywords: c tetris ncurses project
 ---
 
 I'm the kind of programmer that likes to implement everything myself.  That's

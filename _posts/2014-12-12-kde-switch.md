@@ -1,12 +1,10 @@
 ---
 title: Why I Switched to KDE
 layout: post
-tags:
- - KDE
- - Gnome
- - Cinnamon
- - Desktop Environments
- - Linux
+description: >
+  A brief survey of desktop environments and my opinions on them, leading up to
+  why I prefer to use KDE Plasma 5.
+keywords: KDE Gnome Cinnamon Desktop Environments Linux
 ---
 
 ... and why I don't think I'll switch back.

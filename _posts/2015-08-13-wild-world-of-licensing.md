@@ -1,6 +1,10 @@
 ---
 title: The Wild World of Open-Source Licensing
 layout: post
+description: >
+  A brief overview of open source licenses and types, covering GPL, LGPL, MIT,
+  BSD, and more!
+keywords: licensing opensource
 ---
 
 Imagine that you've just finished an awesome program.  As a programmer, you're

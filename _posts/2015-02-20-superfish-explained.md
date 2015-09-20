@@ -1,9 +1,11 @@
 ---
 title: Superfish Explained
 layout: post
-tags:
-  - Security
-  - Internet
+description: >
+  Lenovo preloaded software on their personal computer line that compromises the
+  security of SSL-enabled websites.  Read this article to understand what these
+  words even mean!
+keywords: Security Internet
 ---
 
 Yesterday a big story was broken about Lenovo selling computers with malware,

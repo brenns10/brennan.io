@@ -1,6 +1,11 @@
 ---
 title: Python and Pie!
 layout: post
+description: >
+  For freshman orientation I wrote and presented a tutorial on how to create a
+  Twitter bot using the powerful Python ecosystem.  Tweet @pypie15bot to get a
+  random Taylor Swift lyric!
+keywords: python twitter cwru taylor swift
 ---
 
 Every year at the end of freshman orientation, incoming CWRU students get to

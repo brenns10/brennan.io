@@ -1,12 +1,9 @@
 ---
 title: Tutorial - Write a Shell in C
 layout: post
-tags:
- - Linux
- - Unix
- - Tutorial
- - C
- - Programming
+description: >
+  A tutorial on how to write a Unix shell in C.
+keywords: Linux Unix Tutorial C
 ---
 
 It's easy to view yourself as "not a *real* programmer."  There are programs out

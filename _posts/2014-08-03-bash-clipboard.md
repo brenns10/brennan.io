@@ -1,9 +1,10 @@
 ---
 title: Interacting With X Clipboard in Bash
 layout: post
-tags:
- - bash
- - tips
+description: >
+  A quick tip on how to copy and paste input and output directly from the
+  command line.
+keywords: bash tips
 ---
 
 I ran across this neat trick a couple days ago.  I was looking for a way to copy

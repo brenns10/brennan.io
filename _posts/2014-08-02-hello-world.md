@@ -1,8 +1,7 @@
 ---
 title: Hello, World!
 layout: post
-tags:
- - meta
+description: The inaugural post on my new personal website!
 ---
 
 Hello, everyone!  This is the inaugural post on the blog for my new personal

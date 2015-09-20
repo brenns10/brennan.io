@@ -4,9 +4,9 @@ title: Stephen Brennan's Blog
 description: Stephen Brennan's personal website and blog.
 keywords: blog programming student resume technology talks
 tagline: C and Python programmer extraordinaire
-logo: "/images/me.jpg"
+logo: /images/me.jpg
 
-url: "http://stephen-brennan.com"
+url: http://stephen-brennan.com
 
 paginate: 5
 paginate_path: "blog/page:num"
@@ -17,4 +17,5 @@ permalink: pretty
 
 exclude: ["CNAME", "README.md"]
 
-disqus: "stephenbrennan"
+disqus: stephenbrennan
+analytics: UA-58675248-2

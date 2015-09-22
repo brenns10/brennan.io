@@ -94,16 +94,16 @@ _atoi_return:
     jr $ra
 ```
 
-This particular assembly language is for a type of processor called MIPS.  Its
-job is to take a number written as text in base 10, and convert it into a binary
-number that the computer can understand.  I won't explain anything about how it
-works, but I think one thing about it is clear: it looks very confusing!  Maybe
-you're able to recognize a couple words, like `add` and `mult`, where you could
-guess what they do.  But what about the ones like `beq` and `mflo`?  And even if
-you did understand all the instructions, understanding what the code does as a
-whole is very difficult.  I wrote this code, but it still takes me a while of
-looking at it to remember how it works.  So it doesn't get much easier with more
-experience!
+This particular assembly language is for a type of processor called MIPS.  The
+job of this code is to take a number written as text in base 10, and convert it
+into a binary number that the computer can understand.  I won't explain anything
+about how it works, but I think one thing about it is clear: it looks very
+confusing!  Maybe you're able to recognize a couple words, like `add` and
+`mult`, where you could guess what they do.  But what about the ones like `beq`
+and `mflo`?  And even if you did understand all the instructions, understanding
+what the code does as a whole is very difficult.  I wrote this code, but it
+still takes me a while of looking at it to remember how it works.  So it doesn't
+get much easier with more experience!
 
 Besides the readability issue, there is another major issue with assembly code.
 Like I said above, there are plenty of processor types, and each one understands
@@ -115,7 +115,7 @@ there.  This really stinks for me as a developer, because I'd like to write code
 that lots of people can use.
 
 When you take those two problems together, you realize that it would be very
-convenient if we had languages that solved those problems.  And, we do.
+convenient if we had languages that solved those problems.  And we do.
 
 ## Higher level languages
 

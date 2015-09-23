@@ -28,17 +28,17 @@ I'm going to do my best.  But right off the bat, I think it's worth pointing out
 that there's already a truly excellent article written on the subject: "What is
 Code?", by Paul Ford in *Bloomberg*.  You can find it [here][what-is-code].
 It's very long and goes into much more detail than I will here.  I'd highly
-recommend it -- if you have the time and interest, read it after you finish
-this!
+recommend it; if you have the time and interest, read it after you finish this!
 
 To understand what programming is and why we need it, you have to understand
 what a computer is at its most basic level.  At the center of every computer,
 you have something called a *processor*.  This is what you might think of as the
-"brain" of the computer, although it doesn't actually think.  What it does do is
-follow instructions.  Every time its internal clock ticks (up to billions of
-times per second), a processor reads another instruction and executes it.  The
-instruction is always something simple.  If you were to translate these
-instructions into English, they'd read something like this:
+"brain" of the computer.  But there's one crucial difference between a processor
+and a brain: a processor can't think.  It can, however, follow instructions very
+quickly.  Every time its internal clock ticks (up to billions of times per
+second), a processor reads another instruction and executes it.  The instruction
+is always something simple.  If you were to translate these instructions into
+English, they'd read something like this:
 
 * "add A and B, and store the result in C"
 * "move the number from A into B"
@@ -99,11 +99,11 @@ job of this code is to take a number written as text in base 10, and convert it
 into a binary number that the computer can understand.  I won't explain anything
 about how it works, but I think one thing about it is clear: it looks very
 confusing!  Maybe you're able to recognize a couple words, like `add` and
-`mult`, where you could guess what they do.  But what about the ones like `beq`
-and `mflo`?  And even if you did understand all the instructions, understanding
-what the code does as a whole is very difficult.  I wrote this code, but it
-still takes me a while of looking at it to remember how it works.  So it doesn't
-get much easier with more experience!
+`mult`.  So maybe you could guess what those commands do.  But what about the
+ones like `beq` and `mflo`?  And even if you did understand all the
+instructions, understanding what the code does as a whole is very difficult.  I
+wrote this code, but it still takes me a while of looking at it to remember how
+it works.  So it doesn't get much easier with more experience!
 
 Besides the readability issue, there is another major issue with assembly code.
 Like I said above, there are plenty of processor types, and each one understands

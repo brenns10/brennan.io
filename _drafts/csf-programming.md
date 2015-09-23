@@ -249,7 +249,7 @@ audience), I highly recommend you check out the ["What Is Code?"][what-is-code]
 article I mentioned earlier.  If this has convinced you to start learning to
 write code yourself, that's great!  I'd recommend you start with one of the
 simpler (higher level) languages, like Python.  You can start learning it with a
-completely free website called [Code Academy](codeacademy-python).  You don't
+completely free website called [Code Academy][codeacademy-python].  You don't
 need to install anything, just click "Start" to begin learning!
 
 Check back later for newer Computer Science Foundations articles.  I'll update

@@ -10,8 +10,8 @@ exactly that you do?"  I really appreciate questions like that, but they're also
 really difficult to answer.  Computer science is a world full of jargon, and
 when I start using that jargon in my explanations, it inevitably leads to blank
 looks.  But the thing is, contrary to what some people seem to think, you
-*don't* need to be a genius or a computer wizard to understand the ideas of what
-computer scientists and programmers do.
+*don't* need to be a genius or a computer wizard to understand the basics of
+computer science.
 
 So what I'd like to do is start up a series of articles on this blog, called
 "Computer Science Fundamentals," that gives broad, non-technical overviews of

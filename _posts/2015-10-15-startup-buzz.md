@@ -18,9 +18,9 @@ classmate say that they want to graduate and move to the Bay Area to work at a
 startup.  There's even a "startup incubator" house ([IncubatorCLE][]) for a few
 computer science majors at my school to live at (which is, admittedly, pretty
 awesome).  Online, I'm a regular reader of [Hacker News][hn], which is run by
-another startup incubator called Y Combinator.  It's a community run site that
-focuses on technology news, but it definitely has a regular batch of "startup
-oriented" content in it.
+another startup incubator called Y Combinator.  It's a community-driven site
+that focuses on technology news, but it definitely has a regular batch of
+"startup oriented" content in it.
 
 In particular, what I've noticed isn't the amount of buzz about startups.  Like
 I said, I've put myself in an environment to hear a lot of it.  What strikes me

@@ -246,9 +246,10 @@ because then you can see this simple reference counting code in action!
 **Easter Egg:** There is currently at least one memory leak in my Lisp
   implementation (as of commit `c99f4b5345ec651c9d6cd51358e2d9595c71c356`).  See
   if you can find it!  My only hints:
-  - It has something to do with the `(define ...)` function.
-  - You may find `valgrind` incredibly useful for this sort of debugging,
-    especially with the option `--leak-check=full`.
+
+- It has something to do with the `(define ...)` function.
+- You may find `valgrind` incredibly useful for this sort of debugging,
+  especially with the option `--leak-check=full`.
 
 [how-to-write-a-shell]: {% post_url 2015-01-16-write-a-shell-in-c %}
 [lisp]: https://en.wikipedia.org/wiki/Lisp_%28programming_language%29

@@ -45,11 +45,12 @@ controlled by a single person.  No matter what, these sources of information are
 being manipulated by all sorts of people.  They're battling over a single
 resource: your attention.
 
-People want your attention because it's money.  Clicks get ad revenue.
-Advertisements bring increased sales.  I want your attention because, well, I
-have opinions.  I enjoy writing my thoughts, I enjoy people reading them, and I
-especially enjoy when interesting conversation results from it.  But the bottom
-line is, everybody wants your attention.
+People want your attention because it's money.  Attention wins elections and
+builds fortune.  Attention wins clicks.  Clicks get ad revenue.  Advertisements
+bring increased sales.  I want your attention because, well, I have opinions.  I
+enjoy writing my thoughts, I enjoy people reading them, and I especially enjoy
+when interesting conversation results from it.  But the bottom line is,
+everybody wants your attention.
 
 If I still have your attention right now, I hope you realize how valuable it
 really is.  It's time out of your day, and revenue to all sorts of people.

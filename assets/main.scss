@@ -24,10 +24,10 @@ $background-color: $base3;
 
 #navigation {
     text-align:center;
-    margin-top: 20px;
 }
 #navigation a {
     margin: 1em;
+    display: inline-block;
 }
 div.site-content {
     margin-left: auto;
@@ -192,6 +192,14 @@ footer {
 		margin-left: 43%;
 		padding: 0;
 	}
+}
+
+/* This makes the icons float left in a small viewport (when left aligned) */
+@media (max-width: 768px) {
+    header ul span.fa {
+        float:left;
+        padding-top: 3px;
+    }
 }
 
 .social {

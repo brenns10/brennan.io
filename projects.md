@@ -9,52 +9,39 @@ tw: <span class="fa fa-twitter fa-lg"></span>
 ---
 # Projects
 
-## Current
-
-### Using Prior Biological Information to Select Features for Predicting Cancer Phenotypes
-
-This is a 10-week bioinformatics research project scheduled for the summer
-of 2015.  I will be working in conjunction with Dr. Mehmet Koyuturk to develop
-an algorithm for selecting combinations of somatic mutations which are
-correlated with cancer phenotypes.
-
-[{{page.pdf}} View the Proposal](https://dl.dropboxusercontent.com/u/24472738/proposal.pdf)
-
-## Works in Progress
-
-I may never decide these projects are *done,* since I'm always improving them.
-
 ### `libstephen` -- A C Library
 
 This humbly-named library is the foundation for much of my C programming.  It
 extends the standard C library with support for a few important data structures,
-regular expressions, command line argument parsing, lightweight unit testing,
-and memory leak detection.  I continue to rethink and improve its architecture,
-so it is not yet at a place where other people should use it in their own
-programs.
+regular expressions, command line argument parsing, several string-handling
+utilities, logging, and lightweight unit testing.  I continue to rethink and
+improve its architecture, but it is getting close to the point of stability
+where other programs can use it too.  Several of my other C projects depend on
+it already.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/libstephen)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/libstephen)  
+[{{page.web}} Visit the Official Site](/libstephen/)
 
-[{{page.web}} Visit the webpage!](/libstephen/)
+### NOSJ
 
-### `cky` -- A Parser
+NOSJ is a simple JSON parser written in C.  It focuses on simplicity, especially
+with respect to memory allocation.
 
-This project is actively under construction.  It's intended to become an
-impementation of the [CKY](http://en.wikipedia.org/wiki/CYK_algorithm) algorithm
-for parsing [CFGs](//en.wikipedia.org/wiki/Context-free_grammar).  In the end, I
-intend for it to be similar to, but not necessarily compatible with,
-[Lex](http://en.wikipedia.org/wiki/Lex_(software)) and
-[Yacc](http://en.wikipedia.org/wiki/Yacc).
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/nosj)  
+[{{page.web}} Visit the Official Site](/nosj/)
 
-`cky` is based on the `libstephen` library.
+### Corvid
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/cky)
+For our Software Engineering project, my team (me, [Jeff Copeland][], and
+[Kyle Deal][]) created a web application that helps people create simple static
+web sites.  It uses [Pelican](http://getpelican.com/) under the hood, and it's
+implemented in Python using the Django web framework.  For a short time only
+(until the end of 2015), it's deployed and available to try out!
 
-- - -
+[{{page.gh}} Visit it at GitHub](https://github.com/jpcjr/corvid)  
+[{{page.web}} Visit the Official Site](https://corvid.xyz)
 
-## Past
-
-### Twitter Bot
+### PySwizzle
 
 [Hacker's Society](http://hacsoc.org) hosted an event called "Python and Pie"
 for incoming freshmen during Fall 2015 orientation.  I gave an intermediate
@@ -63,19 +50,17 @@ result, this bot and the accompanying tutorial are now on GitHub for others to
 learn from.  The bot responds to any @mention with a randomly chosen Taylor
 Swift lyric.
 
-[{{page.gh}} Code and Tutorial at GitHub](https://github.com/brenns10/pypie15int)
-
-[{{page.web}} Blog Post]({% post_url 2015-08-22-python-and-py %})
-
-[{{page.tw}} Tweet at the Bot](https://twitter.com/pypie15bot)
+[{{page.gh}} Code and Tutorial at GitHub](https://github.com/brenns10/pypie15int)  
+[{{page.gh}} Latest Version at GitHub](https://github.com/brenns10/pyswizzle)  
+[{{page.web}} Blog Post]({% post_url 2015-08-22-python-and-py %})  
+[{{page.tw}} Tweet at the Bot](https://twitter.com/pyswizzle)
 
 ### `tswift` - A Python MetroLyrics API
 
 Get your Taylor Swift lyric fix with this quick'n'dirty tool for downloading
 song lyrics from MetroLyrics.  Or, you know, any other artist's lyrics.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tswift)
-
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tswift)  
 [{{page.web}} It's on PyPI!](https://pypi.python.org/pypi/tswift)
 
 ### CBot
@@ -94,8 +79,7 @@ A 24 hour Tetris implementation written in C, using the `ncurses` library.  I
 wrote an accompanying blog post about it, which also touched on how important I
 find my personal projects, even if some are reimplementations.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tetris)
-
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tetris)  
 [{{page.web}} Read the blog post]({% post_url 2015-06-12-tetris-reimplementation %})
 
 ### `PyWall` -- A Python Firewall
@@ -117,8 +101,7 @@ in MIPS assembly.  In addition to serving static pages, it also comes with
 [Brainf***](https://en.wikipedia.org/wiki/Brainfuck) interpreter also written in
 assembly.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/yams)
-
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/yams)  
 [{{page.web}} Read the blog post]({% post_url 2015-05-17-yams %})
 
 ### Minesweeper
@@ -136,8 +119,7 @@ retrieve information about the owner of a Case ID.  It supports scraping CWRU
 web services, as well as accessing the public LDAP server in order to find
 people by their Case ID, and vice versa.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/caseid)
-
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/caseid)  
 [{{page.gh}} Visit its Ruby cousin by Andrew Mason](https://github.com/ajm188/cwru_directory)
 
 ### `lsh` -- A Simple Shell in C
@@ -145,9 +127,23 @@ people by their Case ID, and vice versa.
 I wrote this to illustrate the system calls and basic mechanics behind a Unix
 shell.  The accompanying blog post had a modest positive audience response.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/lsh)
-
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/lsh)  
 [{{page.web}} Read the blog post]({% post_url 2015-01-16-write-a-shell-in-c%})
+
+### `cky` -- A Parser
+
+This project is on the back burner for a while.  It's intended to become an
+impementation of the [CKY](http://en.wikipedia.org/wiki/CYK_algorithm) algorithm
+for parsing [CFGs](//en.wikipedia.org/wiki/Context-free_grammar).  In the end, I
+intend for it to be similar to, but not necessarily compatible with,
+[Lex](http://en.wikipedia.org/wiki/Lex_(software)) and
+[Yacc](http://en.wikipedia.org/wiki/Yacc).
+
+`cky` is based on the `libstephen` library.  In fact, the regular expression
+implementation in `libstephen` was originally created in CKY, and is still
+intended for use in it.
+
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/cky)
 
 ### `wepa-linux` -- A CUPS Printer Driver
 
@@ -170,3 +166,6 @@ intended to be used as a local chat server over SSH, instead of constantly
 sending `wall` messages to other logged in users.
 
 [{{page.bb}} Visit it at Bitbucket](//bitbucket.org/brenns10/chat)
+
+[Jeff Copeland]: https://github.com/jpcjr
+[Kyle Deal]: https://github.com/dealie16

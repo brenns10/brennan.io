@@ -252,8 +252,7 @@ simpler (higher level) languages, like Python.  You can start learning it with a
 completely free website called [Code Academy][codeacademy-python].  You don't
 need to install anything, just click "Start" to begin learning!
 
-Check back later for newer Computer Science Foundations articles.  I'll update
-this article with a link to the new one when it comes out!
+[Next in the series: Algorithms][csf-algorithms]
 
 [what-is-code]: http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/
 [wiki-binary]: https://en.wikipedia.org/wiki/Binary_number
@@ -269,3 +268,4 @@ this article with a link to the new one when it comes out!
 [Java]: https://en.wikipedia.org/wiki/Java_%28programming_language%29
 [C#]: https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29
 [codeacademy-python]: https://www.codecademy.com/en/tracks/python
+[csf-algorithms]: {% post_url 2015-12-15-csf-algorithms %}

@@ -41,6 +41,15 @@ implemented in Python using the Django web framework.  For a short time only
 [{{page.gh}} Visit it at GitHub](https://github.com/jpcjr/corvid)  
 [{{page.web}} Visit the Official Site](https://corvid.xyz)
 
+### `lisp` -- A Lisp-y Language with Garbage Collection
+
+A simple implementation of a Lisp like language.  This was a fun opportunity to
+create a lexical analyzer out of my `libstephen` regex implementation, as well
+as try out a simple garbage collection system.
+
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/lisp)  
+[{{page.web}} Read the Blog Post]({% post_url 2015-11-02-spooky-garbage-collection %})
+
 ### PySwizzle
 
 [Hacker's Society](http://hacsoc.org) hosted an event called "Python and Pie"

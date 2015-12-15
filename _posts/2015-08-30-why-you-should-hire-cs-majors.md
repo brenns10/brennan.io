@@ -107,7 +107,7 @@ what I think of fondly as "Apple's war against Flash."  Tons of websites had
 these "flashy" (pun *definitely* intended) plugins that ran on Adobe's Flash
 Player.  They featured lots of pretty transitions and animations.  But the
 iPhone didn't have Flash, and Apple threw its weight behind HTML5 and apps.
-Fast-forward to today, and Flash is [on its way out](flash).
+Fast-forward to today, and Flash is [on its way out][flash].
 
 If I went to college then, and it was the way Mr. Gelernter would have it, I
 would have learned the ins and outs of Adobe Flash, so I could make killer Flash

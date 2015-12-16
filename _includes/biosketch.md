@@ -1,15 +1,19 @@
-Stephen Brennan is a computer science student in his fourth of five years in the
-BS/MS program at [Case Western Reserve University](https://case.edu).
+Stephen is a friendly Leo who likes piña coladas and getting caught in the
+rain.  
+*... wait, that's the wrong biosketch!*
 
-As a student, Stephen consistently achieves high grades, achieving Dean's High
-Honors during each semester.  He is the president of the Zeta chapter of
-[IEEE-HKN](http://hkn.case.edu), the premier EECS honor society at CWRU.  He is
-also an active member of Tau Beta Pi and the CWRU
-[Hacker Society](http://hacsoc.org).
+I'm a student in my fourth of five years at [CWRU](https://case.edu), where I'm
+pursuing a BS and MS in Computer Science.  While at school, I've been an active
+member of [HacSoc](http://hacsoc.org), a computing interest group.
 
-As a programmer, Stephen has over seven years of experience, specializing in
-Python and C.  He enjoys working on challenging programming projects, such as a
-regular expression parser in C, or a firewall written in Python.
+I've been programming for over seven years now *(whaaat?)*, with my current
+laguages of choice being Python and C.  I really like doing little
+[projects](/projects/) in my spare time, and writing [blog posts](/blog/) when
+inspiration strikes.
 
-When he's not in any of those roles, Stephen enjoys cooking exciting new foods
-and following his favorite shows on Netflix.
+Beyond all that, I like cooking, piano, *How I Met Your Mother*, Emacs, and the
+color green.  In case you were wondering, I *do* in fact like piña coladas, but
+not so much getting caught in the rain.
+
+If you have time, check out [what I'm doing now (ish)](/now/) and my
+[links](/links/).

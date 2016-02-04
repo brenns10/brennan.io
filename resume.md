@@ -67,21 +67,20 @@ Coursework
 
 ### Current
 
-* Machine Learning
-* Advanced Algorithms
-* Software Engineering
+- Internet Security
+- Data Mining
 
 ### Completed
 
+* Machine Learning
+* Advanced Algorithms
+* Software Engineering
 * Computer Architecture
 * Computer Security
-* Software Craftsmanship
 * Networking
 * Operating Systems
 * Databases
 * Theoretical Computer Science
-* Algorithms
-* Data Structures
 
 <hr>
 

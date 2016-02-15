@@ -8,9 +8,8 @@ title: /now/
 #### Last Updated: February 15, 2016
 
 I'm working on the second second semester of my fourth year at CWRU.  My courses
-this semester are taking Data Mining and a special topics course on Internet
-Security this semester, as well as a really enjoyable film class, and
-psychology.
+this semester are Data Mining and a special topics course on Internet Security
+this semester, as well as a really enjoyable film class, and psychology.
 
 Lately my programming projects have been focused on regular expressions.  I've
 been working on an alternative regex implementation for my C library (check it

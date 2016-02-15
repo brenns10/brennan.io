@@ -139,21 +139,6 @@ shell.  The accompanying blog post had a modest positive audience response.
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/lsh)  
 [{{page.web}} Read the blog post]({% post_url 2015-01-16-write-a-shell-in-c%})
 
-### `cky` -- A Parser
-
-This project is on the back burner for a while.  It's intended to become an
-impementation of the [CKY](http://en.wikipedia.org/wiki/CYK_algorithm) algorithm
-for parsing [CFGs](//en.wikipedia.org/wiki/Context-free_grammar).  In the end, I
-intend for it to be similar to, but not necessarily compatible with,
-[Lex](http://en.wikipedia.org/wiki/Lex_(software)) and
-[Yacc](http://en.wikipedia.org/wiki/Yacc).
-
-`cky` is based on the `libstephen` library.  In fact, the regular expression
-implementation in `libstephen` was originally created in CKY, and is still
-intended for use in it.
-
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/cky)
-
 ### `wepa-linux` -- A CUPS Printer Driver
 
 [WEPA](https://www.wepanow.com/) is a printing system used at my campus.  Users

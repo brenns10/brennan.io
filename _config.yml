@@ -6,7 +6,7 @@ keywords: blog programming student resume technology talks
 tagline: C and Python programmer extraordinaire
 logo: /images/me.jpg
 
-url: http://stephen-brennan.com
+url: http://brennan.io
 
 gems: [jekyll-paginate]
 paginate: 10

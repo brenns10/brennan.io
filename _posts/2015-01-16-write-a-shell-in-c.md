@@ -36,7 +36,7 @@ So, we'll just call the looping function and then terminate.  But in terms of
 architecture, it's important to keep in mind that the lifetime of the program is
 more than just looping.
 
-```C
+```c
 int main(int argc, char **argv)
 {
   // Load config files, if any.

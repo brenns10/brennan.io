@@ -11,46 +11,44 @@ tw: <span class="fa fa-twitter fa-lg"></span>
 
 ### `libstephen` -- A C Library
 
-This humbly-named library is the foundation for much of my C programming.  It
-extends the standard C library with support for a few important data structures,
+This library extends the standard C library with dynamic lists, hash tables,
 regular expressions, command line argument parsing, several string-handling
-utilities, logging, and lightweight unit testing.  I continue to rethink and
-improve its architecture, but it is getting close to the point of stability
-where other programs can use it too.  Several of my other C projects depend on
-it already.
+utilities, logging, and lightweight unit testing.  It's an experiment in making
+an API as well as sharing code.  Several of my other C projects depend on it
+already.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/libstephen)  
-[{{page.web}} Visit the Official Site](/libstephen/)
+[{{page.web}} Documentation and Code Coverage](/libstephen/)
 
-### NOSJ
+### `lsh` -- A Simple Shell in C
+
+I wrote this to illustrate the different system calls and mechanics that
+underlie one of a programmer's fundamental tools: the shell.  I also wrote a
+tutorial about it.
+
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/lsh)  
+[{{page.web}} Read the tutorial]({% post_url 2015-01-16-write-a-shell-in-c%})
+
+### NOSJ -- A JSON Library in C
 
 NOSJ is a simple JSON parser written in C.  It focuses on simplicity, especially
 with respect to memory allocation.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/nosj)  
-[{{page.web}} Visit the Official Site](/nosj/)
+[{{page.web}} Documentation and Code Coverage](/nosj/)
 
-### Corvid
+### Corvid -- Static Site Generation Made Easy
 
 For our Software Engineering project, my team (me, [Jeff Copeland][], and
 [Kyle Deal][]) created a web application that helps people create simple static
 web sites.  It uses [Pelican](http://getpelican.com/) under the hood, and it's
-implemented in Python using the Django web framework.  For a short time only
-(until the end of 2015), it's deployed and available to try out!
+implemented in Python using the Django web framework.  Unfortunately, Corvid is
+no longer deployed.  However, a few friends are working on a sequel for their
+senior project -- stay tuned.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/jpcjr/corvid)  
-[{{page.web}} Visit the Official Site](https://corvid.xyz)
 
-### `lisp` -- A Lisp-y Language with Garbage Collection
-
-A simple implementation of a Lisp like language.  This was a fun opportunity to
-create a lexical analyzer out of my `libstephen` regex implementation, as well
-as try out a simple garbage collection system.
-
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/lisp)  
-[{{page.web}} Read the Blog Post]({% post_url 2015-11-02-spooky-garbage-collection %})
-
-### PySwizzle
+### PySwizzle -- A Twitter Bot
 
 [Hacker's Society](http://hacsoc.org) hosted an event called "Python and Pie"
 for incoming freshmen during Fall 2015 orientation.  I gave an intermediate
@@ -64,32 +62,13 @@ Swift lyric.
 [{{page.web}} Blog Post]({% post_url 2015-08-22-python-and-py %})  
 [{{page.tw}} Tweet at the Bot](https://twitter.com/pyswizzle)
 
-### `tswift` - A Python MetroLyrics API
+### `tswift` -- A Python MetroLyrics API
 
 Get your Taylor Swift lyric fix with this quick'n'dirty tool for downloading
 song lyrics from MetroLyrics.  Or, you know, any other artist's lyrics.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tswift)  
 [{{page.web}} It's on PyPI!](https://pypi.python.org/pypi/tswift)
-
-### CBot
-
-A fun little challenge - write a functioning IRC bot in C!  This little guy was
-a great excuse to use Libstephen's regular expressions in the real world, as
-well as learn all about dynamic loading of modules and the IRC protocol.  CBot
-currently has the basic functions necessary for a chatbot, and I'm sure I'll
-return every now and then to expand on his available plugins.
-
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/cbot)
-
-### Tetris in C!
-
-A 24 hour Tetris implementation written in C, using the `ncurses` library.  I
-wrote an accompanying blog post about it, which also touched on how important I
-find my personal projects, even if some are reimplementations.
-
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tetris)  
-[{{page.web}} Read the blog post]({% post_url 2015-06-12-tetris-reimplementation %})
 
 ### `PyWall` -- A Python Firewall
 
@@ -99,7 +78,8 @@ firewall illustrates the basics of packet filtering (including TCP connection
 tracking) in a high-level lanugage, which is much easier to understand and
 extend than C.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/pywall)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/pywall)  
+[{{page.pdf}} Report](https://www.dropbox.com/s/a9wjs4e1rnhdxfe/pywall_report.pdf?dl=1)
 
 ### `yams` -- YAMS: Awesome MIPS Server
 
@@ -111,7 +91,26 @@ in MIPS assembly.  In addition to serving static pages, it also comes with
 assembly.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/yams)  
-[{{page.web}} Read the blog post]({% post_url 2015-05-17-yams %})
+[{{page.web}} Read the blog post]({% post_url 2015-05-17-yams %})  
+[{{page.pdf}} Report](https://www.dropbox.com/s/vhzw7246aufwx5p/yams_report.pdf?dl=1)
+
+### `lisp` -- A Lisp-y Language with Garbage Collection
+
+A simple implementation of a Lisp like language.  This was a fun opportunity to
+create a lexical analyzer out of my `libstephen` regex implementation, as well
+as try out a simple garbage collection system.
+
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/lisp)  
+[{{page.web}} Read the Blog Post]({% post_url 2015-11-02-spooky-garbage-collection %})
+
+### Tetris in C!
+
+A 24 hour Tetris implementation written in C, using the `ncurses` library.  I
+wrote an accompanying blog post about it, which also touched on how important I
+find my personal projects, even if some are reimplementations.
+
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tetris)  
+[{{page.web}} Read the blog post]({% post_url 2015-06-12-tetris-reimplementation %})
 
 ### Minesweeper
 
@@ -120,6 +119,16 @@ interface.  This was a fun and short project to apply my C knowledge, as opposed
 to my more ambitious, long running projects above.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/minesweeper)
+
+### CBot -- IRC Bot in C
+
+A fun little challenge - write a functioning IRC bot in C!  This little guy was
+a great excuse to use Libstephen's regular expressions in the real world, as
+well as learn all about dynamic loading of modules and the IRC protocol.  CBot
+currently has the basic functions necessary for a chatbot, and I'm sure I'll
+return every now and then to expand on his available plugins.
+
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/cbot)
 
 ### `caseid` -- Python module for Case IDs
 
@@ -130,29 +139,6 @@ people by their Case ID, and vice versa.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/caseid)  
 [{{page.gh}} Visit its Ruby cousin by Andrew Mason](https://github.com/ajm188/cwru_directory)
-
-### `lsh` -- A Simple Shell in C
-
-I wrote this to illustrate the system calls and basic mechanics behind a Unix
-shell.  The accompanying blog post had a modest positive audience response.
-
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/lsh)  
-[{{page.web}} Read the blog post]({% post_url 2015-01-16-write-a-shell-in-c%})
-
-### `cky` -- A Parser
-
-This project is on the back burner for a while.  It's intended to become an
-impementation of the [CKY](http://en.wikipedia.org/wiki/CYK_algorithm) algorithm
-for parsing [CFGs](//en.wikipedia.org/wiki/Context-free_grammar).  In the end, I
-intend for it to be similar to, but not necessarily compatible with,
-[Lex](http://en.wikipedia.org/wiki/Lex_(software)) and
-[Yacc](http://en.wikipedia.org/wiki/Yacc).
-
-`cky` is based on the `libstephen` library.  In fact, the regular expression
-implementation in `libstephen` was originally created in CKY, and is still
-intended for use in it.
-
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/cky)
 
 ### `wepa-linux` -- A CUPS Printer Driver
 

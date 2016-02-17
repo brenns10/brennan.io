@@ -16,40 +16,39 @@ A huge portion of the economy relies on it.  The Internet is a major part of the
 lives of untold millions of people, and so it can really come as surprise to me
 when I realize most of them have no clue how it all works!
 
-Of course, those are the days when I *know* I'm being a tech snob.  After all,
-the whole world is complicated these days.  There are a whole lot more things
-that I don't understand than things I do understand about the world.  The only
-reason I know anything about the Internet is because I'm a programmer, and I've
-even taken classes about the Internet.  So it's a bit unreasonable to think that
-people should know anything about how the Internet, even if they use it every
-day.
+Of course, those are the days when I *know* I'm being an absolute snob.  After
+all, the whole world is complicated these days.  There are plenty more things
+that I don't understand in the world than things I do.  The only reason I know
+anything about the Internet is because I'm a programmer, and I've even taken
+classes about networking.  So it's a bit unreasonable to think that people
+should know anything about how the Internet, even if they use it every day.
 
 But just because I don't understand everything in the world doesn't mean I don't
-want to try to learn.  The world would be a sad place if there was nobody to
-explain the complex things to those who don't have the technical background in
-the field.  I think that there are plenty of people that would be fascinated
-with an explanation of how the Internet works, but aren't particularly computer
-oriented.  So this post is for all of those people.  My aim with this article is
-to summarize the main points of a college networking course in an interesting
-and understandable way.  I hope I have some success in doing so!
+want to know more.  The world would be a sad place if there was nobody to
+explain complex things to those who specialize in something different.  I think
+that there are plenty of people that would be fascinated with an explanation of
+how the Internet works, but aren't particularly computer oriented.  So this post
+is for all of those people.  My aim with this article is to summarize the main
+points of a college networking course in an interesting and understandable way.
+I hope I have some success in doing so!
 
 ## Networks
 
-Computer scientists talk about networks a lot.  Not all of them are "internet"
-type networks (that is, networks of computers).  A network is really just a
-nicer name for something computer scientists call a [graph][].  And that's just
-a collection of "things" and connections between the "things".  One type of
-network you're probably familiar with is a "social network".  (When I say
-"social network", I don't mean Facebook or Twitter, just the underlying people
-and their friendships).  In the case of a social network, the "things" are
-people, and the connections are friendships.  Another network you're probably
-familiar with is a road map.  With roads, the "things" are intersections, and
-the connections are roads.
+Computer scientists talk about networks a lot.  When we talk about the Internet,
+we think of lots of computers connected together, but networks are actually more
+general than that.  A network is really just a nicer name for something computer
+scientists call a [graph][].  And that's just a collection of "things" (which
+are typically called *nodes* or *vertices*) and connections between the "things"
+(which are typically called *edges* or *arcs*).  One type of network you're
+probably familiar with is a "social network".  When people think of social
+networks, they usually think about Facebook or some other social website, but a
+social network can just be people (the nodes) and friendships among them (the
+edges).  Another network you're probably familiar with is a road map.  With
+roads, the nodes are intersections, and the edges are roads.
 
-Well, the Internet is just another one of those networks.  The "things" are
-computers, and the connections are, well, connections.  They can be anything
-that allows the two computers to communicate.  Cables and radio waves are common
-connections in the Internet.
+Well, the Internet is just another one of those networks.  The nodes are
+computers, and the edges are direct connections between them, like a cord or a
+wireless connection.
 
 In a social network, information can spread from person to person through
 friendships.  Rumors, jokes, and stories are common examples of this.  On the
@@ -61,9 +60,9 @@ house to the grocery store, but you still can get there on the roads.  And when
 you start a rumor about someone who isn't your friend, that rumor *always*
 manages to reach them.
 
-The Internet works precisely because of those same qualities of other networks.
-You can't physically connect every computer to every other computer, any more
-than you could be friends with everyone, or have a road between every pair of
+The Internet works precisely because of those properties of networks.  You can't
+physically connect every computer to every other computer, any more than you
+could be friends with everyone, or have a road between every pair of
 destinations.  But with a well created network of roads, everyone can still get
 where they need to go.
 
@@ -170,10 +169,9 @@ small local network that hooks up all of its customers in and around your
 neighborhood.  Then, it probably has a larger regional network connecting the
 small local networks.  It may even have larger networks connecting each region.
 These different size networks are similar to the different types of roads -
-residential roads, main roads, and highways.  But, each ISP has its own
-organization of its own networks.  They are free to manage their networks
-however they like, which is why the ISP networks are sometimes referred to as
-"Autonomous Systems", or AS's.
+residential roads, main roads, and highways.  But, each ISP gets to decide how
+it structures and manages its networks of computers, which is why the ISP
+networks are sometimes referred to as "Autonomous Systems", or AS's.
 
 Now, ISPs know that you don't want to communicate solely with their customers.
 So, even though they're competitors, ISPs have to negotiate agreements among
@@ -227,86 +225,72 @@ So, without further ado, let's get exploring these layers.
 
 ### The Physical Layer
 
-The Physical layer is the lowest layer.  It is the physical "thing" you use to
-hook up network devices.  For instance, if you use WiFi, then your physical
-layer is radio waves, in a specific frequency range.  If you use fiber optic
-cables, your physical layer is light.  The physical layer is so low level, that
-sometimes it's more like talking about physics, or electrical engineering.  For
-instance, you could use a single copper wire as your physical layer.  But then,
-the question would be, how to transmit information across it?  There are many
-different ways that electricity could be used to send information.  For
-instance, if you wanted to send a number, you could simply put that amount of
-volts on a circuit.  But what if the number you wanted to send was large?  Say,
-a million?  It might be dangerous to put that many volts across a small copper
-wire.  Plus, depending on the length of a wire, there is resistance within it.
-The device on the other side may only read 4.5 volts when you actually sent 5.
-Obviously, encoding numbers directly as voltages is not how we send data across
-circuits.
+The Physical layer is the lowest layer.  And quite honestly, it's the most
+boring layer.  It is the physical "thing" you use to hook up network devices.
+For instance, if you use WiFi, then your physical layer is radio waves, in a
+specific frequency range.  If you use fiber optic cables, your physical layer is
+light traveling along the cable.  The physical layer is so low level, that
+sometimes it's more like talking about physics, or electrical engineering.  I
+won't spend too much time discussing it, beyond one important issue.
 
-Instead, we represent numbers (which can represent any data) using "binary".
-This is a number system that uses ones and zeros as its digits (usually called
-"bits" for "binary digits").  All numbers can be represented in binary.  We
-assign one to some voltage (typically 5V), and zero to something else (typically
-0V).  To send a number, you send a series of voltages in order.  If your 5V
-deteriorates down to 4.5V on the other end, it's OK, because that's still close
-to 5.  No information was lost.  This is usually called "digital", because you
-are encoding information as a series of digits.  Directly sending a number as a
-voltage would be an example of "analog".
-
-One thing you need to do when you have digital signals is decide on a "clock
-rate".  Basically, you need to know how long each digit lasts.  Otherwise, how
-could you tell the difference between 11111, and just 1?  Making sure that both
-devices have their clock rates the same, and synchronized, is a difficult task.
-I'm not going to go into the solutions to this problem.  Each type of physical
-layer has its own unique set of problems like this to address: radio waves are
-different from copper wires, or fiber optic cables.  There could be books
-written on the solutions to these problems for all the different types of
-physical layers you could have.  Suffice to say that, while it's the lowest
-level of the network, the physical layer is definitely not the easiest one.  The
-fact is, none of the layers have easy problems to solve.
+All data that gets sent across the Internet can be reduced to numbers.  We use
+numbers to represent text, to represent images, as well as everything else that
+makes the Internet tick.  How do you send a number across something like a
+circuit, or a radio wave?  The immediate thought might be to "encode" your
+number as a voltage across the circuit.  If you want to send the number 5, just
+send 5 volts across the circuit.  This is called "analog", but the problem with
+it is data loss.  If the circuit is long enough, it will have some resistance
+and the 5 volts will be 4.5 by the time it reaches the other side.  So instead
+of that "analog" approach, everything we send across these physical layers is
+"digital", in particular, "binary".  This means that we send a series of signals
+that are either 1 (high voltage) or 0 (low voltage).  Since every number can be
+encoded as a binary (base 2) number, we can send any number as a series of
+binary digits across a circuit without many errors.
 
 ### The Link Layer
 
 So, all of that electricity and binary, and what do we have to show for it?
-Well, we know that we have a way to send bits across a connection.  And that's
-pretty much it.  Now, we apply our "abstraction", and forget about all the
-problems of the physical layer.  Are we using radio waves, or a wire?  Who
-cares!  We know that we can send a bit out onto our physical layer, and that
-*maybe* someone on the other end will receive it.  We can't be certain that
-they'll get it.  After all, the physical layer never guaranteed us that it would
-send the bits correctly.  It'll obviously be designed to do its best at it, but
-there are no guarantees.
+Well, we know that we have a way to send bits (binary digits) across a
+connection.  And that's pretty much it.  Now, we apply our "abstraction", and
+forget about all the problems of the physical layer.  Are we using radio waves,
+or a wire?  Who cares!  We know that we can send a bit out onto our physical
+layer, and that *maybe* someone on the other end will receive it.  We can't be
+certain that they'll get it.  After all, the physical layer never guaranteed us
+that it would send the bits correctly.  It'll obviously be designed to do its
+best at it, but there are no guarantees.
 
 So what does our link layer do?  Its job is deceptively simple: get a message to
-somebody else that is on the same "link" (that is, connection) as us.  All of
-last section, I talked about the physical layer as connecting two devices, but
-the fact is, many devices can be connected together at once by the physical
-layer.  After all, many people use a single WiFi hotspot.  And, believe it or
-not, you can have more than two computers connected with each other on a single
-Ethernet connection.  All we figured out last section was how we could send
-bits.  So, the link layer has to be able to send a message to any of the people
-that share a link with us.
+somebody else that is on the same connection as us.  When I described the
+physical layer, I talked about it as connecting two devices, but the fact is,
+many devices can be connected together at once by the physical layer.  After
+all, many people use a single WiFi hotspot.  And, believe it or not, you can
+have more than two computers connected with each other on a single Ethernet
+connection.  All we figured out last section was how we could send bits.  So,
+the link layer has to be able to send a message to any of the people that share
+a link with us.
 
-So, how do we send a message to a specific device?  The simplest way is by
-putting the recipient's name on the envelope!  After all, you don't just stick a
-letter in the mail without a salutation or address, and just hope that the
-intended recipient gets it.  You put the address on an envelope and you put the
-letter in there.  That way, whoever sees it at the post office knows whom to
-send the letter to.  Similarly, the link layer takes whatever data you want to
-send, puts it into an envelope (called a "frame"), and puts the device's address
-on the envelope (along with other information, like how long the message is).
-So, what is a device's address?  It could vary among link-layers, but for the
-most common ones, it's always a MAC address (which stands for Media Access
-Control).  This is just a long number.  There are agreements among everyone that
-makes devices like these, ensuring that MAC addresses are always unique.
+So, how do we send a message to a specific device?  First, we need to have a way
+to identify each device.  We do this by assigning big numbers to each device
+that will connect to a network.  We call them MAC addresses (which stands for
+Media Access Control).  All the companies that make these devices have
+agreements on who can use what MAC addresses, so that they are always unique.
 
-So, in the simplest link layer, when a device wants to send a message to another
-device it shares a link with, it simply wraps the message up in a frame, slaps
-the correct MAC address on it, and gives the frame to the physical layer to put
-those bits onto the wire.  The other devices would receive that, and if the MAC
-address on the frame matched their own, they would open it up and read it.
+Now that every device sharing our connection has an address, we can just put any
+message into an envelope (called a "frame"), and put the recipient's address on
+the envelope (along with other information, like how long the message is).
+Then, we can just put that message (which is just a bunch of bits) onto the
+physical layer.  The other devices on the connection will all receive it, and if
+the MAC address on the frame matched their own, they would open it up and read
+it.
 
-Sadly, things aren't usually that simple.  Since multiple devices can be
+> Notice that this whole thing is on the "honor system".  That is, a device
+> *could* simply open up any "envelope" it receives, regardless of whether it
+> was the intended recipient.  This is called "promiscuous mode", and it's the
+> very reason why it's unsafe to use public WiFi networks with no password.
+> Anybody else on the network can read every single message sent between you and
+> the WiFi router!
+
+Sadly, there's one problem with this setup.  Since multiple devices can be
 connected to the same link, it'll probably happen that two of them will try to
 talk at the same time.  If they do, the other devices on the link won't be able
 to understand either of their messages, because they'll interfere with each
@@ -314,7 +298,7 @@ other.  This is called the multiple access problem.  A simple way to think of
 the multiple access problem is to imagine a small dinner party where everyone is
 sitting around the table talking.  In small groups like this, only one person
 can talk at a time.  The strategies we use in networks to solve this problem are
-remarkably similar to strategies people us in these "dinner party" situations.
+remarkably similar to strategies people use in these "dinner party" situations.
 
 *   The most obvious rule: if you hear that somebody else is talking, don't
     start talking!  In networking, this is called collision avoidance.
@@ -328,38 +312,18 @@ remarkably similar to strategies people us in these "dinner party" situations.
 *   When you do "collide" with somebody in conversation, you typically wait a
     moment and then try again.  In human conversation, there's usually some
     negotiation about who should talk first, but in networking, devices just
-    wait a random amount of time before trying.  That way, there's a decent
-    chance that the two devices that colleded will go at different times.  This
-    is typically referred to as random backoff.
+    wait a random amount of time before trying again.  That way, there's a
+    decent chance that the two devices that collided will go at different times.
+    This is typically referred to as random backoff.
 *   Finally, people frequently acknowledge that they've understood what you've
     said by nodding.  Some link layers use acknowledgements just like this.
-    WiFi has lots of interference, so it uses these.  It also retransmits if
-    there was an error in the message.  Ethernet, on the other hand, does not
-    (since errors are uncommon in Ethernet).
+    WiFi has lots of interference, so it uses these.
 
-This isn't really a description of any particular multiple access protocol.
-Each link layer typically combines these elements as well as other ones in a way
-that can ensure that collisions will be handled and messages will get across the
-link quickly.
-
-OK, so with MAC addresses, and a properly designed multiple access protocol, the
-link layer is mostly complete.  However, there are a few other issues to solve!
-First is error detection.  Like I said earlier, we have no guarantees that the
-physical layer will perfectly send all our bits.  For all we know, it could get
-them wrong.  So, most link-layer protocols implement a "checksum", which is just
-a number computed from the data in the frame.  They add this checksum to the
-frame, and send it with.  The receiver will compute the checksum itself, and
-compare it to the checksum included with the data.  If they don't match, the
-receiver will typically drop the frame.  Some link-layers will actually tell the
-sender that they didn't receive the message correctly, and retransmit the
-message.  But not all.  The link layer, in general, doesn't guarantee that it
-will reliably get a message across to the other person.  But, if it does, it
-will get it there pretty much intact, due to checksums.
-
-In conversation, humans *sort of* use checksums too.  You have no guarantee that
-the person you talk to will hear you correctly.  But, we generally talk in
-complete sentences.  If somebody misheard you, it wouldn't make sense, and
-they'd probably stop you to ask what you actually said.  Checksums in action!
+These basic strategies (as well as others) are combined together in various ways
+to create "multiple access protocols".  When all the devices on a WiFi hotspot
+(for example) use WiFi's "multiple access protocol", they are guaranteed that
+they will be able to send messages and avoid or fix collisions.  And this pretty
+much completes our brief look at the link layer.
 
 ### The Network Layer
 
@@ -452,11 +416,9 @@ If we wanted the Internet to have a delivery system similar to the post office
 similar way!  We already know of MAC addresses from our discussion of the link
 layer.  These addresses are assigned uniquely by manufacturers to our devices.
 Unfortunately, a MAC address tells you nothing about where in the network a
-device is.  Two devices made by the same manufacturer with nearly identical MAC
-addresses are not guaranteed to be near each other.  Really, a MAC address is
-more like a Social Security Number in the US.  These numbers, assigned at birth,
-tell us nothing about where a person resides.  That's why we use a street
-address to send mail, and not a SSN.
+device is.  Really, a MAC address is more like a Social Security Number in the
+US.  These numbers, assigned at birth, tell us nothing about where a person
+resides.  That's why we use a street address to send mail, and not a SSN.
 
 So, from the looks of it, we'll need a new way to "address" devices.  This
 address is called an Internet Protocol (IP) address!  These addresses are
@@ -465,14 +427,13 @@ IP address are the same, you know that the addresses are within a network
 together.  If more numbers at the beginning of the address are the same, then
 these devices are within an even smaller network, and therefore closer together.
 This makes sense when you think about the street address analogy.  My next door
-neighbors share most of my address, and we're next door.  My relatives in other
-states don't have any parts of their street address in common with me, because
-we live so far away.  Of course, IP addresses are slightly different than cities
-and states.  There is a central organization that gives ranges of IP addresses
-out to companies (like ISPs).  This organization is called the Internet Assigned
-Numbers Authority (IANA), and it's a part of a larger organization called the
-Internet Corporation for Assigned Names and Numbers (ICANN).  We'll meet ICANN
-again later on!
+neighbors share most of my address.  My relatives in other states don't have any
+parts of their street address in common with me, because we live so far away.
+Of course, IP addresses are slightly different than cities and states.  There is
+a central organization that gives ranges of IP addresses out to companies (like
+ISPs).  This organization is called the Internet Assigned Numbers Authority
+(IANA), and it's a part of a larger organization called the Internet Corporation
+for Assigned Names and Numbers (ICANN).  We'll meet ICANN again later on!
 
 IP addresses are numbers that look like this: `12.34.56.78`.  Each of the four
 numbers can range from 0 to 255.  When IP addresses were created, the plan was
@@ -795,7 +756,7 @@ the IP addresses that the Internet uses for routing.
 
 DNS is one of those "simple" protocols that doesn't need the complexity of TCP.
 So, it operates on UDP port 53.  When you want to go to a domain, like
-`stephen-brennan.com`, your computer sends a question ("DNS query") to the local
+`brennan.io`, your computer sends a question ("DNS query") to the local
 DNS server.  The DNS server (which is just a computer) figures out what IP
 address that stands for, and sends back a response to your computer.
 
@@ -817,7 +778,7 @@ website that looks something like this:
 
 ```
 GET /resume.html
-Host: stephen-brennan.com
+Host: brennan.io
 
 ```
 

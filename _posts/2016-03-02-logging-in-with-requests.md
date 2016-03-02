@@ -2,9 +2,9 @@
 title: Logging in With Requests
 layout: post
 description: >
-  CWRU's single-sign-on system is a very great way to let web developers offload
-  their authentication concerns for students.  But for people that like web
-  scraping, it's more difficult to log into a site with SSO.
+  Web scraping in Python is a fun and useful skill.  In this article, I
+  demonstrate basic web scraping using requests and lxml, and then explain how
+  you can scrape sites that require you to log in.
 ---
 
 One of my favorite types of quick side projects are ones that involve web
@@ -31,7 +31,7 @@ and look at the HTML source to figure out where your information is in the page.
 Since webpage content is primarily written in HTML, getting your program to find
 the data you want could be difficult.  Thankfully, the Python library [lxml][]
 makes things a lot easier.  Not only will it parse HTML, but it includes a
-powerful search tool called XPath, which allows you craft a "query" that can
+powerful search tool called XPath, which allows you to craft a "query" that can
 match particular HTML tags in a webpage.  You could think of it like regular
 expressions, but for HTML (because regular expressions [won't work][re-html] on
 HTML... but that's a discussion for another, lengthy blog post).

@@ -17,9 +17,15 @@ it makes other people feel that way too.
 The code for the shell described here, dubbed `lsh`, is available on
 [GitHub](https://github.com/brenns10/lsh).
 
+**University students beware!** Many classes have assignments that ask you to
+write a shell, and some faculty are aware of this tutorial and code.  If you're
+a student in such a class, you shouldn't copy (or copy then modify) this code
+without permission.  And even then, I would [advise]({% post_url
+2016-03-29-dishonesty %}) against heavily relying on this tutorial.
+
 ## Basic lifetime of a shell
 
-Let's look a shell from the top down.  A shell does three main things in its
+Let's look at a shell from the top down.  A shell does three main things in its
 lifetime.
 
 * **Initialize**: In this step, a typical shell would read and execute its

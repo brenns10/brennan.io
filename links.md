@@ -24,10 +24,8 @@ Some other miscellaneous HacSoc links:
 - [Student Project Server](http://people.acm.case.edu)
 
 I've developed a real appreciation for blogging, both writing my own and reading
-those of my friends.  So here are some of blogs you should check out:
-
-- [Andrew Mason](http://fixedpoint.xyz)
-- [A directory of HacSoc blogs!](http://hacsoc.org/wiki/directory)
+those of my friends.  So here is a whole
+[directory](http://hacsoc.org/wiki/directory) of blogs you should check out!
 
 And now, in no particular order, a list of things that I found helpful in
 learning the things I know today.  Hopefully, somebody else may find them useful

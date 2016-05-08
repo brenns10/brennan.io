@@ -10,12 +10,12 @@ Resume
 
 Research
 ---------
-*Case Western Reserve University, May 2014 - Present*
+*Case Western Reserve University, May 2014 - September 2015*
 
-* Creating a tool that analyzes binary combinations of somatic mutations in
+* Created a tool that analyzes binary combinations of somatic mutations in
   cancer patients to discover relationships with various phenotypes.
-* Using Python, Pandas, NumPy.
-* Applying knowledge of information theory, graph algorithms, and data
+* Used Python, Pandas, NumPy.
+* Applied knowledge of information theory, graph algorithms, and data
   visualization.
 
 <hr>
@@ -51,7 +51,7 @@ Education
 * Dean's High Honors (All Semesters)
 * University Scholar
 * National Merit Scholar
-* Cum. GPA: 3.967 / 4.0
+* Cum. GPA: 3.974 / 4.0
 * Major GPA: 4.0 / 4.0
 
 ### St. Joseph High School
@@ -65,13 +65,15 @@ Education
 Coursework
 ----------
 
-### Current
+### Upcoming
 
-- Internet Security
-- Data Mining
+* Database Systems (Graduate)
+* Number Theory
 
 ### Completed
 
+* Internet Security
+* Data Mining
 * Machine Learning
 * Advanced Algorithms
 * Software Engineering
@@ -79,7 +81,6 @@ Coursework
 * Computer Security
 * Networking
 * Operating Systems
-* Databases
 * Theoretical Computer Science
 
 <hr>
@@ -116,20 +117,15 @@ Leadership
 
 <hr>
 
-Awards
-------
+Awards & Honors
+---------------
 
+* 2016 - Jennings Award for excellence in Computer Engineering and Science
+* 2015 - EECS Research Award
+* 2014 - Eta Kappa Nu EECS Honor Society
 * 2013 - Case Alumni Association Scholarship
+* 2013 - Tau Beta Pi Engineering Honor Society
 * 2012 - Case Western Reserve University Scholar
 * 2012 - National Merit Scholar
 * 2012 - National AP Scholar
-
-<hr>
-
-Societies
----------
-
-* 2014 - IEEE-Eta Kappa Nu EECS Honor Society
-* 2013 - Tau Beta Pi Engineering Honor Society
 * 2010 - National Honor Society
-

@@ -410,6 +410,7 @@ Would it work in the real world? Maybe, if you assume that a mechanism for
 "cloning" Clipper Cards could become available some day. Disregarding that major
 barrier, there are still some problems that would have to be solved in a real
 world application of this algorithm:
+
 - **Adoption:** The simulation results are so rosy because they assume everyone
   participates in the algorithm. Like social networks, the app might not be very
   good without a lot of users.

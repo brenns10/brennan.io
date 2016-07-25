@@ -1,7 +1,7 @@
 name: Stephen Brennan
 author: Stephen Brennan
-title: Stephen Brennan's Blog
-description: Stephen Brennan's personal website and blog.
+title: "Stephen Brennan's Blog"
+description: "Stephen Brennan's personal website and blog."
 keywords: blog programming student resume technology talks
 tagline: C and Python programmer extraordinaire
 logo: /images/me.jpg
@@ -18,6 +18,7 @@ permalink: pretty
 
 kramdown:
   input: GFM
+  math_engine: mathjax
   hard_wrap: false
 
 exclude: ["CNAME", "README.md"]

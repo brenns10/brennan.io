@@ -430,6 +430,9 @@ This was a really enjoyable problem to solve. I learned a lot from it, and I got
 to apply some concepts that you normally just learn about in school. Hopefully
 people will enjoy reading about it as much as I enjoyed doing it!
 
+If you want to learn more, check out the code on [GitHub][gh].
+
+[gh]: https://github.com/brenns10/bart
 [scipy-solver]: https://github.com/brenns10/bart/blob/c148563af68b68237ad4556e0111b6bc3052ed59/bart/solver.py#L82
 [simplex]: https://en.wikipedia.org/wiki/Simplex_algorithm
 [unimodular]: https://en.wikipedia.org/wiki/Unimodular_matrix

@@ -106,7 +106,7 @@ problem for you.  So let's formulate this as an integer linear program!
 In this particular problem, we have a variable $$x$$ for every single pair of
 stations you could start at and end at. $$x$$ will represent how many tickets we
 buy for that start/end pair. There are 45 BART stations, which means that we
-have $$42^2 = 2025$$ different variables. The cost for each variable is provided
+have $$45^2 = 2025$$ different variables. The cost for each variable is provided
 in a fare schedule, available from BART's [website][bart-fares]. The one value
 that is missing from this schedule is the cost of a trip that starts and ends at
 the same station. You'd think that this would be free, but people would take

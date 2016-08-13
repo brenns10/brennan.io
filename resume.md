@@ -8,8 +8,6 @@ Resume
 
 [{{page.pdf}} Download my resume](https://dl.dropboxusercontent.com/u/24472738/Resume.pdf)
 
-<hr>
-
 Experience
 ----------
 

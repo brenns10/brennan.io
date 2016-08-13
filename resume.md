@@ -8,9 +8,22 @@ Resume
 
 [{{page.pdf}} Download my resume](https://dl.dropboxusercontent.com/u/24472738/Resume.pdf)
 
-Research
----------
-*Case Western Reserve University, May 2014 - September 2015*
+<hr>
+
+Experience
+----------
+
+### Yelp
+*Intern, Spam Team, May 2016 - August 2016*
+
+* Improved user security by blocking messages containing dangerous URLs.
+* Researched new features for improving URL spam classifications in machine
+  learning classifiers.
+* Migrated credit card transaction blocking systems to a service oriented
+  architecture.
+
+### Case Western Reserve University
+*Researcher, May 2014 - September 2015*
 
 * Created a tool that analyzes binary combinations of somatic mutations in
   cancer patients to discover relationships with various phenotypes.
@@ -18,10 +31,14 @@ Research
 * Applied knowledge of information theory, graph algorithms, and data
   visualization.
 
-<hr>
+### LECO
+*Intern, May 2013 - August 2013*
 
-Experience
-----------
+* Applied knowledge of C++, graph traversal algorithms, and parallel computing
+  to develop a feature in production code for the main software product.
+* Gained experience writing GPU-accelerated programs in Microsoft C++ AMP.
+* Developed Windows Installers for the company's main products.
+* Wrote Python build scripts.
 
 ### Global Mold Tech Management
 *Webmaster, June 2011 - June 2015*
@@ -29,16 +46,7 @@ Experience
 * Self taught PHP and SQL to build secure upload and download system.
 * Researched, selected, and implemented commercial grade solutions for file
   sharing and email systems.
-* Manage file sharing, email, and provide support to employees.
-
-### LECO
-*Software Development Intern, May 2013 - August 2013*
-
-* Applied knowledge of C++, graph traversal algorithms, and parallel computing
-  to develop a feature in production code for the main software product.
-* Gained experience writing GPU-accelerated programs in Microsoft C++ AMP.
-* Developed Windows Installers for the company's main products.
-* Wrote Python build scripts.
+* Managed file sharing, email, and provided support to employees.
 
 <hr>
 
@@ -90,18 +98,18 @@ Skills
 
 ### Programming Languages
 
-* Over 5000 lines: Python, C, C++, Java, LaTeX
-* Over 1000 lines: Javascript, PHP, C#, Scheme
-* Familiar: SQL, Bash, HTML, CSS, Batch, C++/CLI
+* Very Experienced: Python, C, C++
+* Some Experience: Java, Javascript, C#, Scheme, SQL
+* Familiar: Bash, HTML, CSS, PHP, C++/CLI
 
 ### Technologies
 
 * Git
 * NumPy, SciPy, Pandas
+* Scikit Learn
 * Django
 * Flask
 * Windows Installer XML
-* .NET
 
 <hr>
 
@@ -123,9 +131,5 @@ Awards & Honors
 * 2016 - Jennings Award for excellence in Computer Engineering and Science
 * 2015 - EECS Research Award
 * 2014 - Eta Kappa Nu EECS Honor Society
-* 2013 - Case Alumni Association Scholarship
 * 2013 - Tau Beta Pi Engineering Honor Society
-* 2012 - Case Western Reserve University Scholar
 * 2012 - National Merit Scholar
-* 2012 - National AP Scholar
-* 2010 - National Honor Society

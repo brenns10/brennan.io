@@ -40,6 +40,9 @@ in their own education.
   everywhere (especially in Python).
 - [Intro to MIPS Assembly][mips].  Although I later learned this in EECS 314
   (Computer Architecture), I first learned MIPS assembly from this great guide.
+- [Implementing Regular Expressions][regex]: A series of articles by Russ Cox. I
+  consider this to be some of the best practical information out there about
+  implementing regular expressions, that is still firmly rooted in theory.
 - [Python Challenge][py-chal].  This is an excellent puzzle/riddle set for
   Python programmers.
 - [TI-Basic Developer][tibasicdev].  At one point, this was one of my main
@@ -51,3 +54,4 @@ in their own education.
 [py-chal]: http://www.pythonchallenge.com/
 [tibasicdev]: http://tibasicdev.wikidot.com/
 [float]: https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/
+[regex]: https://swtch.com/~rsc/regexp/

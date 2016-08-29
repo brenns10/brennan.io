@@ -37,3 +37,5 @@ install tswift`!
   [new version](https://github.com/brenns10/pyswizzle) of the code on GitHub,
   but the old version (still in the body of the article) is still available,
   complete with the original tutorial.
+
+**Update 2:** Check out the slides [here](http://brennan.io/talks/2016/08/27/python-and-pie/)!

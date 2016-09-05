@@ -9,11 +9,18 @@ keywords: opinion education computer science
 
 This morning my parents forwarded me an [article][] in the Wall Street Journal,
 entitled "Why I'm Not Looking to Hire Computer-Science Majors," by Daniel
-Gelernter (CEO of a startup called [Dittach][]).  It was an interesting read,
-but one that I ultimately disagreed with, enough to write about it here on my
-blog.  Unfortunately, the article is behind a paywall, so you can't read it
-without a subscription.  Here is a brief summary of the main points
-Mr. Gelernter made:
+Gelernter (CEO of a startup called [Dittach][]). It was an interesting read, but
+one that I ultimately disagreed with, enough to write about it here on my blog.
+Unfortunately, the article is behind a paywall, so you can't read it without a
+subscription[^paywall]. Here is a brief summary of the main points Mr. Gelernter
+made:
+
+[^paywall]:
+    Conveniently, if the Wall Street Journal detects that you found their page
+    from a Google search, they will show you the full article rather than just
+    the first paragraph. I would recommend a [Google search][srch] for "Why I'm
+    Not Looking to Hire Computer-Science Majors", and then clicking the WSJ.com
+    link.
 
 * Startups have difficulty competing with major companies for skilled,
   passionate developers.  Google and Facebook (for instance) can offer vast
@@ -169,3 +176,6 @@ the best developers.
 [ls]: http://acm.case.edu/acm/conference/2015
 [speaking]: https://goo.gl/forms/YKNRyJlEPc
 [sponsoring]: http://acm.case.edu/resources/Link-State_2015_Information.pdf
+[srch]: https://www.google.com/search?q=why%20i%27m%20not%20looking%20to%20hire%20computer-science%20majors
+
+#### Footnotes

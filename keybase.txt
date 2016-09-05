@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/brenns10
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://brennan.io
+  * I am brenns10 (https://keybase.io/brenns10) on keybase.
+  * I have a public key ASBjoRLIjZK9BV0c_NIwwWhkWczCtetsy8vAfDcVvEkLaQo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "012063d6b97789c03005cd834cb149130fa0d7293ebcde1fcba539a6a705a95d840b0a",
+            "host": "keybase.io",
+            "kid": "012063a112c88d92bd055d1cfcd230c1686459ccc2b5eb6ccbcbc07c3715bc490b690a",
+            "uid": "e8ab7b35b58f228d96bec1a66f1b9c19",
+            "username": "brenns10"
+        },
+        "service": {
+            "hostname": "brennan.io",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.17"
+    },
+    "ctime": 1472527121,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1472527103,
+        "hash": "6f7fcbadb0b913fccd4d57b0756839ae0d3c06b0273f8712ac4e9ed0257f8e00c8eacce326fc3d218c8b3050d320f99458ee9f746aa7997a038cb7aed0a73f9a",
+        "seqno": 608716
+    },
+    "prev": "a8fa098b73f1fffa33fc2b414f4153cbc2477283b447f7f64f442f2cd9e78d9c",
+    "seqno": 12,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgY6ESyI2SvQVdHPzSMMFoZFnMwrXrbMvLwHw3FbxJC2kKp3BheWxvYWTFAvJ7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNjNkNmI5Nzc4OWMwMzAwNWNkODM0Y2IxNDkxMzBmYTBkNzI5M2ViY2RlMWZjYmE1MzlhNmE3MDVhOTVkODQwYjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNjNhMTEyYzg4ZDkyYmQwNTVkMWNmY2QyMzBjMTY4NjQ1OWNjYzJiNWViNmNjYmNiYzA3YzM3MTViYzQ5MGI2OTBhIiwidWlkIjoiZThhYjdiMzViNThmMjI4ZDk2YmVjMWE2NmYxYjljMTkiLCJ1c2VybmFtZSI6ImJyZW5uczEwIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJicmVubmFuLmlvIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4xNyJ9LCJjdGltZSI6MTQ3MjUyNzEyMSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDcyNTI3MTAzLCJoYXNoIjoiNmY3ZmNiYWRiMGI5MTNmY2NkNGQ1N2IwNzU2ODM5YWUwZDNjMDZiMDI3M2Y4NzEyYWM0ZTllZDAyNTdmOGUwMGM4ZWFjY2UzMjZmYzNkMjE4YzhiMzA1MGQzMjBmOTk0NThlZTlmNzQ2YWE3OTk3YTAzOGNiN2FlZDBhNzNmOWEiLCJzZXFubyI6NjA4NzE2fSwicHJldiI6ImE4ZmEwOThiNzNmMWZmZmEzM2ZjMmI0MTRmNDE1M2NiYzI0NzcyODNiNDQ3ZjdmNjRmNDQyZjJjZDllNzhkOWMiLCJzZXFubyI6MTIsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAZzgYj1RrCtbxQ2yj8sWSLWLAUgXjG6h3Vm7gogPs1O9ByPy1BAx0ItNkk/2smRS41y+KwyNKO0GL8hrdo/4FCqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIPpw08Y0qo0S61KY/8UOlUd5vtJq+RtvHF0inuji0jWQo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/brenns10
+
+==================================================================

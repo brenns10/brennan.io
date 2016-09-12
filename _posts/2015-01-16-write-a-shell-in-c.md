@@ -4,6 +4,7 @@ layout: post
 description: >
   A tutorial on how to write a Unix shell in C.
 keywords: Linux Unix Tutorial C
+featured: true
 ---
 
 It's easy to view yourself as "not a *real* programmer."  There are programs out

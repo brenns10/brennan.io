@@ -2,6 +2,7 @@
 layout: post
 title: Fare Hacking on BART
 description: How I wrote an app that lowers BART riders' fares.
+featured: true
 ---
 
 Imagine that you're taking a long train ride on the BART. Maybe from Millbrae to

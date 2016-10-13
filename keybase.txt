@@ -4,7 +4,7 @@ https://keybase.io/brenns10
 
 I hereby claim:
 
-  * I am an admin of http://brennan.io
+  * I am an admin of https://brennan.io
   * I am brenns10 (https://keybase.io/brenns10) on keybase.
   * I have a public key ASBjoRLIjZK9BV0c_NIwwWhkWczCtetsy8vAfDcVvEkLaQo
 
@@ -21,7 +21,7 @@ To do so, I am signing this object:
         },
         "service": {
             "hostname": "brennan.io",
-            "protocol": "http:"
+            "protocol": "https:"
         },
         "type": "web_service_binding",
         "version": 1
@@ -30,21 +30,21 @@ To do so, I am signing this object:
         "name": "keybase.io go client",
         "version": "1.0.17"
     },
-    "ctime": 1472527121,
+    "ctime": 1476201708,
     "expire_in": 504576000,
     "merkle_root": {
-        "ctime": 1472527103,
-        "hash": "6f7fcbadb0b913fccd4d57b0756839ae0d3c06b0273f8712ac4e9ed0257f8e00c8eacce326fc3d218c8b3050d320f99458ee9f746aa7997a038cb7aed0a73f9a",
-        "seqno": 608716
+        "ctime": 1476201708,
+        "hash": "dd104f68b0c4bce3c5ef5f32c05fafdf895c7ba45815f9c1eb7ffd9a5e663034917c02e2cdf1c1137c8568630b0820df7c9c3a5f195b42e1667b13da3f42c2c3",
+        "seqno": 672655
     },
-    "prev": "a8fa098b73f1fffa33fc2b414f4153cbc2477283b447f7f64f442f2cd9e78d9c",
-    "seqno": 12,
+    "prev": "65e50cff828f15cdf8747bdb368153929ef48d53193324233c5a35584445ee68",
+    "seqno": 13,
     "tag": "signature"
 }
 
 which yields the signature:
 
-hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgY6ESyI2SvQVdHPzSMMFoZFnMwrXrbMvLwHw3FbxJC2kKp3BheWxvYWTFAvJ7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNjNkNmI5Nzc4OWMwMzAwNWNkODM0Y2IxNDkxMzBmYTBkNzI5M2ViY2RlMWZjYmE1MzlhNmE3MDVhOTVkODQwYjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNjNhMTEyYzg4ZDkyYmQwNTVkMWNmY2QyMzBjMTY4NjQ1OWNjYzJiNWViNmNjYmNiYzA3YzM3MTViYzQ5MGI2OTBhIiwidWlkIjoiZThhYjdiMzViNThmMjI4ZDk2YmVjMWE2NmYxYjljMTkiLCJ1c2VybmFtZSI6ImJyZW5uczEwIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJicmVubmFuLmlvIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4xNyJ9LCJjdGltZSI6MTQ3MjUyNzEyMSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDcyNTI3MTAzLCJoYXNoIjoiNmY3ZmNiYWRiMGI5MTNmY2NkNGQ1N2IwNzU2ODM5YWUwZDNjMDZiMDI3M2Y4NzEyYWM0ZTllZDAyNTdmOGUwMGM4ZWFjY2UzMjZmYzNkMjE4YzhiMzA1MGQzMjBmOTk0NThlZTlmNzQ2YWE3OTk3YTAzOGNiN2FlZDBhNzNmOWEiLCJzZXFubyI6NjA4NzE2fSwicHJldiI6ImE4ZmEwOThiNzNmMWZmZmEzM2ZjMmI0MTRmNDE1M2NiYzI0NzcyODNiNDQ3ZjdmNjRmNDQyZjJjZDllNzhkOWMiLCJzZXFubyI6MTIsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAZzgYj1RrCtbxQ2yj8sWSLWLAUgXjG6h3Vm7gogPs1O9ByPy1BAx0ItNkk/2smRS41y+KwyNKO0GL8hrdo/4FCqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIPpw08Y0qo0S61KY/8UOlUd5vtJq+RtvHF0inuji0jWQo3RhZ80CAqd2ZXJzaW9uAQ==
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgY6ESyI2SvQVdHPzSMMFoZFnMwrXrbMvLwHw3FbxJC2kKp3BheWxvYWTFAvN7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNjNkNmI5Nzc4OWMwMzAwNWNkODM0Y2IxNDkxMzBmYTBkNzI5M2ViY2RlMWZjYmE1MzlhNmE3MDVhOTVkODQwYjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNjNhMTEyYzg4ZDkyYmQwNTVkMWNmY2QyMzBjMTY4NjQ1OWNjYzJiNWViNmNjYmNiYzA3YzM3MTViYzQ5MGI2OTBhIiwidWlkIjoiZThhYjdiMzViNThmMjI4ZDk2YmVjMWE2NmYxYjljMTkiLCJ1c2VybmFtZSI6ImJyZW5uczEwIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJicmVubmFuLmlvIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTcifSwiY3RpbWUiOjE0NzYyMDE3MDgsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ3NjIwMTcwOCwiaGFzaCI6ImRkMTA0ZjY4YjBjNGJjZTNjNWVmNWYzMmMwNWZhZmRmODk1YzdiYTQ1ODE1ZjljMWViN2ZmZDlhNWU2NjMwMzQ5MTdjMDJlMmNkZjFjMTEzN2M4NTY4NjMwYjA4MjBkZjdjOWMzYTVmMTk1YjQyZTE2NjdiMTNkYTNmNDJjMmMzIiwic2Vxbm8iOjY3MjY1NX0sInByZXYiOiI2NWU1MGNmZjgyOGYxNWNkZjg3NDdiZGIzNjgxNTM5MjllZjQ4ZDUzMTkzMzI0MjMzYzVhMzU1ODQ0NDVlZTY4Iiwic2Vxbm8iOjEzLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQG/Wp2QsXB4IoXR0Y/FuVbMBLEHOoAiBpc+8HXQx436RT9k0klFSl9NP1jFvZSXKo+Tgw9h2KJeGf6YfZnr1Cw6oc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCDOoF0ROIh6T5hOlPLu4gJHQ8EqGbLUk4nGW1/RwHVOnqN0YWfNAgKndmVyc2lvbgE=
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.

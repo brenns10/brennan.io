@@ -155,8 +155,8 @@ further damage.
 [You can rmmmod it any time you'd like, but will never leave!][hotelcalifornia]
 (until you reboot)
 
-**Score one on the kernel development scorecard!** Come back for episode 2 to
-see how I put a process into an uninterruptable sleep using nothing but a kernel
+**Score one on the kernel development scorecard!** Read [Episode 2][ep2] to see
+how I put a process into an uninterruptible sleep using nothing but a kernel
 module.
 
 [Use ALL the memory]: /images/use-all-the-memory.jpg
@@ -171,6 +171,7 @@ module.
 [oops]: https://en.wikipedia.org/wiki/Linux_kernel_oops
 [loc]: http://arstechnica.com/business/2012/04/linux-kernel-in-2011-15-million-total-lines-of-code-and-microsoft-is-a-top-contributor/
 [hotelcalifornia]: https://www.youtube.com/watch?v=G0ATsOXSPBw
+[ep2]: {% post_url 2016-11-03-kernel-dev-ep2 %}
 
 ---
 

@@ -237,8 +237,8 @@ zombie process will be bumbling around your computer until you reboot it.
 Thankfully it's fairly harmless (unless you have lots of them [dancing][mash]
 around your computer).
 
-*Coming up next in the series: implementing a system call!*
-[Read Episode 1 Here][ep1]
+If you liked this article, check out my other kernel development
+articles: [Episode 1][ep1], [Episode 3][ep3]
 
 [lkmpg]: http://www.tldp.org/LDP/lkmpg/2.6/html/lkmpg.html
 [gist]: https://gist.github.com/brenns10/65d1ee6bb8419f96d2ae693eb7a66cc0
@@ -246,6 +246,7 @@ around your computer).
 [spoop]: {% post_url 2015-11-02-spooky-garbage-collection %}
 [mash]: https://www.youtube.com/watch?v=l2PoSljk8cE
 [ep1]: {% post_url 2016-10-13-kernel-dev-ep1 %}
+[ep3]: {% post_url 2016-11-14-kernel-dev-ep3 %}
 
 #### Footnotes:
 

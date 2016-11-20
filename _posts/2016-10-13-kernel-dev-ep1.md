@@ -157,7 +157,7 @@ further damage.
 
 **Score one on the kernel development scorecard!** Read [Episode 2][ep2] to see
 how I put a process into an uninterruptible sleep using nothing but a kernel
-module.
+module. Read [Episode 3][ep3] to learn how to make your own system call.
 
 [Use ALL the memory]: /images/use-all-the-memory.jpg
 {: max-width="100%"}
@@ -172,6 +172,7 @@ module.
 [loc]: http://arstechnica.com/business/2012/04/linux-kernel-in-2011-15-million-total-lines-of-code-and-microsoft-is-a-top-contributor/
 [hotelcalifornia]: https://www.youtube.com/watch?v=G0ATsOXSPBw
 [ep2]: {% post_url 2016-11-03-kernel-dev-ep2 %}
+[ep3]: {% post_url 2016-11-14-kernel-dev-ep3 %}
 
 ---
 

@@ -21,22 +21,26 @@ operating system to do something (such as [fork][] or [fprintf][]). Still others
 simply provide programming functionality without using the operating system,
 such as [qsort][] and [strtok][].
 
-In fact, a system call has a very specific definition. Most processors provide a
-functionality called "interrupts." An interrupt is an event which triggers the
-processor to stop what it is doing and jump to the operating system to deal with
-the event. An interrupt can be caused by external factors, like devices, or by
-the processor itself. Interrupts are assigned numbers---in particular, a system
-call interrupt is numbered `0x80` on x86 processors. While a normal function
-call in a program simply results in pushing a frame onto the stack and jumping
-to a new code location, system calls actually cause a processor interrupt, using
-the `int 0x80` instruction. The calling code specifies a *system call number* in
-a register so that the operating system knows what task it's calling.
+In fact, a system call has a very specific definition. It is a way of requesting
+that the operating system kernel do something on your behalf. Operations like
+tokenizing a string don't require interacting with the kernel, but anything
+involving devices, files, or processes definitely does.
 
-Once the interrupt is triggered, the kernel begins executing the interrupt
-service routine for `0x80`, which looks up the system call number in a table,
-and invokes the correct function. Since all you need is a table entry and a
-function, it's actually very easy to implement your own system call. So let's
-give it a shot!
+System calls also behave differently under the hood than a normal function.
+Rather than simply jumping to some code from your program or a library, your
+program has to ask the CPU to switch into kernel mode, and then go to a
+predefined location within the kernel to handle your system call. This can be
+done in a few different ways, such as a processor interrupt, or special
+instructions such as `syscall` or `sysenter`. In fact, the modern way of making
+a system call in Linux is to let the kernel provide some code (called the VDSO)
+which does the right thing to make a system call. Here's
+an [interesting SO question][so] on the topic.
+
+Thankfully, all that complexity is handled for us. No matter how a system call
+is made, it all comes down to looking up the particular *system call number* in
+a table to find the correct kernel function to call. Since all you need is a
+table entry and a function, it's actually very easy to implement your own system
+call. So let's give it a shot!
 
 ## Set up your VM
 
@@ -63,20 +67,20 @@ your compile times, so long as you substitute* &nbsp;`make -jN` *for*
 your VM access to.*
 
 The first preparation step you should take is to install `bc`, a build-time
-dependency of Linux that isn't included in the virtual machine. Note that every
+dependency of Linux that isn't included in the virtual machine. Unfortunately,
+this will require that you update the virtual machine first. Note that every
 command I give in this article should be run as root, which shouldn't be hard,
 because the only user on your VM is, in fact, root.
 
 ```bash
-$ pacman -S bc
-```
-
-You can also update the entire system, if you're feeling particularly
-adventurous!
-
-```bash
 $ pacman -Syu
+$ pacman -S bc
+$ reboot
 ```
+
+You have to reboot because the kernel will almost certainly be updated, and we
+want to make sure we're running the kernel we have installed before continuing
+with the rest of this process.
 
 ## Acquire Source Code
 
@@ -85,27 +89,20 @@ the kernel source code. Although most developers reflexively reach for Git when
 they need to get code, this is probably not the time for that! The Linux Git
 repository is *very* large, and so cloning it will almost certainly not be
 worthwhile. Instead, you should download the source tarball associated with your
-kernel version. You can check your version with `uname -r`, and then pick a
-download at [kernel.org][] that is as close to your kernel
-version as possible. For instance, the applicable download for the 201608 Arch
-Image would be:
-
-```
-https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.7.1.tar.xz
-```
-
-Within your virtual machine, download the source using `curl`, e.g.:
+kernel version. You can check your version with `uname -r`, and then **pick a
+download at [kernel.org][] that is as close to your kernel version as
+possible**. Within your virtual machine, download the source using `curl`, e.g.:
 
 ```bash
 # -O -J will set the output filename based on the URL
-$ curl -O -J https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.7.1.tar.xz
+$ curl -O -J https://www.kernel.org/pub/linux/kernel/v4.x/linux-VERSION.tar.xz
 ```
 
 And then you can decompress your tarball, e.g.:
 
 ```bash
-$ tar xvf linux-4.7.1.tar.xz
-$ cd linux-4.7.1
+$ tar xvf linux-VERSION.tar.xz
+$ cd linux-VERSION
 ```
 
 ## Configure Your Kernel
@@ -186,9 +183,9 @@ in the `kernel/sys.c` file. Put this somewhere in the file:
 SYSCALL_DEFINE1(stephen, char *, msg)
 {
   char buf[256];
-  if (copy_from_user(buf, msg, 256))
+  long copied = strncpy_from_user(buf, msg, sizeof(buf));
+  if (copied < 0 || copied == sizeof(buf))
     return -EFAULT;
-  buf[255] = '\0';
   printk(KERN_INFO "stephen syscall called with \"%s\"\n", buf);
   return 0;
 }
@@ -201,14 +198,19 @@ and name for the parameters. Since our system call has one argument, we use
 `SYSCALL_DEFINE1`, and our only parameter is a `char *` which we name `msg`.
 
 An interesting issue that we encounter immediately is that we cannot directly
-use the `msg` pointer provided to us. The reason is not that obvious! The `msg`
-pointer was given to us by an application, and it is a "virtual memory" address
-unique to that process. The kernel uses a different memory mapping, and so `msg`
-does not point to the same thing in the kernel as it does for that process. To
-get around this, we copy the string (to a maximum of 256 bytes) into a temporary
-buffer using a special function for this task, and use that to print to the log.
-Note how we nul-terminate the string (to ensure that no buffer overruns occur in
-printk).
+use the `msg` pointer provided to us. There are several reasons why this is the
+case, but none are very obvious!
+
+- The process could try to trick us into printing out data from kernel memory by
+  giving us a pointer that maps to kernel space. This should not be allowed.
+- The process could try to read another process's memory by giving a pointer
+  that maps into another process's address space.
+- We also need to respect the read/write/execute permissions of memory.
+
+To handle these issues, we use a handy `strncpy_from_user()` [function][strncpy]
+which behaves like normal `strncpy`, but checks the user-space memory address
+first. If the string was too long or if there was a problem copying, we return
+`EFAULT` (although returning `EINVAL` for a too-long string might be better).
 
 Finally, we use `printk` with the `KERN_INFO` log level. This is actually a
 macro that resolves to a string literal. The compiler concatenates that with the
@@ -384,12 +386,22 @@ I really hope that some people follow this tutorial all the way through and get
 their own custom kernels and system calls up and running. Please drop me a line
 in the comments if you do!
 
+Please keep in mind that I'm not a kernel expert, and nothing I say here is
+guaranteed to be the best way to do something. For instance, you can save a lot
+of time if you're doing serious development by using qemu instead of VirtualBox.
+
+Finally, if you liked this article, you may want to check out my previous two
+kernel development episodes: [Episode 1][km1], [Episode 2][km2]. They're all
+about how to make the kernel fail in interesting ways.
+
 [shell]: {% post_url 2015-01-16-write-a-shell-in-c %}
 [km1]: {% post_url 2016-10-13-kernel-dev-ep1 %}
 [km2]: {% post_url 2016-11-03-kernel-dev-ep2 %}
 [lsh]: https://github.com/brenns10/lsh
 [osbox]: http://www.osboxes.org/arch-linux/
-[kernel.org]: https://www.kernel.org/pub/linux/kernel/v4.x/
+[kernel.org]: https://cdn.kernel.org/pub/linux/kernel/v4.x/
+[strncpy]: https://www.fsl.cs.sunysb.edu/kernel-api/re252.html
+[so]: http://stackoverflow.com/questions/12806584/what-is-better-int-0x80-or-syscall
 
 [read]: https://linux.die.net/man/3/read
 [fork]: https://linux.die.net/man/3/fork

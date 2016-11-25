@@ -15,7 +15,8 @@ tw: <span class="fa fa-twitter fa-lg"></span>
 A tool written in Go that allows you to query your filesystem using XPath. This
 was a project for my EECS 433 Database Systems course in the fall of 2016.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/dpath)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/dpath)  
+[{{page.pdf}} Read the (preliminary) report](/papers/dpath_report.pdf)
 
 ### YAMS: Awesome MIPS Server
 
@@ -28,7 +29,7 @@ assembly.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/yams)  
 [{{page.web}} Read the blog post]({% post_url 2015-05-17-yams %})  
-[{{page.pdf}} Report](https://www.dropbox.com/s/vhzw7246aufwx5p/yams_report.pdf?dl=1)
+[{{page.pdf}} Read the report](/papers/yams_report.pdf)
 
 ### PyWall---A Python Firewall
 
@@ -39,7 +40,7 @@ tracking) in a high-level lanugage, which is much easier to understand and
 extend than C.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/pywall)  
-[{{page.pdf}} Report](https://www.dropbox.com/s/a9wjs4e1rnhdxfe/pywall_report.pdf?dl=1)
+[{{page.pdf}} Report](/papers/pywall_report.pdf)
 
 ### Corvid---Static Site Generation Made Easy
 

@@ -21,6 +21,6 @@ card fraud and detecting spammy and dangerous URLs.
 ![spam]
 
 [spam]: /images/spam.jpg
+{: width="100%"}
 [DPath]: https://github.com/brenns10/dpath
 [KChat]: https://github.com/brenns10/kchat
-{: width="100%"}

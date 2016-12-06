@@ -45,7 +45,7 @@ Some books I recommend:
 
 [knr]: https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628
 [lkd]: https://www.amazon.com/Linux-Kernel-Development-Robert-Love/dp/0672329468
-
+[unix]: https://www.amazon.com/Lions-Commentary-Unix-John/dp/1573980137
 
 I've developed a real appreciation for blogging, both writing my own and reading
 those of my friends. So here is a

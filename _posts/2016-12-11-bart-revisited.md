@@ -81,7 +81,7 @@ my own algorithm. This algorithm actually worked, but it was horrendously slow.
 
 More importantly, I never really stopped to examine the flaw in my logic. An
 industry-grade implementation of a classic algorithm for solving a well-known
-class of optimizations problem was just wrong on my input?
+class of optimization problems was just wrong on my input?
 
 *Nope.  I did something wrong.*
 

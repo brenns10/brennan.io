@@ -229,3 +229,15 @@ blockquote {
 blockquote p {
   display: inline;
 }
+
+table {
+    border: collapse;
+}
+
+th, td {
+    padding: 5px;
+}
+
+table, th, td {
+    border: 1px solid $text-color;
+}

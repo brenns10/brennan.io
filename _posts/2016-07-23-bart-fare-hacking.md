@@ -152,13 +152,13 @@ that hard. For some problems, if you just "forget" the constraint that your
 solutions should be integers, and solve the problem as a normal linear program,
 you'll always get integer solutions anyway.
 
-This happens whenever your constraint matrix $$A$$ is [unimodular][]. I won't
-explain what that is, but it turns out that our matrix is
+This happens whenever your constraint matrix $$A$$ is [totally unimodular][]. I
+won't explain what that is, but it turns out that our matrix is
 unimodular![^fn-unimodular] So this means that we *can* just use a linear
 programming library to solve it. In fact, here is the code I used to do it:
 
 [^fn-unimodular]:
-    I haven't actually proved that yet, but it's on my to-do list.
+    I proved it in an [update][] to this post.
 
 ```python
 b = np.hstack([src_sum(self.traveler_matrix),
@@ -183,7 +183,7 @@ good as the underlying linear programming library!
 
 ### Regular linear programming is hard too
 
-It turns out that not every linear programming library is created equal.
+~~It turns out that not every linear programming library is created equal.
 Sometimes, they don't work right. Since my project was in Python, I used NumPy
 and SciPy, the industry and academic standard toolchain for math in Python.
 SciPy's implementation of the [simplex][] algorithm, like most implementations,
@@ -194,7 +194,12 @@ occasionally SciPy wasn't able to find a basic feasible solution in the first
 step, even though in this case there is always a very simple one: just buy a
 ticket for each person's ride directly. It's not optimal, but it satisfies the
 source and destination constraints. Unfortunately, I wasn't really able to get
-around this problem, so it was right back to square one for me.
+around this problem, so it was right back to square one for me.~~
+
+**Edit (December 2016):** My solution using SciPy's linear programming solver
+did not work, because I sometimes gave it linearly dependent constraints. I
+wasn't aware that was the problem. You can read more about this issue and how
+I've resolved it [here][update].
 
 But this was a hackathon, and there's no giving up at a hackathon! If one thing
 doesn't work, you just find a new way to do it. And you don't waste too much
@@ -434,12 +439,15 @@ people will enjoy reading about it as much as I enjoyed doing it!
 
 If you want to learn more, check out the code on [GitHub][gh].
 
+**Edit (December 2016):** An update to this post can be found [here][update].
+
 [gh]: https://github.com/brenns10/bart
 [scipy-solver]: https://github.com/brenns10/bart/blob/c148563af68b68237ad4556e0111b6bc3052ed59/bart/solver.py#L82
 [simplex]: https://en.wikipedia.org/wiki/Simplex_algorithm
-[unimodular]: https://en.wikipedia.org/wiki/Unimodular_matrix
+[totally unimodular]: https://en.wikipedia.org/wiki/Unimodular_matrix
 [bart-fares]: https://www.bart.gov/sites/default/files/docs/2016%20Fare%20Chart.pdf
 [linprog]: https://en.wikipedia.org/wiki/Linear_programming
+[update]: {% post_url 2016-12-11-bart-revisited %}
 [bart-labeled]: /images/bart-labeled.png
 {: width="100%"}
 [bart-one-hill]: /images/bart-one-hill.jpg

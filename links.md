@@ -4,32 +4,9 @@ title: Links
 ---
 # Links
 
-Like you may have seen on my front page, I'm pretty heavily involved in
-[Hacker Society][hacsoc], a campus computing interest group.  Every fall we host
-[Link-State][], a (really awesome) tech conference.  Shoot [us][officers] a
-message if you want to give a talk there or sponsor the conference!  Every
-spring, we also host [HackCWRU][], a hackathon.  Again, shoot [us][officers] an
-email if you're interested in sponsoring (or even co-hosting) the event!
-
-[hacsoc]: http://hacsoc.org
-[officers]: mailto:hacsoc-officers@case.edu
-[Link-State]: http://acm.case.edu/acm/conference/
-[HackCWRU]: http://hack.cwru.edu
-
-Some other miscellaneous HacSoc links:
-
-- [GitHub Organization](https://github.com/hacsoc)
-- [Twitter](https://twitter.com/cwruacm)
-- [IRC Server](http://irc.case.edu)
-- [Student Project Server](http://people.acm.case.edu)
-
-I've developed a real appreciation for blogging, both writing my own and reading
-those of my friends.  So here is a whole
-[directory](http://hacsoc.org/wiki/directory) of blogs you should check out!
-
-And now, in no particular order, a list of things that I found helpful in
-learning the things I know today.  Hopefully, somebody else may find them useful
-in their own education.
+In no particular order, a list of things that I found helpful in learning the
+things I know today. Hopefully, somebody else may find them useful in their own
+education.
 
 - [Unicode and character sets][joel-unicode]. This is, like, super important.
 - [Comparing Floating Point Numbers][float].  This article series was pivotal in
@@ -55,3 +32,22 @@ in their own education.
 [tibasicdev]: http://tibasicdev.wikidot.com/
 [float]: https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/
 [regex]: https://swtch.com/~rsc/regexp/
+
+Some books I recommend:
+
+- [The C Programming Language][knr] by Kernighan & Ritchie (of course)
+- [Linux Kernel Development, 3rd Edition][lkd] by Robert Love
+- [Lions' Commentary on UNIX 6th Edition][unix] by John Lions. This contains the
+  complete source code for the UNIX operating system (well, the kernel) and a
+  commentary of the whole darn thing. At only 9000 lines of C, I've seen (and
+  probably written) many CRUD webapps with more code than UNIX had. I haven't
+  had the time to fully read this, but it's on my to-do list.
+
+[knr]: https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628
+[lkd]: https://www.amazon.com/Linux-Kernel-Development-Robert-Love/dp/0672329468
+[unix]: https://www.amazon.com/Lions-Commentary-Unix-John/dp/1573980137
+
+I've developed a real appreciation for blogging, both writing my own and reading
+those of my friends. So here is a
+whole [directory](http://hacsoc.org/wiki/directory) of blogs from my friends
+at [HacSoc](http://hacsoc.org) you should check out!

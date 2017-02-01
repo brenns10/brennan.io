@@ -24,6 +24,10 @@ education.
   Python programmers.
 - [TI-Basic Developer][tibasicdev].  At one point, this was one of my main
   programming resources!  Of course, it was for a graphing calculator.
+- [The Lost Art of Structure Packing][struct]. A really useful overview of how
+  the C compiler lays out variables in memory.
+- [Things Every Hacker Once Knew][things]. Some really fun insights into the
+  history of why things are the way they are now.
 
 [joel-unicode]: http://www.joelonsoftware.com/articles/Unicode.html
 [beej]: http://beej.us/guide/bgnet/
@@ -32,6 +36,8 @@ education.
 [tibasicdev]: http://tibasicdev.wikidot.com/
 [float]: https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/
 [regex]: https://swtch.com/~rsc/regexp/
+[struct]: http://www.catb.org/esr/structure-packing/
+[things]: http://www.catb.org/esr/faqs/things-every-hacker-once-knew/
 
 Some books I recommend:
 

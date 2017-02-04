@@ -15,7 +15,7 @@ tw: <span class="fa fa-twitter fa-lg"></span>
 A tool written in Go that allows you to query your filesystem using XPath. This
 was a project for my EECS 433 Database Systems course in the fall of 2016.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/dpath)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/dpath)  
 [{{page.pdf}} Read the report](/papers/dpath_report.pdf)
 
 ### YAMS: Awesome MIPS Server
@@ -27,8 +27,8 @@ in MIPS assembly.  In addition to serving static pages, it also comes with
 [Brainf***](https://en.wikipedia.org/wiki/  Brainfuck) interpreter also written in
 assembly.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/yams)
-[{{page.web}} Read the blog post]({% post_url 2015-05-17-yams %})
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/yams)  
+[{{page.web}} Read the blog post]({% post_url 2015-05-17-yams %})  
 [{{page.pdf}} Read the report](/papers/yams_report.pdf)
 
 ### PyWall---A Python Firewall
@@ -39,7 +39,7 @@ firewall illustrates the basics of packet filtering (including TCP connection
 tracking) in a high-level lanugage, which is much easier to understand and
 extend than C.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/pywall)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/pywall)  
 [{{page.pdf}} Report](/papers/pywall_report.pdf)
 
 ### Corvid---Static Site Generation Made Easy
@@ -73,9 +73,9 @@ result, this bot and the accompanying tutorial are now on GitHub for others to
 learn from.  The bot responds to any @mention with a randomly chosen Taylor
 Swift lyric.
 
-[{{page.gh}} Code and Tutorial at GitHub](https://github.com/brenns10/pypie15int)
-[{{page.gh}} Latest Version at GitHub](https://github.com/brenns10/pyswizzle)
-[{{page.web}} Blog Post]({% post_url 2015-08-22-python-and-py %})
+[{{page.gh}} Code and Tutorial at GitHub](https://github.com/brenns10/pypie15int)  
+[{{page.gh}} Latest Version at GitHub](https://github.com/brenns10/pyswizzle)  
+[{{page.web}} Blog Post]({% post_url 2015-08-22-python-and-py %})  
 [{{page.tw}} Tweet at the Bot](https://twitter.com/pyswizzle)
 
 ### A Simple Shell in C
@@ -84,7 +84,7 @@ I wrote this to illustrate the different system calls and mechanics that
 underlie one of a programmer's fundamental tools: the shell.  I also wrote a
 tutorial about it.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/lsh)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/lsh)  
 [{{page.web}} Read the tutorial]({% post_url 2015-01-16-write-a-shell-in-c%})
 
 ### Tetris in C!
@@ -93,7 +93,7 @@ A 24 hour Tetris implementation written in C, using the `ncurses` library.  I
 wrote an accompanying blog post about it, which also touched on how important I
 find my personal projects, even if some are reimplementations.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tetris)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tetris)  
 [{{page.web}} Read the blog post]({% post_url 2015-06-12-tetris-reimplementation %})
 
 ### Libstephen
@@ -104,7 +104,7 @@ utilities, logging, and lightweight unit testing.  It's an experiment in making
 an API as well as sharing code.  Several of my other C projects depend on it
 already.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/libstephen)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/libstephen)  
 [{{page.web}} Documentation and Code Coverage](/libstephen/)
 
 ### NOSJ---A JSON Library in C
@@ -112,7 +112,7 @@ already.
 NOSJ is a simple JSON parser written in C.  It focuses on simplicity, especially
 with respect to memory allocation.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/nosj)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/nosj)  
 [{{page.web}} Documentation and Code Coverage](/nosj/)
 
 ### tswift---A Python MetroLyrics API
@@ -120,7 +120,7 @@ with respect to memory allocation.
 Get your Taylor Swift lyric fix with this quick'n'dirty tool for downloading
 song lyrics from MetroLyrics.  Or, you know, any other artist's lyrics.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tswift)
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tswift)  
 [{{page.web}} It's on PyPI!](https://pypi.python.org/pypi/tswift)
 
 ### CBot--IRC Bot in C

@@ -53,7 +53,21 @@ senior project -- stay tuned.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/jpcjr/corvid)
 
-# Personal Creations
+# Personal Projects
+
+### CWRU Love---Web Service for Spreading Love
+
+I've launched a version of the
+open-source [Yelp Love](https://www.yelpblog.com/2017/02/need-yelp-love) for
+students, faculty, staff, and alumni of my school. This web application lets
+users send short notes of appreciation (aka "love") to each other. In addition
+to setting up our version of the web service on Google Appengine, I've been
+contributing features and bugfixes back to Yelp's open source project.
+
+[{{page.gh}} CWRU Love](https://github.com/hacsoc/love)  
+[{{page.gh}} Yelp Love](https://github.com/Yelp/love)  
+[{{page.web}} Blog Post]({% post_url 2017-02-19-cwru-love %})  
+[{{page.web}} Try it out (must be affiliated with CWRU)](https://cwrulove.appspot.com)
 
 ### KChat---In-Kernel Chat Server
 
@@ -123,7 +137,7 @@ song lyrics from MetroLyrics.  Or, you know, any other artist's lyrics.
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tswift)  
 [{{page.web}} It's on PyPI!](https://pypi.python.org/pypi/tswift)
 
-### CBot--IRC Bot in C
+### CBot---IRC Bot in C
 
 A fun little challenge - write a functioning IRC bot in C!  This little guy was
 a great excuse to use Libstephen's regular expressions in the real world, as

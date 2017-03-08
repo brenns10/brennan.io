@@ -3,15 +3,15 @@ layout: post
 title: Kernel Development Made Easier
 ---
 
-A little while ago I wrote about creating a Linux [system call][syscall]. In it,
-I explained how to create a virtual machine, get the Linux source, modify it,
-build it, and boot your custom kernel. This is a totally valid way to do kernel
-development, but it can be a bit inconvenient. For one, the code was stored
-within the VM, so all editing and compiling was done in a VM too. For another,
-there was a pretty complex process to build an "initrd" in order for Arch Linux
-to boot properly. And finally, the kernel configuration we used was pretty
-massive, resulting in longer build times for extra features and device support
-to be compiled into the kernel.
+A little while ago I wrote a post about creating a Linux [system call][syscall].
+In it, I explained how to create a virtual machine, get the Linux source, modify
+it, build it, and boot your custom kernel. This is a totally valid way to do
+kernel development, but it can be a bit inconvenient. For one, the code was
+stored within the VM, so all editing and compiling was done in a VM too. For
+another, there was a pretty complex process to build an "initrd" in order for
+Arch Linux to boot properly. And finally, the kernel configuration we used was
+pretty massive, resulting in longer build times for extra features and device
+support to be compiled into the kernel.
 
 For simple development and debugging, we can do better! In this post, I'll
 describe the setup that I'm using now - which allows me to compile and boot a

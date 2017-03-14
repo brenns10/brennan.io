@@ -4,38 +4,41 @@ layout: post
 ---
 
 I was a curious child. I spent hours on the family computer, exploring every
-menu in Windows 95, and later Windows XP. My exploration sometimes ended badly,
-like the time when I changed our computer's language to Portuguese, or the time
-I set the foreground and background colors of the menus to lime green[^1].
-Exploring and learning about computers has never failed to put that excited
-feeling in my chest, like I'm flying.
+menu in Windows 95, and later XP. My exploration sometimes ended badly, like the
+time when I changed our computer's language to Portuguese, or the time I set the
+foreground and background colors of the menus to lime green[^1]. Exploring and
+learning about computers has never failed to put that elated, soaring feeling in
+my chest.
 
 More recently, I've discovered how much I like teaching others. Helping somebody
-reach that "aha" moment can be even more gratifying than learning it
-yourself[^2]. As a result of these two loves, I've done a lot of "development"
-as a developer, and I've watched a fair amount of it too. Sometimes I feel like
-there are some distinct stages I've gone through, and I can even recognize them
-in others too. While I wouldn't presume that my experiences are universal, or
-even normal, I do think most people will be able to relate to at least some
-portion.
+else reach that "aha" moment can be even more gratifying than reaching it
+yourself[^2]. As a result of these two loves, I've done a lot of learning (you
+might say, "development" as a developer), and I've watched many others as they
+learn too. Sometimes I feel like we all go through some common stages while
+growing up as programmers. I recently did some thinking about what those stages
+might be, and this article is the result. My development is probably not
+universal, but the retrospective helped me remember what it was like to be a
+beginner. Hopefully it will help others remember that too.
 
 ## Step 0: Fascination
 
 As I've already said, my fascination with computers was evident early in my
 life. I spent plenty of hours exploring Microsoft Office, managing my first
 music library with Windows Media Player, and competing with my brother in
-pinball and Sonic games. Inevitably I became curious about how people made
-computers behave the way they wanted. Unfortunately, Windows 95 did not ship
-with development tools, unlike earlier home computers.
+pinball and Sonic. It wasn't long before I became curious about how people
+actually made those things. Unfortunately, Windows 95 didn't ship with any tools
+or documentation for development. It's funny, because older PCs probably had to
+include programming tools out of necessity, but I was "lucky" enough to be
+growing up at the beginning of a "user-friendly" world of computing, where users
+didn't have to be bothered with programming.
 
 The biggest barrier to entry at this point was not a lack of information, but
-rather not knowing where to begin. Internet time was a scarce resource in my
-early childhood, and library books were not likely to contain up-to-date
-information. Without a parent or friend who knew anything about programming, and
-without built-in development tools or documentation, I had no way of discovering
-anything more about programming. Part of me wonders how my life might be
-different if I had had a computer that made development tools available to
-end-users.
+rather not knowing where to begin. Internet time was a scarce resource back
+then. Library books were not likely to contain up-to-date information. Without a
+parent or friend who knew anything about programming, and without built-in
+development tools or documentation, I had no way of discovering anything more
+about programming. Part of me wonders how my life might be different if I had
+had a computer that shipped with programming tools.
 
 ## Step 1: Initial Discovery
 
@@ -53,56 +56,63 @@ This phase of development was truly exciting for me. In a few days, I had gone
 from wondering how people gave computers instructions, to giving them
 instructions myself. Even simple projects like adding two numbers and displaying
 the result were exciting, because I could tell the computer what I wanted it to
-do. For a while, the happy walled garden of C# and Windows Forms was everything
-I needed to know.
+do. For a time, this exciting new world was all I needed to know.
 
 But soon, questions began to form in my head. I felt like I wasn't getting the
 whole truth about how programming worked. After all, what was my program doing
 when the button *wasn't* getting pressed? How did the computer put the window
-onto the screen? What happens when the program first starts? I felt like the
+onto the screen? What happened when the program first starts? I felt like the
 truth was being hidden from me, and I didn't like it.
 
 ## Step 2: Confusion and Intimidation
 
 These questions quickly lead me into the next step in my development: confusion
 and intimidation. After camp, I had one simple goal: create a game that kept
-track of high scores. To be able to store these scores, I stumbled upon MSDN
-videos about "SQL Databases". I followed along with these videos to the best of
-my knowledge, installing programs like "SQL Server Express Edition" onto my
-computer. Soon I was lost in a sea of big words and complicated interfaces. What
-was a schema, and why did I need one just to keep track of high scores?
+track of high scores. As I researched a way my program could save data for the
+next time it ran, I stumbled upon MSDN videos about "SQL Databases". I followed
+along with these videos to the best of my knowledge, installing scary programs
+like "SQL Server Express Edition" onto my computer. Soon I was lost in a sea of
+big words and complicated interfaces that looked like spreadsheets, but weren't!
+What was a schema, and why did I need one just to keep track of high scores?
 
 I never did get my database-driven high scores to work. It was a demoralizing
-experience, to say the least. Poor 14 year old Stephen had no idea what
+experience, to say the least. Poor 14-year-old Stephen had no idea what
 databases were or why they existed. He sure didn't realize that there were much
 simpler ways to store data (like, a file).
 
-A similar experience happened probably a year later. During my golden years
-of [TI-Basic][basic], I learned that the "best" way to write calculator programs
-was using Z80 Assembly. I tried desperately to learn from a tutorial, but failed
-miserably. Especially when the tutorial went into [Two's Complement][2c].
+This was the first time I began to feel lost and confused about programming, but
+it surely wasn't the last. It happened again the time 15-year-old Stephen tried
+to understand assembly and [two's complement][2c] signed integers. The biggest
+problem I had was that most of the "help" I found online assumed I knew a whole
+bunch of other things. Learning how to use a database in C# is hard enough, but
+it is darn near impossible when you don't actually know what a database schema
+is. I really needed someone who could give me high level explanations of what
+things were.
 
 ## Step 3: Getting Cocky
 
-In my final years of high school, I became more confident. I solved some of my
-early challenges: I learned to use a database, and I even wrote a few tiny
-assembly programs. I had transitioned to Java and I was even self-teaching
-myself the AP Computer Science course, since my high school didn't have one.
-Somehow my school let me do an independent study, which meant I had an hour per
-day to ~~mess around on my computer~~ teach myself Java.
+In my final years of high school, I became more confident in spite of these
+setbacks. I did manage to solve some of my early challenges: I learned to use a
+database, and I even wrote a few tiny assembly programs. I had transitioned to
+Java and I was even self-teaching myself the AP Computer Science course, since
+my high school didn't have one. Somehow my school let me do an independent
+study, which meant I had an hour per day to ~~mess around on my computer~~ teach
+myself Java. So things were going pretty well.
 
-I certainly didn't think I knew *everything* there was to know about computers,
-but I figured I had pretty much mastered programming. I knew that people went to
-college for programming (which I wanted to do), so I knew there had to be some
-stuff I didn't know yet. But I just could not imagine what it could be. After
-all, I knew about classes, functions, arrays, and loops. I could make windows on
-screens and I had even made a web site.
+I certainly didn't think I knew *everything* about computers, but I figured I
+had pretty much mastered programming. I knew that people studied it in college,
+so there must have been [a *few* things I hadn't learned yet][snow]. But I just
+could not imagine what they could be. After all, I knew about classes,
+functions, arrays, and loops. I could make windows on screens and I had even
+made a web site.
+
+&nbsp;&nbsp;&nbsp;&nbsp;*I was basically a coding expert.*
 
 The biggest thing that prevented me from moving past this stage was that I
-didn't have good opportunities for gaining breadth of knowledge. To me, the
-happy, walled garden of classes, functions, and loops in simple Java programs
-was everything I needed to know. Meanwhile, I didn't understand how much was
-going on behind the scenes---I had no idea about things like garbage collection,
+didn't have good opportunities for broadening my knowledge. To me, the happy,
+walled garden of classes, functions, and loops in simple Java programs was
+everything I needed to know. Meanwhile, I didn't understand how much was going
+on behind the scenes---I had no idea about things like garbage collection,
 memory management, concurrency, networking, etc.
 
 ## Step 4: Head Above Water
@@ -114,27 +124,27 @@ education did a lot to help me mature as a developer, but probably even more
 significant were the things I continued to learn outside of class.
 
 I started by switching my main computer to Linux. And not just Linux, but Arch
-Linux, which forced me to learn a lot about the "operations" side of computers.
-I finally learned the Linux command line well. In those years, I learned my
-first version control systems (Mercurial, and then Git). I learned C and started
-writing all sorts of awful code in it. Slowly but surely I began to gain
-perspective about the complexity of a computer system.
+Linux, which forced me to learn a lot about the nitty-gritty side of Linux. I
+finally learned bash well. In those years, I learned my first version control
+systems (Mercurial, and then Git). I learned C and started writing all sorts of
+awful code in it. Slowly but surely I began to gain perspective about the
+complexity of a computer system.
 
-Perhaps the biggest single moment for my "maturing" was when I took my Networks
-class. In this course, we walked down the protocol stack, from the application
-layer down to the link layer. For the first time, I "understood" how the
-Internet worked. The machinery made sense. But I also quickly recognized that
+A turning point came thanks to my Networks class. In this course, we walked down
+the Internet protocol stack, from the application layer down to the link layer.
+For the first time, I "understood" the pieces of the puzzle that made the
+Internet work. The machinery made sense. But I also quickly recognized that
 nobody *really* understands all of how the Internet works. It's just way too
 complicated!
 
 ## Step 5: Deep Dive
 
-From here on, I'm too close to the action to say anything with confidence. I
-don't believe that there is a well-defined end of Step 4. It's mostly just a
-gradual realization of how little you know. For me, at some point a "big
-picture" started to come together. While I don't know much of that big picture,
-I have general ideas about how a lot of these things work together, and I know
-how I can start to learn about them.
+From my late undergrad years, I'm too close to now to say anything with
+confidence. I don't believe that there is a well-defined end of Step 4. It's
+mostly just a gradual realization of how little you know. For me, at some point
+a "big picture" started to come together. While I don't know much of that big
+picture, I have general ideas about how a lot of these things work together, and
+I know how I can start to learn about them.
 
 Now, I feel like I'm entering a new stage, which is characterized by delving
 deep into the parts of the big picture that interest me. In the past year I've
@@ -145,31 +155,34 @@ thesis. I'm far from reaching the end of this stage, and I doubt I'll ever truly
 
 ## Takeaways
 
-In my (almost) nine years of development, I've learned a lot of technical
-things, and probably forgotten a lot of them. But I think the biggest takeaways
-are nontechnical.
+In these (nearly) nine years of learning, I'm amazed at how much technical
+knowledge I've gained, but even more surprised at how much perspective I have on
+it already. Below, I've distilled a few of the thoughts I have about my learning
+process, although maybe my thoughts will be wildly different in another nine
+years.
 
 ### Nobody Knows Everything
 
 Nobody knows everything about computers. Nobody knows one percent of everything
-about them. There's too much to know! The best you can hope for is to build a
-big picture of the things you know that you know, and the things you know that
-you don't know.
+about them. There's too much to know! The best thing you can do is make a mental
+map and try to know what things you don't know.
 
 ### Respect What You Don't Know
 
 A simple corollary is that you should always respect the complexity of the
 things you don't know well. There is nothing cool about "oh, they just do
 front-end" or "they're just a designer". Chances are, if you're dismissive about
-a field, you haven't learned enough, and you're too ignorant to consider that
-there even *is* anything you've missed.
+a field, you haven't learned enough about it, and you're too ignorant to
+consider that there even *is* anything you've missed.
 
 ### Learn to Learn
 
 The most valuable skill you can have is learning. The only constant in my
 development has been teaching myself new skills. Each time I learn something
 new, the bar has gotten higher. As the topics get harder, there's less
-documentation, fewer books, and more misinformation to sift through.
+documentation, fewer books, and more misinformation to sift through. But each
+time I learn something new, I get better at asking the right questions and
+looking for answers in the right places.
 
 ### Embrace Uncertainty
 
@@ -181,11 +194,12 @@ wrapping my head around kernel development. It seems to me that I will never not
 feel uncertain and confused when I try something new. And, I'd be willing to bet
 that I'm not the only one that still feels that way. So instead of letting that
 uncertainty feed into self-doubt, I'm learning to redirect it into confidence.
-If I'm feeling lost and confused, that means I'm moving forward---I'll figure it
-out eventually, though probably not without help!
+If I'm feeling lost and confused, that means I'm moving forward.
 
-[basic]: {% post_url 2015-11-22-ode-to-ti-basic %}
 [2c]: https://en.wikipedia.org/wiki/Two's_complement
+[snow]: http://i0.kym-cdn.com/photos/images/facebook/000/527/985/04f.gif
+
+***
 
 #### Footnotes
 

@@ -6,7 +6,7 @@ pdf: <span class="fa fa-file-pdf-o fa-lg"></span>
 Resume
 ======
 
-[{{page.pdf}} Download my resume](https://dl.dropboxusercontent.com/u/24472738/Resume.pdf)
+[{{page.pdf}} Download my resume](/papers/Resume.pdf)
 
 Experience
 ----------

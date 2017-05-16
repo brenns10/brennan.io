@@ -5,10 +5,17 @@ title: /now/
 
 # /now/
 
-#### Last Updated: February 21, 2017
+#### Last Updated: May 16, 2017
 
-I'm in my final semester of school, finishing up a Master's thesis that involves
-having a lot of fun messing with the Linux kernel. When I'm not doing that, I'm
-probably working on [CWRU Love][love].
+I officially have a BS!
 
-[love]: https://github.com/hacsoc/love
+All that stands in the way of my MS is a defense.
+
+![The best thesis defense is a good thesis offense](https://imgs.xkcd.com/comics/thesis_defense.png)
+{: style = "max-width: 100%" }
+
+Other neat things going on:
+
+- [CWRU Love](https://github.com/hacsoc/love)
+- [Slacksoc](https://github.com/brenns10/slacksoc)
+- [Eudyptula Challenge](http://eudyptula-challenge.org)

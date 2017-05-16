@@ -28,6 +28,8 @@ education.
   the C compiler lays out variables in memory.
 - [Things Every Hacker Once Knew][things]. Some really fun insights into the
   history of why things are the way they are now.
+- [Eudyptula Challenge][eudyptula]. The challenge is now closed. I got in *just*
+  under the wire. Hopefully it will reopen some day.
 
 [joel-unicode]: http://www.joelonsoftware.com/articles/Unicode.html
 [beej]: http://beej.us/guide/bgnet/
@@ -38,6 +40,7 @@ education.
 [regex]: https://swtch.com/~rsc/regexp/
 [struct]: http://www.catb.org/esr/structure-packing/
 [things]: http://www.catb.org/esr/faqs/things-every-hacker-once-knew/
+[eudyptula]: http://eudyptula-challenge.org
 
 Some books I recommend:
 

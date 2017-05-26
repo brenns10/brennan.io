@@ -52,13 +52,13 @@ Education
 ---------
 
 ### Case Western Reserve University
-*BS/MS in Computer Science, expected May 2017*
+*BS in Computer Science, Summa Cum Laude, May 2017*
 
 * Dean's High Honors (All Semesters)
-* University Scholar
-* National Merit Scholar
 * Cum. GPA: 3.974 / 4.0
 * Major GPA: 4.0 / 4.0
+
+*MS in Computing and Information Science, expected August 2017*
 
 ### St. Joseph High School
 *Graduated May 2012*
@@ -71,13 +71,10 @@ Education
 Coursework
 ----------
 
-### Upcoming
+### Completed
 
 * Database Systems (Graduate)
 * Number Theory
-
-### Completed
-
 * Internet Security
 * Data Mining
 * Machine Learning
@@ -96,18 +93,17 @@ Skills
 
 ### Programming Languages
 
-* Very Experienced: Python, C, C++
-* Some Experience: Java, Javascript, C#, Scheme, SQL
-* Familiar: Bash, HTML, CSS, PHP, C++/CLI
+* Very Experienced: Python, C, Go
+* Some Experience: Javascript, C++, SQL
+* Familiar: HTML, CSS, Java, C#
 
 ### Technologies
 
-* Git
+* Git, Bash
 * NumPy, SciPy, Pandas
-* Scikit Learn
-* Django
 * Flask
-* Windows Installer XML
+* Linux Kernel, Netlink, IPTables
+* Multipath TCP
 
 <hr>
 
@@ -126,6 +122,7 @@ Leadership
 Awards & Honors
 ---------------
 
+* 2017 - William L. Everitt Award
 * 2016 - Jennings Award for excellence in Computer Engineering and Science
 * 2015 - EECS Research Award
 * 2014 - Eta Kappa Nu EECS Honor Society

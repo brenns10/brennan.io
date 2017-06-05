@@ -10,7 +10,7 @@ Master's Thesis
 is where you will be able to find the following materials of my thesis:
 
 - The actual thesis document
-- My presentation slides
+- [{{page.pdf}} My presentation slides](/papers/thesis-slides-plain.pdf)
 
 These materials will be available upon my final thesis submission, June 9th.
 Additional materials will be made available pending later publication of this

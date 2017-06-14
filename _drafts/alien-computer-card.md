@@ -9,24 +9,22 @@ first movie, and the really awesome video game, *Alien: Isolation* (I guess you
 could say I'm a fan too!). As a goodbye gift, I thought I'd create a really odd
 e-card: a bootable Linux flash drive with the same boot splash as computers from
 the movie, sound effects from the movie and game, and programs that look like
-the ones in the game. Everything turned out much better than I could have hoped,
-and so I thought I'd share the method and the result in a blog post!
+the ones in the game. Everything turned out much better than I hoped, and so I
+thought I'd share the method and the result in a blog post!
 
 ## The foundation
 
 I'm an Arch Linux user, so when I think of creating a bootable Linux disk, the
 first thing that comes to mind is the [archiso][] tool. This is the set of
 scripts that creates the bootable Arch Linux "installer" ISO image, and it can
-be customized for a lot of other stuff.
-
-I started my project by copying all of the scripts and configuration files into
-my own repository, which I could customize to my heart's delight.
+be customized for a lot of other stuff. I started my project by copying all of
+the scripts and configuration files into my own repository.
 
 ## Customized boot splash
 
 The first thing I wanted to do was have a similar boot up splash screen to the
 computers you see in the film *Alien*. At the [beginning of the movie][yt-boot],
-you can see a splash screen that contains `NOSTROMO`, the ship's name, and a
+you can see a splash screen that contains `NOSTROMO` (the ship's name) and a
 serial number. Here's a capture of that particular moment:
 
 ![Nostromo boot screen capture][]
@@ -40,10 +38,10 @@ system would otherwise output.
 
 However, creating a theme requires either writing a C extension to Plymouth, or
 learning an arcane scripting language and writing the extension in that. I opted
-for the scripting language. But I guess the more accurate way to put it was that
-I followed a set of [tutorials][brej] right up until the point where I had what
-I wanted. The result: [`plymouth-theme-nostromo`][], which is incidentally
-available in the [AUR][aur-ptn].
+for the scripting language. More accurately, I followed a set
+of [tutorials][brej] right up until the point where I had what I wanted. The
+result: [plymouth-theme-nostromo][], which is incidentally available in
+the [AUR][aur-ptn].
 
 ## Sound effects
 
@@ -88,7 +86,7 @@ that and set it on a loop in another bash script, and then created another
 systemd unit file for that.
 
 Finally, I wanted to add a bit of tension to the atmosphere... as if an alien
-could come at you at any moment. So I found some alien noises from *Alien:
+could attack you at any moment. So I found some alien noises from *Alien:
 Isolation* in [yet another Youtube video][yt-alien]. I selected my favorites and
 put them in a directory. Then I created this Bash script to play a randomly
 selected sound every 30-90 seconds:
@@ -120,15 +118,13 @@ is this terminal emulator running my normal shell:
 
 ![Alien inspired theme for cool-retro-term]
 
-cool-retro-term stores its configuration, including themes, in a sqlite
-database. In order to make my custom theme appear on the bootable ISO, and make
-it the default, I had to find that file and include it in the ISO file. One
-option was to browse through the source to find the (undocumented) file
-location. I opted for choice 2: using `strace` on the `open` syscall, and then
-looking at likely choices. The file location turned out to be a really odd one:
+While cool-retro-term is customizable, getting it to use my custom theme at
+launch turned out to be a hassle. There is a theme export function, but no
+command line option for specifying an exported theme to load at launch. So, I
+decided I would simply configure it on my computer and copy all necessary "local
+storage" files onto the ISO. I used `strace` to locate the (rather well hidden)
+sqlite configuration database, and included it on the ISO.
 
-    .local/share/cool-retro-term/QML/OfflineStorage/Databases/
-    
 ## Terminal at boot
 
 Since Arch CD's normally boot directly to the console, and cool-retro-term is a
@@ -178,10 +174,11 @@ interface is below:
 I learned [ncurses][] a while back, when I implemented [tetris][]. This library
 allows you to draw on a terminal screen, creating a somewhat graphical user
 interface. It's perfect for replicating this interface. I quickly came up with
-an approximation in C, which I named [alien-console][]. It is fairly
-customizable, allowing you to write a configuration file which specifies the
-title and contents of each "file", as well as the contents of the splash screen.
-Here are a couple screenshots of this program running within cool-retro-term:
+an approximation in C, which I named [alien-console][] (again available in
+the [AUR][aur-ac]). It is fairly customizable, allowing you to write a
+configuration file which specifies the title and contents of each "file", as
+well as the contents of the splash screen. Here are a couple screenshots of this
+program running within cool-retro-term:
 
 ![Alien-Console main screen]
 
@@ -205,14 +202,21 @@ So, to browse through the directory quickly, I wrote up a quick script that
 automated file conversion and let me skip from file to file with the Enter key.
 I also sorted the files by increasing file size (since the startup sound isn't
 long compared to dialog). After a good 20 or 30 minutes I managed to find the
-right sound effect!
+right sound effect! I don't really want to distribute assets from a paid video
+game, so I'm not going to post it.
 
 ## Conclusion
 
-Since this project was ultimately an e-card, the main git repository contains my
-private messages to my roommate. However, I'm publishing a copy which people can
-clone and play with, containing dummy content. I'll also link to a downloadable
-ISO file that you can try out, as soon as it becomes available.
+I wish there were some easier way to show this off online, because the result
+exceeded my expectations. You can [download the ISO](/downloads/alien.iso), and
+you can also look at my [repository][alien-iso] to see the source code. Maybe
+I'll figure out a way to take a good quality video and post it here.
+
+If you do try it out, there are a couple known issues:
+- Sound doesn't always work (it worked on two of the three computers I tried)
+- Only 64-bit processors are supported (I couldn't build packages for 32 bit)
+
+Check it out if you have the chance!
 
 [archiso]: https://wiki.archlinux.org/index.php/archiso
 [code]: https://github.com/brenns10/alien-iso
@@ -220,7 +224,7 @@ ISO file that you can try out, as soon as it becomes available.
 [DeviantArt]: http://quadrafox700.deviantart.com/art/Nostromo-boot-screen-127110997
 [Plymouth]: https://wiki.archlinux.org/index.php/plymouth
 [brej]: http://brej.org/blog/?p=174
-[`plymouth-theme-nostromo`]: https://github.com/brenns10/plymouth-theme-nostromo
+[plymouth-theme-nostromo]: https://github.com/brenns10/plymouth-theme-nostromo
 [aur-ptn]: https://aur.archlinux.org/packages/plymouth-theme-nostromo
 [yt-ambient]: https://www.youtube.com/watch?v=U4p1mZnKkhc
 [yt-alien]: https://www.youtube.com/watch?v=qiyXFQKheOU
@@ -230,6 +234,8 @@ ISO file that you can try out, as soon as it becomes available.
 [tetris]: https://github.com/brenns10/tetris
 [alien-console]: https://github.com/brenns10/alien-console
 [ww2ogg]: https://github.com/hcs64/ww2ogg
+[aur-ac]: https://aur.archlinux.org/packages/alien-console
+[alien-iso]: https://github.com/brenns10/alien-iso
 
 [Nostromo boot screen capture]: /images/alien-splash.png
 {: style="max-width: 100%;"}

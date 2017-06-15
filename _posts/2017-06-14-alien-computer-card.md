@@ -215,6 +215,8 @@ I'll figure out a way to take a good quality video and post it here.
 If you do try it out, there are a couple known issues:
 - Sound doesn't always work (it worked on two of the three computers I tried)
 - Only 64-bit processors are supported (I couldn't build packages for 32 bit)
+- Doesn't work particularly well in a virtual machine... just put it on a USB
+  and try it out!
 
 Check it out if you have the chance!
 

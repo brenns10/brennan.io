@@ -10,6 +10,10 @@ tw: <span class="fa fa-twitter fa-lg"></span>
 
 # Course Projects
 
+### Exploring Alternative Routes Using Multipath TCP
+
+My master's thesis! You can find my page about it [here](/thesis).
+
 ### DPath---Filesystem Querying with XPath
 
 A tool written in Go that allows you to query your filesystem using XPath. This

@@ -4,6 +4,8 @@ title: Links
 ---
 # Links
 
+### Articles
+
 In no particular order, a list of things that I found helpful in learning the
 things I know today. Hopefully, somebody else may find them useful in their own
 education.
@@ -30,6 +32,9 @@ education.
   history of why things are the way they are now.
 - [Eudyptula Challenge][eudyptula]. The challenge is now closed. I got in *just*
   under the wire. Hopefully it will reopen some day.
+- [Anatomy of a Program in Memory][apm]. This is the first in a series of
+  articles describing how modern operating systems manage memory, at a fairly
+  detailed level. Very useful.
 
 [joel-unicode]: http://www.joelonsoftware.com/articles/Unicode.html
 [beej]: http://beej.us/guide/bgnet/
@@ -41,6 +46,13 @@ education.
 [struct]: http://www.catb.org/esr/structure-packing/
 [things]: http://www.catb.org/esr/faqs/things-every-hacker-once-knew/
 [eudyptula]: http://eudyptula-challenge.org
+[apm]: http://duartes.org/gustavo/blog/post/anatomy-of-a-program-in-memory/
+
+Somewhat related, [The Beginner's Creed](/beginner) is an excellent attitude we
+all should have when learning new things. Learning is the most exciting thing we
+do in life, and we should never be afraid of being a beginner.
+
+### Books
 
 Some books I recommend:
 
@@ -55,6 +67,8 @@ Some books I recommend:
 [knr]: https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628
 [lkd]: https://www.amazon.com/Linux-Kernel-Development-Robert-Love/dp/0672329468
 [unix]: https://www.amazon.com/Lions-Commentary-Unix-John/dp/1573980137
+
+### Blogs
 
 I've developed a real appreciation for blogging, both writing my own and reading
 those of my friends. So here is a

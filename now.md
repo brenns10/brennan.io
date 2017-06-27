@@ -7,15 +7,9 @@ title: /now/
 
 #### Last Updated: May 16, 2017
 
-I officially have a BS!
+*I am no longer a student.*
 
-All that stands in the way of my MS is a defense.
+About to move out to San Francisco and start at Yelp!
 
-![The best thesis defense is a good thesis offense](https://imgs.xkcd.com/comics/thesis_defense.png)
-{: style = "max-width: 100%" }
-
-Other neat things going on:
-
-- [CWRU Love](https://github.com/hacsoc/love)
-- [Slacksoc](https://github.com/brenns10/slacksoc)
-- [Eudyptula Challenge](http://eudyptula-challenge.org)
+Also, currently working on the
+[Eudyptula Challenge](http://eudyptula-challenge.org).

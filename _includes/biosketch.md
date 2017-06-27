@@ -1,7 +1,5 @@
-I'm a student, programmer, teacher, reader, writer, chef, and plenty of other
-things when the mood strikes. I study computer science at
-[CWRU](https://case.edu), where I also spend way too much time with
-[Hacker's Society](http://hacsoc.org), a group of nerds like me.
+I'm a programmer, teacher, reader, writer, chef, and plenty of other
+things when the mood strikes.
 
 There's a lot more to know about me, but I doubt my website would do a good job
 explaining it.

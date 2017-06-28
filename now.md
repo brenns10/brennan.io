@@ -5,7 +5,7 @@ title: /now/
 
 # /now/
 
-#### Last Updated: May 16, 2017
+#### Last Updated: June 27, 2017
 
 *I am no longer a student.*
 

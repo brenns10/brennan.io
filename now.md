@@ -5,11 +5,9 @@ title: /now/
 
 # /now/
 
-#### Last Updated: June 27, 2017
+#### Last Updated: November 18, 2017
 
-*I am no longer a student.*
-
-About to move out to San Francisco and start at Yelp!
-
-Also, currently working on the
-[Eudyptula Challenge](http://eudyptula-challenge.org).
+Working at Yelp, living in San Francisco!  Also, currently working on the
+[Eudyptula Challenge](http://eudyptula-challenge.org). Got my first commit to
+the Linux kernel
+[merged](https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/staging.git/commit/?h=staging-testing&id=1dc2f73a17843379d555d5150657333c79b9c697) recently.

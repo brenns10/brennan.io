@@ -281,9 +281,9 @@ end product can be used something like this:
     $ tail -n 2 chain
     gjZmdTdMNnijpZd0hhkxJSK9/IywQIQ2H5N2BiWC6w0=
     5o/+3BTbOTebzIJGTI0bZPorFatbV1zu070qBSx3Z0k=
-    $ ./hashchain verify gjZmdTdMNnijpZd0hhkxJSK9/IywQIQ2H5N2BiWC6w0= 5o/+3BTbOTebzIJGTI0bZPorFatbV1zu070qBSx3Z0k=
+    $ ./hashchain verify sha256 gjZmdTdMNnijpZd0hhkxJSK9/IywQIQ2H5N2BiWC6w0= 5o/+3BTbOTebzIJGTI0bZPorFatbV1zu070qBSx3Z0k=
     success
-    $ ./hashchain verify not-really-a-valid-hash-at-all-1234567890ab= 5o/+3BTbOTebzIJGTI0bZPorFatbV1zu070qBSx3Z0k=
+    $ ./hashchain verify sha256 not-really-a-valid-hash-at-all-1234567890ab= 5o/+3BTbOTebzIJGTI0bZPorFatbV1zu070qBSx3Z0k=
     failure
 
 ## Conclusion

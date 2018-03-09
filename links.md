@@ -10,6 +10,10 @@ In no particular order, a list of things that I found helpful in learning the
 things I know today. Hopefully, somebody else may find them useful in their own
 education.
 
+<!-- Hi Adam! -->
+
+- [Beginners resources][beginners]. A neat reference for people who want to
+  learn about programming, but don't know where to start.
 - [Unicode and character sets][joel-unicode]. This is, like, super important.
 - [Comparing Floating Point Numbers][float].  This article series was pivotal in
   me learning what floating point numbers even are, let alone how to compare
@@ -36,6 +40,7 @@ education.
   articles describing how modern operating systems manage memory, at a fairly
   detailed level. Very useful.
 
+[beginners]: https://www.vodien.com/blog/education/beginners-resources-to-learn-programming-languages.php
 [joel-unicode]: http://www.joelonsoftware.com/articles/Unicode.html
 [beej]: http://beej.us/guide/bgnet/
 [mips]: http://chortle.ccsu.edu/assemblytutorial/index.html

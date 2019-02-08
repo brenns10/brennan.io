@@ -36,7 +36,7 @@ ill-fated little list.
 
 Here's what my happy little linked list looked like at the beginning:
 
-![01-empty](/images/linkedlist/01-empty.png){: style="max-width: 100%" }
+![01-empty](/images/linkedlist/01-empty.png){: class="body-responsive" }
 
 Like many linked lists in the Linux kernel, it's doubly linked and circular.
 Right now it's empty---the "head" node here simply exists to point to the first
@@ -45,13 +45,13 @@ and last items.
 Soon enough, my first MPTCP socket comes along, and I happily add it to my
 linked list:
 
-![02-inserted](/images/linkedlist/02-inserted.png){: style="max-width: 100%" }
+![02-inserted](/images/linkedlist/02-inserted.png){: class="body-responsive" }
 
 But eventually, this socket is closed, and the memory consumed by it is
 reclaimed. Unfortunately, nobody ever thought to tell me about it, so now my
 list looks something like this:
 
-![03-deallocated](/images/linkedlist/03-deallocated.png){: style="max-width: 100%" }
+![03-deallocated](/images/linkedlist/03-deallocated.png){: class="body-responsive" }
 
 In the world of C, this sort of thing is run-of-the-mill. If you free up memory
 without cleaning up pointers to it, you're going to have problems. But what
@@ -111,7 +111,7 @@ happened to be the **exact same piece of memory** as the first socket.
 
 I added it to the linked list, a second time. Disaster resulted:
 
-![04-reinserted](/images/linkedlist/04-reinserted.png){: style="max-width: 100%" }
+![04-reinserted](/images/linkedlist/04-reinserted.png){: class="body-responsive"}
 
 Carnage, bloodshed, and misery! The CPU weeps in anguish, and the memory bus
 gnashes its teeth. How could this horrific situation happen? Let's see what the

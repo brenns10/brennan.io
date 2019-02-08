@@ -240,16 +240,16 @@ Check it out if you have the chance!
 [alien-iso]: https://github.com/brenns10/alien-iso
 
 [Nostromo boot screen capture]: /images/alien-splash.png
-{: style="max-width: 100%;"}
+{: class="body-responsive"}
 
 [Alien inspired theme for cool-retro-term]: /images/alien-crt-theme.png
-{: style="max-width: 100%;"}
+{: class="body-responsive"}
 
 [Alien Isolation personal terminal]: https://raw.githubusercontent.com/brenns10/alien-console/master/img/real-main.jpg
-{: style="max-width: 100%;"}
+{: class="body-responsive"}
 
 [Alien-Console main screen]: https://raw.githubusercontent.com/brenns10/alien-console/master/img/our-main.png
-{: style="max-width: 100%;"}
+{: class="body-responsive"}
 
 [Alien-Console splash screen]: https://raw.githubusercontent.com/brenns10/alien-console/master/img/our-splash.png
-{: style="max-width: 100%;"}
+{: class="body-responsive"}

@@ -33,28 +33,32 @@ real world, this would result in lots of people swapping tickets on platforms,
 or else some sort of electronic Clipper Card spoofing that's not currently
 practical.
 
-The linear programming formulation is simple. If $$x_{ij}$$ represents the
-number of tickets purchased from station $$i$$ to $$j$$, and $$s_i$$ represents
-the number of travelers departing from station $$i$$, and $$t_i$$ represents the
-number of travelers arriving at station $$j$$, then we have two sets of
+The linear programming formulation is simple. If {%latex classes=latex-inline%}$x_{ij}${%endlatex%} represents the
+number of tickets purchased from station {%latex classes=latex-inline%}$i${%endlatex%} to {%latex classes=latex-inline%}$j${%endlatex%}, and {%latex classes=latex-inline%}$s_i${%endlatex%} represents
+the number of travelers departing from station {%latex classes=latex-inline%}$i${%endlatex%}, and {%latex classes=latex-inline%}$t_i${%endlatex%} represents the
+number of travelers arriving at station {%latex classes=latex-inline%}$j${%endlatex%}, then we have two sets of
 constraints:
 
-$$
-\sum_{j} x_{ij} = s_i \:\:\: \forall i
-$$
+{% latex %}
+    \begin{equation*}
+    \sum_{j} x_{ij} = s_i \:\:\: \forall i
+    \end{equation*}
+{% endlatex %}
 
-This represents the constraint that the tickets starting at $$i$$ need to add up
-to the number of travelers departing from $$i$$.
+This represents the constraint that the tickets starting at {%latex classes=latex-inline%}$i${%endlatex%} need to add up
+to the number of travelers departing from {%latex classes=latex-inline%}$i${%endlatex%}.
 
-$$
-\sum_{i} x_{ij} = t_j \:\:\: \forall j
-$$
+{% latex %}
+    \begin{equation*}
+    \sum_{i} x_{ij} = t_j \:\:\: \forall j
+    \end{equation*}
+{% endlatex %}
 
-This represents the constraint that the tickets destined for $$j$$ need to add
-up to the number of travelers arriving at $$j$$. You can combine these
-constraints into the matrix form $$Ax = b$$ quite easily. We can define $$b$$ as
-simply a vector containing all $$s_i$$ followed by all $$t_i$$. The vector $$x$$
-will contain the variables $$x_{ij}$$ in row-major order. The matrix $$A$$ is
+This represents the constraint that the tickets destined for {%latex classes=latex-inline%}$j${%endlatex%} need to add
+up to the number of travelers arriving at {%latex classes=latex-inline%}$j${%endlatex%}. You can combine these
+constraints into the matrix form {%latex classes=latex-inline%}$Ax = b${%endlatex%} quite easily. We can define {%latex classes=latex-inline%}$b${%endlatex%} as
+simply a vector containing all {%latex classes=latex-inline%}$s_i${%endlatex%} followed by all {%latex classes=latex-inline%}$t_i${%endlatex%}. The vector {%latex classes=latex-inline%}$x${%endlatex%}
+will contain the variables {%latex classes=latex-inline%}$x_{ij}${%endlatex%} in row-major order. The matrix {%latex classes=latex-inline%}$A${%endlatex%} is
 best visualized by the following table, for a simple 3-station example.
 
 |             | 11 | 12 | 13 | 21 | 22 | 23 | 31 | 32 | 33 |
@@ -66,7 +70,7 @@ best visualized by the following table, for a simple 3-station example.
 | Ends at 2   |  0 |  1 |  0 |  0 |  1 |  0 |  0 |  1 |  0 |
 | Ends at 3   |  0 |  0 |  1 |  0 |  0 |  1 |  0 |  0 |  1 |
 
-The other constraints are that the $$x_{ij}$$ need to be positive integers. That
+The other constraints are that the {%latex classes=latex-inline%}$x_{ij}${%endlatex%} need to be positive integers. That
 "integer" part makes this an integer linear program, which is much harder to
 solve than a normal one, unless you happen to have a totally unimodular problem.
 We'll get to that in a moment.
@@ -147,7 +151,7 @@ be integer anyway.
 All minimum cost flow linear programs are totally unimodular. Our problem can be
 transformed into a minimum cost flow problem. However, the linear program we
 made up and the linear program we would get from the minimum cost flow version
-of the problem are not the same (there are at least $$2n$$ more variables in the
+of the problem are not the same (there are at least {%latex classes=latex-inline%}$2n${%endlatex%} more variables in the
 minimum cost flow version: one for each arc between the source/sink and the
 stations). So even though we know that our linear program *should* have a
 totally unimodular constraint matrix, we don't have a solid argument relying
@@ -156,28 +160,28 @@ solely on the constraint matrix.
 Thankfully, it's not too hard. Quoting the Wikipedia[^1] article
 on [Unimodularity][un]:
 
-> Let $$A$$ be a $$m$$ by $$n$$ matrix whose rows can be partitioned into two
-> disjoint sets $$B$$ and $$C$$. Then, the following four conditions together
-> are sufficient for $$A$$ to be totally unimodular:
+> Let {%latex classes=latex-inline%}$A${%endlatex%} be a {%latex classes=latex-inline%}$m${%endlatex%} by {%latex classes=latex-inline%}$n${%endlatex%} matrix whose rows can be partitioned into two
+> disjoint sets {%latex classes=latex-inline%}$B${%endlatex%} and {%latex classes=latex-inline%}$C${%endlatex%}. Then, the following four conditions together
+> are sufficient for {%latex classes=latex-inline%}$A${%endlatex%} to be totally unimodular:
 >
-> 1. Every column of $$A$$ contains at most two non-zero entries.
+> 1. Every column of {%latex classes=latex-inline%}$A${%endlatex%} contains at most two non-zero entries.
 >
-> 2. Every entry in $$A$$ is 0, +1, or -1.
+> 2. Every entry in {%latex classes=latex-inline%}$A${%endlatex%} is 0, +1, or -1.
 >
-> 3. If two non-zero entries in a column of $$A$$ have the same sign, then the
->    row of one is in $$B$$, and the other is in $$C$$.
+> 3. If two non-zero entries in a column of {%latex classes=latex-inline%}$A${%endlatex%} have the same sign, then the
+>    row of one is in {%latex classes=latex-inline%}$B${%endlatex%}, and the other is in {%latex classes=latex-inline%}$C${%endlatex%}.
 >
-> 4. If two non-zero entries in a column of $$A$$ have opposite signs, then the
->    rows of both are in $$B$$, or both in $$C$$.
+> 4. If two non-zero entries in a column of {%latex classes=latex-inline%}$A${%endlatex%} have opposite signs, then the
+>    rows of both are in {%latex classes=latex-inline%}$B${%endlatex%}, or both in {%latex classes=latex-inline%}$C${%endlatex%}.
 
 Our constraint matrix satisfies this exactly!  Let's take this step by step.
 
-1. Every column of $$A$$ does contain at most two non-zero entries, because each
+1. Every column of {%latex classes=latex-inline%}$A${%endlatex%} does contain at most two non-zero entries, because each
    column appears in exactly two constraints: one for the starting station and
    one for the ending station.
-2. Every entry of $$A$$ is either 0 or 1.
-3. If we let $$B$$ be the set of rows corresponding to the source constraints,
-   and $$C$$ be the set of rows corresponding to the destination constraints,
+2. Every entry of {%latex classes=latex-inline%}$A${%endlatex%} is either 0 or 1.
+3. If we let {%latex classes=latex-inline%}$B${%endlatex%} be the set of rows corresponding to the source constraints,
+   and {%latex classes=latex-inline%}$C${%endlatex%} be the set of rows corresponding to the destination constraints,
    then each pair of constraints will be assigned properly.
 4. There are no opposite sign entries!
 

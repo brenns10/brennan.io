@@ -1,64 +1,72 @@
 ---
 ---
 
-$base03:    #002b36;
-$base02:    #073642;
-$base01:    #586e75;
-$base00:    #657b83;
-$base0:     #839496;
-$base1:     #93a1a1;
-$base2:     #eee8d5;
-$base3:     #fdf6e3;
-$yellow:    #b58900;
-$orange:    #cb4b16;
-$red:       #dc322f;
-$magenta:   #d33682;
-$violet:    #6c71c4;
-$blue:      #268bd2;
-$cyan:      #2aa198;
-$green:     #859900;
+$text-color: rgb(33, 37, 41);
+$anchor-text-color: #414971;
+$background-color: #FEFEFE;
 
-$text-color: $base00;
-$anchor-text-color: $yellow;
-$background-color: $base3;
-
-#navigation {
-    text-align:center;
-}
-#navigation a {
-    margin: 1em;
-    display: inline-block;
-}
+/*
+ * A centered layout that maxes out at 800 px wide, has a bit of padding as it
+ * shrinks on wider devices, but finally loses the padding on narrow devices.
+ */
 div.site-content {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    overflow: hidden;
 }
-body {
-	font-family: 'Vollkorn', serif;
-	color: $text-color;
-	background-color: $background-color;
-        font-size: 18px;
+@media (min-width: 560px) and (max-width: 799px) {
+    div.site-content {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+@media (min-width: 800px) {
+    div.site-content {
+        width: 768px;
+    }
 }
 
-p, li {    font-size: 1.3em;
-    font-size: 18px;
+/* For main page, style the aside to float right on large screens and take up
+ * the full width on small ones. */
+aside {
+    display: block;
+    float: left;
+    width: 50%;
+    max-width: 250px;
+}
+
+@media (max-width: 560px) {
+    aside {
+        width: 100%;
+        max-width: 100%;
+        clear: both;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/*
+ * Main text and background styles
+ */
+body {
+    font-family: sans-serif;
+    color: $text-color;
+    background-color: $background-color;
+    font-size: 16px;
+}
+
+p, li {
+    font-size: 16px;
     line-height: 1.5em;
 }
 
-header,
-main {
-	padding: 0 20px;
+p code {
+
 }
 
-/*** wrapper div for both header and main ***/
-.wrapper {
-	margin-top: 10%;
-}
-
-/*** anchor tags ***/
 a:link,
 a:visited,
 a:hover,
@@ -71,11 +79,220 @@ a:hover {
 	text-decoration: underline;
 }
 
+/*
+ * Body image styling, especially for LaTeX.
+ */
+img.body-responsive {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+img.latex-inline {
+    // ensure that it looks roughly like part of the text
+    max-height: 0.85em;
+}
+
+/*
+ * Blockquote styling, source:
+ * https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
+ */
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote p {
+  display: inline;
+}
+
+/*
+ * Styles for tables in posts
+ */
+table {
+    border: collapse;
+}
+
+th, td {
+    padding: 5px;
+}
+
+table, th, td {
+    border: 1px solid $text-color;
+}
+
+/*
+ * Social links at bottom of page.
+ */
+.social {
+    text-align: center;
+}
+
+.social li {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.clearfix {
+    clear: both
+}
+
+/*
+ * Navigation menu, adapted from
+ * https://codepen.io/andreasstorm/pen/lriga
+ */
+$color: #1F2227;
+nav {
+  .header-container {
+    float: left;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  padding: 20px;
+  ul {
+    float: right;
+    li {
+      display: inline-block;
+      float: left;
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+      a {
+        display: inline-block;
+        outline: none;
+        color: $color;
+        font-size: 16px;
+        &:hover {
+          color: gray;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+ .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: $color;
+    opacity: 0;
+    transition: all .2s ease;
+    ul {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      li {
+        display: block;
+        float: none;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 10px;
+        &:nth-child(1) a {
+          transition-delay: .2s;
+        }
+        &:nth-child(2) a {
+          transition-delay: .3s;
+        }
+        &:nth-child(3) a {
+          transition-delay: .4s;
+        }
+        &:nth-child(4) a {
+          transition-delay: .5s;
+        }
+        &:not(:first-child) {
+          margin-left: 0;
+        }
+        a {
+          padding: 10px 25px;
+          opacity: 0;
+          color: white;
+          font-size: 24px;
+          font-weight: 600;
+          transform: translateY(-20px);
+          transition: all .2s ease;
+        }
+      }
+    }
+  }
+  .nav-open {
+     position: fixed;
+     right: 10px;
+     top: 10px;
+     display: block;
+     width: 48px;
+     height: 48px;
+     cursor: pointer;
+     z-index: 9999;
+     border-radius: 50%;
+     i {
+       display: block;
+       width: 20px;
+       height: 2px;
+       background: $color;
+       border-radius: 2px  ;
+       margin-left: 14px;
+     }
+     i:nth-child(1) {
+       margin-top: 16px;
+     }
+     i:nth-child(2) {
+       margin-top: 4px;
+       opacity: 1;
+     }
+     i:nth-child(3) {
+       margin-top: 4px;
+     }
+  }
+}
+
+#nav:checked + .nav-open {
+  transform: rotate(45deg);
+  i {
+    background: white;
+    transition: transform .2s ease;
+    &:nth-child(1) {
+      transform: translateY(6px) rotate(180deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      transform: translateY(-6px) rotate(90deg);
+    }
+  }
+}
+
+#nav:checked ~ .nav-container {
+  z-index: 9990;
+  opacity: 1;
+  ul li {
+    a {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+.hidden {
+  display: none;
+}
+
+
+
 
 /*** main content list ***/
 .main-list-item {
 	font-weight: bold;
-	font-size: 1.2em;
 	margin: 0.8em 0;
 }
 
@@ -107,21 +324,6 @@ since it must be aligned with the content */
 	box-shadow: 0 0 0 3px $text-color;
 }
 
-/*** author ***/
-.author-container h1 {
-	font-size: 2.8em;
-	margin-top: 0;
-	margin-bottom: 0;
-	text-align: center;
-}
-
-/*** tagline ***/
-.tagline-container p {
-	font-size: 1.3em;
-	text-align: center;
-	margin-bottom: 2em;
-}
-
 /******/
 hr {
 	border: 0;
@@ -147,97 +349,4 @@ footer {
 	padding: 0 5px;
         margin-top: 30px;
         text-align: center;
-}
-
-/*** media queries ***/
-/* X-Small devices (phones, 480px and up) */
-@media (min-width: 480px) {
-	/* wrapper stays 480px wide past 480px wide and is kept centered */
-	.wrapper {
-		width: 480px;
-		margin: 5% auto 0 auto;
-	}
-        div.site-content {
-            width: 480px;
-        }
-}
-
-/* All other devices (768px and up) */
-@media (min-width: 768px) {
-	/* past 768px the layout is changed and the wrapper has a fixed width of 680px
-	to accomodate both the header column and the content column */
-	.wrapper {
-		width: 680px;
-	}
-        div.site-content {
-            width: 680px;
-        }
-
-	/* the header column stays left and has a dynamic width with all contents
-	aligned right */
-	header {
-		float: left;
-		width: 30%;
-		text-align: right;
-	}
-
-	.author-container h1,
-	.logo-container,
-	.tagline-container p {
-		text-align: right;
-	}
-
-	main {
-		width: 62%;
-		margin-left: 43%;
-		padding: 0;
-	}
-}
-
-/* This makes the icons float left in a small viewport (when left aligned) */
-@media (max-width: 768px) {
-    header ul span.fa {
-        float:left;
-        padding-top: 3px;
-    }
-}
-
-.social {
-    text-align: center;
-}
-
-.social li {
-    display: inline-block;
-    font-size: 1px;
-    padding-left: 20px;
-}
-
-#reddit-share {
-    padding-left: 0px;
-}
-
-/* BLOCKQUOTE STYLES */
-/* https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/ */
-
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-}
-blockquote p {
-  display: inline;
-}
-
-table {
-    border: collapse;
-}
-
-th, td {
-    padding: 5px;
-}
-
-table, th, td {
-    border: 1px solid $text-color;
 }

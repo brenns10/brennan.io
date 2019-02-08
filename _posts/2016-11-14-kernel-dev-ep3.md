@@ -308,7 +308,7 @@ original if something horrible happens.
 If all goes well, you should be greeted with login screen roughly like this:
 
 ![syscall_kernel_booted](/images/syscall_kernel_booted.png)
-{: max-width="100%"}
+{: class="body-responsive"}
 
 The text `4.7.1-stephen` is the kernel version, so it is plain to see that we
 are running my modified kernel version. If for some reason you can't see a
@@ -371,7 +371,7 @@ To see the log entries generated here, just use the `dmesg` command. Since
 call's text in the log! Here's how it looks on my machine:
 
 ![syscall_dmesg_output](/images/syscall_dmesg_output.png)
-{: max-width="100%"}
+{: class="body-responsive"}
 
 
 ## Wrap Up

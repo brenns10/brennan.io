@@ -76,38 +76,45 @@ have a classic optimization problem. In particular, this problem can be
 expressed as an **Integer Linear Program**.
 
 [Linear programs][linprog] are math problems where you are trying to choose
-values for a vector (i.e. a list) of variables $$x$$, such that you minimize a
-cost function. Typically, each variable $$x_i$$ in $$x$$ has an associated cost
-$$c_i$$, and so the cost function is just the sum of the $$x$$'s times their
+values for a vector (i.e. a list) of variables {%latex classes=latex-inline%}$x${%endlatex%}, such that you minimize a
+cost function. Typically, each variable {%latex classes=latex-inline%}$x_i${%endlatex%} in {%latex classes=latex-inline%}$x${%endlatex%} has an associated cost
+{%latex classes=latex-inline%}$c_i${%endlatex%}, and so the cost function is just the sum of the {%latex classes=latex-inline%}$x${%endlatex%}'s times their
 costs. But, you have to satisfy some constraints, which are usually expressed as
 equations, like this:
 
-$$
-a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = b
-$$
+{% latex %}
+    \begin{equation*}
+    a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = b
+    \end{equation*}
+{% endlatex %}
 
 We can have lots of constraints we need to satisfy, so we typically number the
-constraints from one to $$m$$. We can compactly write all the constraints using
+constraints from one to {%latex classes=latex-inline%}$m${%endlatex%}. We can compactly write all the constraints using
 a matrix form like this:
 
-$$
-A x = b
-$$
+{% latex %}
+    \begin{equation*}
+    A x = b
+    \end{equation*}
+{% endlatex %}
 
-Here, $$A$$ is an $$m$$ row (one for each constraint) by $$n$$ column (one for
-each variable) matrix containing the coefficients $$a$$ from all the
-constraints. Usually we also have the constraint that $$x \ge 0$$, and for
-integer linear programs, we also need to make sure that our solutions for $$x$$
+Here, {%latex classes=latex-inline %}$A${%endlatex%} is an {%latex classes=latex-inline%}$m${%endlatex%} row (one for each constraint) by {%latex classes=latex-inline%}$n${%endlatex%} column (one for
+each variable) matrix containing the coefficients {%latex classes=latex-inline%}$a${%endlatex%} from all the
+constraints. Usually we also have the constraint that {%latex
+classes=latex-inline%}$x \ge 0${%endlatex%}, and for
+integer linear programs, we also need to make sure that our solutions for
+{%latex classes=latex-inline%}$x${%endlatex%}
 are integers. Since linear programs are pretty common problems to solve, there
 are plenty of existing solvers that can solve them *reasonably* quickly. If you
-can write a problem as a linear program and come up with $$A$$, $$b$$, and the
-costs $$c$$, you can use these linear programming libraries to solve your
+can write a problem as a linear program and come up with {%latex
+classes=latex-inline%}$A${%endlatex%}, {%latex classes=latex-inline%}$b${%endlatex%}, and the
+costs {%latex classes=latex-inline%}$c${%endlatex%}, you can use these linear programming libraries to solve your
 problem for you.  So let's formulate this as an integer linear program!
 
-In this particular problem, we have a variable $$x$$ for every single pair of
-stations you could start at and end at. $$x$$ will represent how many tickets we
+In this particular problem, we have a variable {%latex classes=latex-inline%}$x${%endlatex%} for every single pair of
+stations you could start at and end at. {%latex classes=latex-inline%}$x${%endlatex%} will represent how many tickets we
 buy for that start/end pair. There are 45 BART stations, which means that we
-have $$45^2 = 2025$$ different variables. The cost for each variable is provided
+have {%latex classes=latex-inline%}$45^2 = 2025${%endlatex%} different variables. The cost for each variable is provided
 in a fare schedule, available from BART's [website][bart-fares]. The one value
 that is missing from this schedule is the cost of a trip that starts and ends at
 the same station. You'd think that this would be free, but people would take
@@ -121,21 +128,26 @@ them mathematically. The first constraint was that the number of tickets
 starting at any station has to be equal to the number of travelers starting at
 that station. So, the constraint is:
 
-$$
-\sum_{x\text{ starting at station }i} x = b_{i1}
-$$
+{% latex %}
+    \begin{equation*}
+    \sum_{x\text{ starting at station }i} x = b_{i1}
+    \end{equation*}
+{% endlatex %}
 
 We have one of these constraints for each station. We'll call them the *source*
 constraints. The second type of constraint was that the number of tickets ending
 at any station has to be equal to the number of travelers who want to go to that
 station:
 
-$$
-\sum_{x\text{ ending at station }i} x = b_{i2}
-$$
+{% latex %}
+    \begin{equation*}
+    \sum_{x\text{ ending at station }i} x = b_{i2}
+    \end{equation*}
+{% endlatex %}
 
 And these are our *destination* constraints. Together, the source and
-destination constraints can be represented in using the matrix form $$Ax=b$$.
+destination constraints can be represented in using the matrix form {%latex
+classes=latex-inline%}$Ax=b${%endlatex%}.
 The matrix is pretty large, with 90 rows and 2025 columns! Regardless of how big
 it is, this should mean that we're done. We can use a linear programming library
 to solve the problem.
@@ -152,7 +164,7 @@ that hard. For some problems, if you just "forget" the constraint that your
 solutions should be integers, and solve the problem as a normal linear program,
 you'll always get integer solutions anyway.
 
-This happens whenever your constraint matrix $$A$$ is [totally unimodular][]. I
+This happens whenever your constraint matrix {%latex classes=latex-inline%}$A${%endlatex%} is [totally unimodular][]. I
 won't explain what that is, but it turns out that our matrix is
 unimodular![^fn-unimodular] So this means that we *can* just use a linear
 programming library to solve it. In fact, here is the code I used to do it:
@@ -247,20 +259,24 @@ single hill, but in 2025 dimensional space!
 So how do we find our way up this 2025 dimensional hill? To answer that
 question, let's represent our problem a bit differently: with a matrix. We'll
 label both the rows and the columns with stations: the rows are the starting
-stations, and the columns are ending stations. A number $$x$$ in row $$i$$,
-column $$j$$ means that $$x$$ people are riding from station $$i$$ to station
-$$j$$. We'll call this our traveler matrix, $$T$$. Here's a small example with
+stations, and the columns are ending stations. A number {%latex
+classes=latex-inline%}$x${%endlatex%} in row {%latex
+classes=latex-inline%}$i${%endlatex%},
+column {%latex classes=latex-inline%}$j${%endlatex%} means that {%latex classes=latex-inline%}$x${%endlatex%} people are riding from station {%latex classes=latex-inline%}$i${%endlatex%} to station
+{%latex classes=latex-inline%}$j${%endlatex%}. We'll call this our traveler matrix, {%latex classes=latex-inline%}$T${%endlatex%}. Here's a small example with
 four stations:
 
-$$
-T =
-\begin{bmatrix}
-0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 \\
-\end{bmatrix}
-$$
+{% latex %}
+    \begin{equation*}
+    T =
+    \begin{bmatrix}
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    \end{bmatrix}
+    \end{equation*}
+{% endlatex %}
 
 In this example, one traveler wants to go from station 1 to 3, and another wants
 to go from station 4 to 2. If you imagine the stations in a line, it's a bit
@@ -269,17 +285,19 @@ easier to visualize.
 ![bart-number-line]
 
 If you imagine that the fare is $1 for every "link" in this simple train route,
-then the fare matrix $$F$$ would look something like this:
+then the fare matrix {%latex classes=latex-inline%}$F${%endlatex%} would look something like this:
 
-$$
-F =
-\begin{bmatrix}
-0 & 1 & 2 & 3 \\
-1 & 0 & 1 & 2 \\
-2 & 1 & 0 & 1 \\
-3 & 2 & 1 & 0 \\
-\end{bmatrix}
-$$
+{% latex %}
+    \begin{equation*}
+    F =
+    \begin{bmatrix}
+    0 & 1 & 2 & 3 \\
+    1 & 0 & 1 & 2 \\
+    2 & 1 & 0 & 1 \\
+    3 & 2 & 1 & 0 \\
+    \end{bmatrix}
+    \end{equation*}
+{% endlatex %}
 
 You could get the total fare for everyone in this little system by taking each
 element in the "traveler matrix" and multiplying it with its corresponding
@@ -288,7 +306,7 @@ example travelers, the total fare is $4.
 
 [^fn-frobenius]:
     Incidentally, this is called the Frobenius product, and you would write it
-    as $$\langle T, F \rangle_F$$. But I had to look that up on
+    as {%latex classes=latex-inline%}$\langle T, F \rangle_F${%endlatex%}. But I had to look that up on
     [Wikipedia][frobenius-product]; there's no reason anyone should know that
     off the top of their head.
 
@@ -304,28 +322,30 @@ row and column sums: simply find two entries in different rows and columns that
 are greater than zero. They form two corners of a rectangle in the matrix.
 Subtract however many tickets you want from both those entries, and add them to
 the other two corners of the rectangle. Let's do this with the previous example
-$$T$$:
+{%latex classes=latex-inline%}$T${%endlatex%}:
 
-$$
-\begin{bmatrix}
-0 & \mathbf{0} & \mathbf{1} & 0 \\
-0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 \\
-0 & \mathbf{1} & \mathbf{0} & 0 \\
-\end{bmatrix}
-\to
-\begin{bmatrix}
-0 & \mathbf{1} & \mathbf{0} & 0 \\
-0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 \\
-0 & \mathbf{0} & \mathbf{1} & 0 \\
-\end{bmatrix}
-$$
+{% latex %}
+    \begin{equation*}
+    \begin{bmatrix}
+    0 & \mathbf{0} & \mathbf{1} & 0 \\
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 \\
+    0 & \mathbf{1} & \mathbf{0} & 0 \\
+    \end{bmatrix}
+    \to
+    \begin{bmatrix}
+    0 & \mathbf{1} & \mathbf{0} & 0 \\
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 \\
+    0 & \mathbf{0} & \mathbf{1} & 0 \\
+    \end{bmatrix}
+    \end{equation*}
+{% endlatex %}
 
 If we look back at the fare matrix, we can see that this transformation actually
 lowered the total fare of the system from 4 to 2! This is because we went from
-having tickets $$1 \to 3$$ and $$4 \to 2$$, which both cost $2 to simply having
-tickets $$1 \to 2$$ and $$4 \to 3$$, which both cost $1.
+having tickets {%latex classes=latex-inline%}$1 \to 3${%endlatex%} and {%latex classes=latex-inline%}$4 \to 2${%endlatex%}, which both cost $2 to simply having
+tickets {%latex classes=latex-inline%}$1 \to 2${%endlatex%} and {%latex classes=latex-inline%}$4 \to 3${%endlatex%}, which both cost $1.
 
 And in fact, that's pretty much the whole algorithm! All my custom algorithm
 does is look in the matrix for pairs where it can perform this swap, and do it
@@ -449,25 +469,26 @@ If you want to learn more, check out the code on [GitHub][gh].
 [linprog]: https://en.wikipedia.org/wiki/Linear_programming
 [update]: {% post_url 2016-12-11-bart-revisited %}
 [bart-labeled]: /images/bart-labeled.png
-{: width="100%"}
+{: class="body-responsive"}
 [bart-one-hill]: /images/bart-one-hill.jpg
-{: width="70%"}
+{: class="body-responsive"}
 [bart-one-hill-src]: http://www.extremetech.com/wp-content/uploads/2014/04/bliss-windows-xp-original.jpg
 [bart-multiple-hills]: /images/bart-multiple-hills.jpg
-{: width="100%"}
+{: class="body-responsive"}
 [bart-multiple-hills-src]: http://static5.techinsider.io/image/56059ce8bd86ef21008bd25e-1190-625/north-americas-tallest-mountain-is-shorter-than-we-thought.jpg
 [bart-number-line]: /images/bart-number-line.jpg
+{: class="body-responsive"}
 [frobenius-product]: https://en.wikipedia.org/wiki/Matrix_multiplication#Frobenius_product
 [bart-data]: http://www.bart.gov/about/reports/ridership
 [bart-admin]: /images/bart-admin.png
-{: width="100%"}
+{: class="body-responsive"}
 [bart-weekday-fraction]: /images/bart-weekday-fraction.png
-{: width="100%"}
+{: class="body-responsive"}
 [bart-weekday-savings]: /images/bart-weekday-savings.png
-{: width="100%"}
+{: class="body-responsive"}
 [bart-weekend-fraction]: /images/bart-weekend-fraction.png
-{: width="100%"}
+{: class="body-responsive"}
 [bart-weekend-savings]: /images/bart-weekend-savings.png
-{: width="100%"}
+{: class="body-responsive"}
 
 #### Footnotes

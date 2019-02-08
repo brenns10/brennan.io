@@ -160,7 +160,7 @@ how I put a process into an uninterruptible sleep using nothing but a kernel
 module. Read [Episode 3][ep3] to learn how to make your own system call.
 
 [Use ALL the memory]: /images/use-all-the-memory.jpg
-{: max-width="100%"}
+{: class="body-responsive"}
 [lkmpg]: http://www.tldp.org/LDP/lkmpg/2.6/html/lkmpg.html
 [lkmpgch4]: http://www.tldp.org/LDP/lkmpg/2.6/html/lkmpg.html#AEN567
 [lkd3e]: https://www.amazon.com/Linux-Kernel-Development-Robert-Love/dp/0672329468/

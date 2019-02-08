@@ -2,23 +2,26 @@
 <html>
   {% include head.html %}
   <body>
-  <!-- Facebook SDK -->
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
 
-  <div id="navigation" class="clearfix">
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
-    <a href="/talks/">Talks</a>
-    <a href="/projects">Projects</a>
-    <a href="/resume">Resume</a>
+  <div class="site-content">
+  <nav>
+    <div class="header-container">
+      <h3>Stephen Brennan</h1>
+    </div>
+    <input type="checkbox" id="nav" class="hidden"/>
+    <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+    <div class="nav-container">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/resume">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
   </div>
+
+  <div class="site-content">
 
   {{ content }}
 
@@ -30,6 +33,8 @@
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
       <br><br>
       <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Stephen Brennan's Blog</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+  </div>
+
   </div>
   </body>
 </html>

@@ -62,11 +62,6 @@ p, li {
     font-size: 16px;
     line-height: 1.5em;
 }
-
-p code {
-
-}
-
 a:link,
 a:visited,
 a:hover,
@@ -148,15 +143,12 @@ table, th, td {
  */
 $color: #1F2227;
 nav {
-  .header-container {
-    float: left;
-  }
   * {
     box-sizing: border-box;
   }
-  padding: 20px;
+  padding: 15px;
   ul {
-    float: right;
+    float: left;
     li {
       display: inline-block;
       float: left;
@@ -175,6 +167,13 @@ nav {
     }
   }
 }
+.title {
+    font-size: 1.6em;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 
 @media screen and (max-width: 560px) {
  .nav-container {
@@ -314,12 +313,12 @@ since it must be aligned with the content */
 }
 
 .logo {
+	margin: 5px;
 	width: 96px;
 	height: 96px;
+	border-radius: 10%;
 	display: inline-block;
 	background-size: cover;
-	border-radius: 50%;
-	-moz-border-radius: 50%;
 	border: 2px solid $background-color;
 	box-shadow: 0 0 0 3px $text-color;
 }

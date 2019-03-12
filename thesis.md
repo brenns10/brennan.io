@@ -29,3 +29,8 @@ Binaries for building a VM
   [linux-image.deb](/downloads/linux-image.deb),
   [linux-firmware-image.deb](/downloads/linux-firmware-image.deb)
 - [VM tarball](/downloads/vm.tar)
+
+*Conference Paper*
+
+A conference paper for this research has been presented as well. Check it out on
+my [projects / publications page](/projects/).

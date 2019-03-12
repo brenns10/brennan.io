@@ -8,11 +8,27 @@ pdf: <span class="fa fa-file-pdf-o fa-lg"></span>
 tw: <span class="fa fa-twitter fa-lg"></span>
 ---
 
-# Course Projects
+
+# Publications
+
+### Improving Communication Through Overlay Detours: Pipe Dream or Actionable Insight?
+
+_Stephen Brennan & Michael Rabinovich_, IEEE International Conference on
+Distributed Computing Systems, July 2018.
+
+This paper describes "Detour Collectives" or DCol, a system which allows gigabit
+users to use Multipath TCP to add detour routes to normal TCP connections. This
+can enable you to achieve better throughput by circumventing bottlenecks in the
+Internet's default routes. This paper builds on the previous work in my Master's
+Thesis.
+
+[{{page.pdf}} Read the paper](/papers/dcol.pdf)
 
 ### Exploring Alternative Routes Using Multipath TCP
 
 My master's thesis! You can find my page about it [here](/thesis).
+
+# Course Projects
 
 ### DPath---Filesystem Querying with XPath
 
@@ -46,18 +62,15 @@ extend than C.
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/pywall)  
 [{{page.pdf}} Report](/papers/pywall_report.pdf)
 
-### Corvid---Static Site Generation Made Easy
-
-For our Software Engineering project, my team (me, [Jeff Copeland][], and
-[Kyle Deal][]) created a web application that helps people create simple static
-web sites.  It uses [Pelican](http://getpelican.com/) under the hood, and it's
-implemented in Python using the Django web framework.  Unfortunately, Corvid is
-no longer deployed.  However, a few friends are working on a sequel for their
-senior project -- stay tuned.
-
-[{{page.gh}} Visit it at GitHub](https://github.com/jpcjr/corvid)
-
 # Personal Projects
+
+### Funlisp
+
+An implementation of a small but mighty lisp in standard C89, portable to any
+POSIX compliant operating system.
+
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/funlisp)  
+[{{page.web}} Read the docs](https://funlisp.readthedocs.io)
 
 ### CWRU Love---Web Service for Spreading Love
 

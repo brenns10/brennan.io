@@ -199,7 +199,9 @@ completely different settings in parallel. Here's how it will look:
     # Configure the kernel
     make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4 defconfig O=~/rpi-build defconfig
     scripts/config --file ~/rpi-build/.config --disable CONFIG_LOCALVERSION_AUTO
-    scripts/config --file ~/rpi-build/.config --set-str INITRAMFS_ROOT_SOURCE ~/rpi-ramfs
+    scripts/config --file ~/rpi-build/.config --set-str CONFIG_INITRAMFS_SOURCE ~/rpi-ramfs
+    scripts/config --file ~/rpi-build/.config --set-val CONFIG_INITRAMFS_ROOT_UID 1000
+    scripts/config --file ~/rpi-build/.config --set-val CONFIG_INITRAMFS_ROOT_GID 1000
 
     # Compile it!
     make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4 O=~/rpi-build

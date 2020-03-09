@@ -10,10 +10,9 @@ beyond all odds, this project has progressed really well! Recently, SOS got the
 ability to do _pre-emptive multitasking_ --- and it only took me 116 commits and
 1.5 years of on-and-off effort to get there! Throughout that time, I haven't
 really posted about SOS because it felt too complicated to write about. But I
-don't want to let that prevent me from trying, so starting with this newest
-achievement, I'm going to try to post about different features and achievements
-with SOS. To start, this post will describe how I got pre-emptive multi-tasking
-working.
+don't want to let that prevent me from trying, so going forward, I'm going to
+try to post about different features and achievements with SOS. To start, this
+post will describe how I got pre-emptive multitasking working.
 
 ### What is pre-emptive multitasking?
 
@@ -99,7 +98,8 @@ slices per second.  We divide the frequency by this value to determine the
 number of timer ticks to wait until the interrupt to fire. We set this into the
 TimerValue register, which will count down and fire an interrupt when it hits
 zero. Finally, we set the control register to the value 1. This value enables
-the timer and ensures that the interrupt will be delivered to the CPU.
+the timer and ensures that the interrupt will be delivered, at least to the
+interrupt controller.
 
 The final line, `gic_enable_interrupt(30u)`, enables the timer interrupt in the
 "Generic Interrupt Controller." While not the subject of this blog post, the GIC

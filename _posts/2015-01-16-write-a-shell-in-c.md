@@ -169,17 +169,32 @@ I wrote this code.  This function was a GNU extension to the C library until
 it now.  I'm leaving my existing code the way it is, and I encourage people to
 learn it this way first before using `getline`.  You'd be robbing yourself of a
 learning opportunity if you didn't!  Anyhow, with `getline`, the function
-becomes trivial:
+becomes easier:
 
 ```c
 char *lsh_read_line(void)
 {
   char *line = NULL;
   ssize_t bufsize = 0; // have getline allocate a buffer for us
-  getline(&line, &bufsize, stdin);
+
+  if (getline(&line, &bufsize, stdin) == -1){
+    if (feof(stdin)) {
+      exit(EXIT_SUCCESS);  // We recieved an EOF
+    } else  {
+      perror("readline");
+      exit(EXIT_FAILURE);
+    }
+  }
+
   return line;
 }
 ```
+
+This is not 100% trivial because we still need to check for EOF or errors while
+reading. EOF (end of file) means that either we were reading commands from a
+text file which we've reached the end of, or the user typed Ctrl-D, which
+signals end-of-file. Either way, it means we should exit successfully, and if
+any other error occurs, we should fail after printing the error.
 
 ## Parsing the line
 
@@ -581,3 +596,9 @@ to see exactly what I did wrong.
   for `getline()` specifies that the first argument should be freeable, so
   `line` should be initialized to `NULL` in my `lsh_read_line()` implementation
   that uses `getline()`.
+
+**Edit 3:** It's 2020 and we're still finding bugs, this is why software is
+hard. Credit to [harishankarv](https://github.com/harishankarv) on Github, for
+finding an issue with my "simple" implementation of `lsh_read_line()` that
+depends on `getline()`. See [this issue](https://github.com/brenns10/lsh/issues/14)
+for details -- the text of the blog is updated.

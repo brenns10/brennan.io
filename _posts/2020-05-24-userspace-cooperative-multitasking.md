@@ -2,7 +2,8 @@
 layout: post
 title: Implementing simple cooperative threads in C
 description: |
-  TODO
+  Using setjmp(), longjmp(), and assembly to implement a simple threading system
+  in C!
 ---
 
 Multitasking, like many services an operating system provides, is something we

@@ -21,9 +21,16 @@ all four of the following to false:
 - browser.urlbar.update1.interventions
 - browser.urlbar.update1.searchTips
 
-This gets rid of the URL bar that pops open to exceed its size. While it looked
-funny, the bigger issue (IIRC) is that it messed up the standard keyboard
-shortcuts (Ctrl-L to focus on URL bar, ESC to stop).
+This does two things: first, disabling "openViewOnFocus" means that the
+auto-complete dropdown will only appear once you start typing into the url bar.
+It will not pop up simply because you've clicked into (or used Alt-D or Ctrl-L
+to focus on) the URL bar. Second, the "update1" configs disable the oversized
+URL bar when it is in focus, which just looks stupid and distracting.
+
+I would also like to make it so that clicking the URL bar will insert the caret
+at the point in the text where you clicked (like any normal text input).
+However, it seems that Firefox developers have completely removed this ability,
+defaulting the click action to "select the whole darn contents of the URL bar".
 
 ### Disable "most frequently used" tab cycling
 

@@ -338,7 +338,7 @@ ccurve.plot()
     
 
 
-Well, I gotta give it to gzip -- it's pretty consistent. I can't really see anything interesting in the plot, except that the gzipped data is smaller than the uncompressed version (duh). We can add this in to make it more explicit:e.
+Well, I gotta give it to gzip -- it's pretty consistent. I can't really see anything interesting in the plot, except that the gzipped data is smaller than the uncompressed version (duh). We can add this in to make it more explicit:
 
 
 ```python
@@ -434,6 +434,7 @@ Below I'll create a file using a series of `dd` commands, compress it, and plot 
 !dd if=/dev/urandom of=special.data bs=4096 count=10 oflag=append conv=notrunc
 !dd if=alice.txt    of=special.data bs=4096 count=10 oflag=append conv=notrunc skip=30
 !dd if=/dev/urandom of=special.data bs=4096 count=10 oflag=append conv=notrunc
+!gzip -k special.data
 ```
 
     10+0 records in
@@ -460,12 +461,6 @@ Below I'll create a file using a series of `dd` commands, compress it, and plot 
     10+0 records in
     10+0 records out
     40960 bytes (41 kB, 40 KiB) copied, 0.00074872 s, 54.7 MB/s
-
-
-
-```python
-!gzip -k special.data
-```
 
 
 ```python

@@ -5,7 +5,6 @@ description: >
   My rebuttal to a Wall Street Journal advocating for less theoretical computer
   science education, and more vocational programming education.
 keywords: opinion education computer science
-featured: true
 ---
 
 This morning my parents forwarded me an [article][] in the Wall Street Journal,

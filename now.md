@@ -5,7 +5,7 @@ title: /now/
 
 # /now/
 
-#### Last Updated: May 23, 2020
+#### Last Updated: Feb 11, 2021
 
 Currently sheltering in place at my apartment in San Francisco, and working
 remotely at my new job as a kernel developer with Oracle! Working on the Linux

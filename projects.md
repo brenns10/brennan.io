@@ -14,25 +14,41 @@ tw: <span class="fa fa-twitter fa-lg"></span>
 These are things I'm actively playing around with (maybe once a week or once
 every 6 months).
 
+### CBot---IRC Bot in C
+
+What started as a fun challenge has turned into a more feature-complete chatbot
+than I ever expected. CBot, while implemented in C, supports a lot of cool
+features:
+
+* Plugins as dynamic libraries (`.so` files)
+* SQL database for saved plugin state
+* Cooperative threading to allow multiple async I/O operations (e.g. HTTP
+  requests) to happen while still handling IRC events
+
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/cbot)
+
 ### SOS (Stephen's OS)
 
-This is my own custom operating system, targeting 32-bit ARM. Its feature set
-is slim and constantly evolving. Last I checked, it supports processes with
-isolated address spaces, and cooperative multitasking. In my spare time, I may
-conjure up support for preemptive multitasking, threads, file system, and even
-some simple networking protocols!
+This is my own custom operating system, targeting 32-bit ARM. Its feature set is
+slim and constantly evolving. Last I checked, it supports processes with
+isolated address spaces, preemptive multitasking, and the beginnings of a very
+primitive implementation of the FAT filesystem. SOS is also slowly, painfully,
+growing support for the Raspberry Pi as a real-world target, in addition to the
+Qemu virtual machine.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/sos)
 
-### Sudoku Solver
+### Minesweeper
 
-I've recently been far too interested in sudoku puzzles, and so I wanted to
-build something that solved them in the same way that I do. Rather than building
-the most straightforward "brute-force" algorithm, I made a Javascript program
-that lets you step through each inference that the solver makes. It's definitely
-not complete (having actually very few inference rules).
+A minesweeper game written entirely in C, with both a command line and graphical
+interface.  This was a fun and short project to apply my C knowledge, as opposed
+to my more ambitious, long running projects above.
 
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/sudoku)
+Recently, I've added a new, ncurses-based interface (in addition to the command
+line and GTK ones), along with an interactive solver. I think this is really fun
+to play with!
+
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/minesweeper)
 
 ### Funlisp
 
@@ -106,6 +122,16 @@ These are projects that I knew and loved, but alas have gone stale. Maybe they
 reached feature completion, maybe the cloud hosting expired, or perhaps I just
 lost interest. Nonetheless, the source will always be available for these guys,
 and they can be a fun read through!
+
+### Sudoku Solver
+
+I've recently been far too interested in sudoku puzzles, and so I wanted to
+build something that solved them in the same way that I do. Rather than building
+the most straightforward "brute-force" algorithm, I made a Javascript program
+that lets you step through each inference that the solver makes. It's definitely
+not complete (having actually very few inference rules).
+
+[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/sudoku)
 
 ### CWRU Love---Web Service for Spreading Love
 
@@ -198,24 +224,6 @@ song lyrics from MetroLyrics.  Or, you know, any other artist's lyrics.
 
 [{{page.gh}} Visit it at GitHub](https://github.com/brenns10/tswift)  
 [{{page.web}} It's on PyPI!](https://pypi.python.org/pypi/tswift)
-
-### CBot---IRC Bot in C
-
-A fun little challenge - write a functioning IRC bot in C!  This little guy was
-a great excuse to use Libstephen's regular expressions in the real world, as
-well as learn all about dynamic loading of modules and the IRC protocol.  CBot
-currently has the basic functions necessary for a chatbot, and I'm sure I'll
-return every now and then to expand on his available plugins.
-
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/cbot)
-
-### Minesweeper
-
-A minesweeper game written entirely in C, with both a command line and graphical
-interface.  This was a fun and short project to apply my C knowledge, as opposed
-to my more ambitious, long running projects above.
-
-[{{page.gh}} Visit it at GitHub](https://github.com/brenns10/minesweeper)
 
 [Jeff Copeland]: https://github.com/jpcjr
 [Kyle Deal]: https://github.com/dealie16

@@ -269,7 +269,7 @@ Which begs the question, how do we do that?
 Now, we're really at the heart of what a shell does.  Starting processes is the
 main function of shells.  So writing a shell means that you need to know exactly
 what's going on with processes and how they start.  That's why I'm going to take
-us on a short diversion to discuss processes in Unix.
+us on a short diversion to discuss processes in Unix-like operating systems.
 
 There are only two ways of starting processes on Unix.  The first one (which
 almost doesn't count) is by being Init.  You see, when a Unix computer boots,
@@ -387,7 +387,7 @@ shell that called it.  That command also needs to be built into the shell.
 Also, most shells are configured by running configuration scripts, like
 `~/.bashrc`.  Those scripts use commands that change the operation of the shell.
 These commands could only change the shell's operation if they were implemented
-within the shell itself.
+within the shell process itself.
 
 So, it makes sense that we need to add some commands to the shell itself.  The
 ones I added to my shell are `cd`, `exit`, and `help`.  Here are their function
@@ -470,7 +470,7 @@ can be added simply by modifying these arrays, rather than editing a large
 of `builtin_func`, that's OK!  I am too.  It's an array of function pointers
 (that take array of strings and return an int).  Any declaration involving
 function pointers in C can get really complicated.  I still look up how function
-pointers are declared myself!
+pointers are declared myself![^1]
 
 Finally, I implement each function.  The `lsh_cd()` function first checks that
 its second argument exists, and prints an error message if it doesn't.  Then, it
@@ -481,9 +481,8 @@ nice message and the names of all the builtins.  And the exit function returns
 ## Putting together builtins and processes
 
 The last missing piece of the puzzle is to implement `lsh_execute()`, the
-function that will either launch either a builtin, or a process.  If you're
-reading this far, you'll know that we've set ourselves up for a really simple
-function:
+function that will either launch a builtin, or a process.  If you're reading
+this far, you'll know that we've set ourselves up for a really simple function:
 
 ```c
 int lsh_execute(char **args)
@@ -602,3 +601,11 @@ hard. Credit to [harishankarv](https://github.com/harishankarv) on Github, for
 finding an issue with my "simple" implementation of `lsh_read_line()` that
 depends on `getline()`. See [this issue](https://github.com/brenns10/lsh/issues/14)
 for details -- the text of the blog is updated.
+
+#### Footnotes
+
+[^1]:
+    **Edit 4/Footnote:** It's 2021, over 6.5 years since writing this tutorial. I
+    now work on operating systems in C for a living. I just wanted to say that I
+    still do not remember how to declare a function pointer. I still need to
+    Google it every time.

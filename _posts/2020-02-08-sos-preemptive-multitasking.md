@@ -50,7 +50,7 @@ includes the "ARM Generic Timer". You can read all about it in Chapter B8 of the
 - `CNTPCT` - a 64-bit read-only register containing the current value of the
   timer, incrementing on each tick.
 - `CNTP_CVAL` - the CompareValue register, a 64-bit register which is compared
-  against `CNTPCT`, triggering an interview when both are equal.
+  against `CNTPCT`, triggering an interrupt when both are equal.
 - `CNTP_TVAL` - the TimerValue register, a 32-bit register which counts downward
   and causes an interrupt when it reaches 0.
 - `CNTP_CTL` - the Control register, which enables and disables the timer.

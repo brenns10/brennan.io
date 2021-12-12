@@ -28,7 +28,7 @@ analytics: UA-58675248-2
 
 # Liquid-LaTeX plugin
 liquid_latex:
-  debug: true
+  debug: false
   density: 200
   output_directory: /res/latex
   temp_filename: "latex_temp"

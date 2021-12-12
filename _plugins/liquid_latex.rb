@@ -12,7 +12,7 @@ module Jekyll
         "usepackages" => "",
         "latex_cmd" => "latex -interaction=nonstopmode $texfile 2>&1 >> $logfile",
         "dvips_cmd" => "dvips -E $dvifile -o $epsfile 2>&1 >> $logfile",
-        "convert_cmd" => "convert -trim -density $density $epsfile $pngfile 2>&1 >> $logfile",
+        "convert_cmd" => "convert -strip -define png:exclude-chunks=date -trim -density $density $epsfile $pngfile 2>&1 >> $logfile",
         "temp_filename" => "latex_temp",
         "output_directory" => "/latex",
         "src_dir" => "",

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Please Stop Using keyCode for Form Validation
+title: Please Stop Form Validation on Key Strokes
 description: |
-  Not everyone uses QWERTY
+  Formerly "Please Stop Using keyCode for Form Validation".
 ---
 
 Today I encountered a bug in a web form. A textbox required a numeric value, but
@@ -28,13 +28,13 @@ frequently while programming, and the digit rearrangement makes it easier to get
 to frequently used indices like 0 and 1. That, said, these changes were a major
 pain, by far the hardest change to learn. Who knows if it was worth it?
 
-The digit placement in my keyboard layout is the reason why I couldn't enter
-digits into the form field. The form used a type of "form validation" which
-attempts to _prevent you from entering invalid input_. The problem is that the
-code which implements this does not handle keyboard layouts properly. If I
-change my keyboard layout to QWERTY -- or copy-paste some text[^1] -- I'm able
-to enter numbers. The reason behind this is some Javascript code which I'll
-reproduce here:
+The requirement that I use Shift to access numbers in my keyboard layout is the
+reason why I couldn't enter digits into the form field. The form used a type of
+"form validation" which attempts to _prevent you from entering invalid input_.
+The problem is that the code which implements this does not handle keyboard
+layouts properly. If I change my keyboard layout to QWERTY -- or copy-paste some
+text[^1] -- I'm able to enter numbers. The reason behind this is some Javascript
+code which I'll reproduce here:
 
 ```javascript
 function(e) {
@@ -60,39 +60,64 @@ function(e) {
 }
 ```
 
-This code is wired up to the `keydown` event of the text box. It relies on the
-`keyCode` attribute of the event. I'm not a frontend export, or even competent,
-so I ended up searching and found [this great writeup][moz-article] on the
-Mozilla Hacks blog. `keyCode` seems to refer to a physical button identifier on
-your keyboard, whereas other (newer) attributes exist to refer to that button's
-meaning within the user's keyboard layout. In particular, this snippet uses
-`e.shiftKey` to ensure that you cannot use a digit key while holding down the
-shift button.
+This code is wired up to the `keydown` event of the text box. The `keyCode`
+value is [documented here][]. At the end of the day, it seems to be some weird
+mashup of ASCII codes to refer to keys. The problem with this code lies in the
+second if statement (under the comment "Ensure that it is a number and stop the
+keypress if not"). The if condition is a bit messy, so I indented it across
+multiple lines and commented the keys to make it more readable.
 
-The code written above is making one of two assumptions:
+    e.keyCode == 13             // ENTER
+    || e.keyCode == 109         // Subtract
+    || (
+        e.shiftKey
+        || (
+            e.keyCode < 48      // 0 above letters
+            || e.keyCode > 57   // 9 above letters
+        )
+    )
+    && (
+        e.keyCode < 96          // numpad 0
+        || e.keyCode > 105      // numpad 9
+    )
 
-1. The charitable explanation is that they knew about the variations in keyboard
-   layouts, and noticed that almost all keyboard layouts use the same digit
-   placement as QWERTY, so they went ahead with using `keyCode`.
-2. The more likely explanation is that the developer didn't know that `keyCode`
-   doesn't work across keyboard layouts. The code uses 65, 67, and 88 to refer
-   to the A, C, and X keys, and these would all be in different locations for
-   different layouts as well.
+Honestly that's not much better, but here are a few interesting cases:
 
-It seems to me that it's time for code like this to go away. It's 2021, and
-better web APIs seem to have existed since 2017. Lots of keyboard layouts exist,
-and while this particular issue affected me on a pretty weird layout, this kind
-of issue can affect lots more people. I have the programming knowledge to make
-an educated guess and switch keyboard layouts, but most people probably don't.
-So my appeal to frontend developers out there is: please remember that not
-everyone uses QWERTY, and stop using `keyCode`.
+- Enter and subtract are always blocked
+- If shift key is held (and the key press was not a numpad button), block the
+  key press.
 
-While we're at it, can we stop using this kind of form validation? Straight-up
-*preventing* invalid input by making it impossible to type seems both confusing
-for the user and error-prone. What ever was wrong with highlighting invalid
-input using Javascript, without directly blocking it?
+This last one is what matters. Holding down shift while hitting the number key
+(_even if you are in fact entering a digit_) results in a blocked keyboard
+event. And this is all because of the faulty assumption that numbers can only be
+entered without holding shift. The Programmer Dvorak layout does not follow this
+assumption.
 
-[moz-article]: https://hacks.mozilla.org/2017/03/internationalize-your-keyboard-controls/
+It seems to me that this sort of form validation just sucks. I get that client
+side validation is pretty convenient, but straight-up *preventing* invalid input
+by making it impossible to type is... terrible! There's no visual indication to
+the user that their input is blocked because it's invalid. They might assume
+(like I did) that their keyboard may not be working, or that the OS is having an
+issue.  At the very least, it would be better to have a visual aid, like a
+quick flash of a red outline on the text box, to let the user know their action
+was "invalid."
+
+But that wouldn't solve the problem that in this case, the logic for blocking
+the "invalid input" was just plain wrong. This sort of code is difficult to get
+right, especially considering the possible keyboard layouts and variations
+between OS and browser. I'd argue it'd be better (and easier to maintain) to
+just ditch it. Instead, just validate the contents of the text field against a
+regex after each change.
+
+[documented here]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
+
+**Update, Nov 2022**: My original version of this article incorrectly focused
+on whether keyCode values vary across different keyboard layouts. That's largely
+irrelevant. I've updated the article to focus on the core issue: Shift key
+blocking numeric input from being registered. Thanks to Matthew Wilcox for
+pointing it out. You can find the original version of the article in [git][].
+
+[git]: https://github.com/brenns10/brennan.io/blob/1d7fa8921ad886e7a23b11fc5d9946e57d5a9b40/_posts/2021-03-03-textboxes.md
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Thesis
 layout: contentbase
-pdf: <span class="fa fa-file-pdf-o fa-lg"></span>
+pdf: <span class="fas fa-file-pdf fa-lg"></span>
 ---
 Master's Thesis
 ===============

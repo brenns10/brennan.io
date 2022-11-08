@@ -1,12 +1,12 @@
 ---
 title: Projects
 layout: contentbase
-gh: <span class="fa fa-github fa-lg"></span>
-git: <span class="fa fa-code-fork fa-lg"></span>
-bb: <span class="fa fa-bitbucket fa-lg"></span>
-web: <span class="fa fa-globe fa-lg"></span>
-pdf: <span class="fa fa-file-pdf-o fa-lg"></span>
-tw: <span class="fa fa-twitter fa-lg"></span>
+gh: <span class="fab fa-github fa-lg"></span>
+git: <span class="fas fa-code-branch fa-lg"></span>
+bb: <span class="fab fa-bitbucket fa-lg"></span>
+web: <span class="fas fa-globe fa-lg"></span>
+pdf: <span class="fas fa-file-pdf fa-lg"></span>
+tw: <span class="fab fa-twitter fa-lg"></span>
 ---
 
 # Current Projects

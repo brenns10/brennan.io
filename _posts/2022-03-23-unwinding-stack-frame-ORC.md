@@ -6,6 +6,7 @@ description: |
   kernel creates stack traces at runtime. It describes the common frame pointer
   approach, as well as the newer approach for x86_64 called ORC, which allows
   omitting the frame pointer, thus improving system performance.
+featured: true
 ---
 
 My [article][post], posted on the Oracle Linux Blog, goes in depth on how the

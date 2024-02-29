@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Tutorial - Write a System Call
-featured: true
 ---
 
 A while back, I wrote about writing a [shell in C][shell], a task which lets you

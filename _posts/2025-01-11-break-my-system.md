@@ -92,27 +92,20 @@ this silly error message.
 
 Search or post online about this and you'll hear that the "right way" to handle
 this is with `pipx` or some other package manager _du jour_. These package
-managers are _special_, because they create a virtualenv for every single thing
-you install!
-
-Let me repeat that: every time you install a package for a useful tool, they
-create a separately-managed virtualenv (which you _will_ forget exists). Or you
-can make your own set of virtual environments!
-
-Proponents claim that "node had it right". Apparently `node_modules` is good
-actually, and we should all aspire to have a gigabyte of dependencies in every
-directory we traverse, for every application.
-
-### Please Don't do This!
+managers maintain separate virtual environments for every application. I think
+it's good to have this option around: some applications may need that level of
+control of their dependencies. But on average it's just wasteful -- I don't
+really want the equivalent of a giant `node_modules` directory for every Python
+script I install.
 
 I could spend my time arguing that this is a bad way of packaging applications,
-and that Linux distributions can do better.  I would then fall into the rabbit
+and that Linux distributions can do better. I would then fall into the rabbit
 hole of static vs dynamic linking, and have to address the benefits & drawbacks
 of Flatpak, Snap, Docker, etc... While I enjoy that debate, and I definitely
-have opinions on it, I can avoid it here, Really, that's not the complaint I
-have here.
+have opinions on it, it is a rabbit hole. And honestly, my main issue isn't
+whether this is a good way to package applications.
 
-My real complaint is simpler. I know that Python lets me break my system! That's
+My main complaint is simpler. I know that Python lets me break my system! That's
 been the assumption. I shouldn't need to tell it that. I expect that. I want
 that.
 
@@ -126,7 +119,7 @@ that people use with `pip`.
 I love that Python lets me break things. I love that system apps can import code
 out of my user site directory, and I'm ok with that. I use that feature. I'm ok
 with the risk that I may install a newer version of `requests` that causes
-problems  If I do, I'll figure it out. That's what happens when I use developer
+problems. If I do, I'll figure it out. That's what happens when I use developer
 tools like `pip`.
 
 So really: break my system packages, Pip. I'm begging you.

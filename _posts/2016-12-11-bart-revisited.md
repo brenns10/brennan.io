@@ -33,32 +33,28 @@ real world, this would result in lots of people swapping tickets on platforms,
 or else some sort of electronic Clipper Card spoofing that's not currently
 practical.
 
-The linear programming formulation is simple. If {%latex classes=latex-inline%}$x_{ij}${%endlatex%} represents the
-number of tickets purchased from station {%latex classes=latex-inline%}$i${%endlatex%} to {%latex classes=latex-inline%}$j${%endlatex%}, and {%latex classes=latex-inline%}$s_i${%endlatex%} represents
-the number of travelers departing from station {%latex classes=latex-inline%}$i${%endlatex%}, and {%latex classes=latex-inline%}$t_i${%endlatex%} represents the
-number of travelers arriving at station {%latex classes=latex-inline%}$j${%endlatex%}, then we have two sets of
+The linear programming formulation is simple. If <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">x_{ij}</annotation></semantics></math></span> represents the
+number of tickets purchased from station <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math></span> to <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math></span>, and <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>i</mi></msub><annotation encoding="application/x-tex">s_i</annotation></semantics></math></span> represents
+the number of travelers departing from station <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math></span>, and <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>t</mi><mi>i</mi></msub><annotation encoding="application/x-tex">t_i</annotation></semantics></math></span> represents the
+number of travelers arriving at station <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math></span>, then we have two sets of
 constraints:
 
-{% latex %}
-    \begin{equation*}
-    \sum_{j} x_{ij} = s_i \:\:\: \forall i
-    \end{equation*}
-{% endlatex %}
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><msub><mi>s</mi><mi>i</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mo>∀</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">
+\sum_{j} x_{ij} = s_i \:\:\: \forall i
+</annotation></semantics></math>
 
-This represents the constraint that the tickets starting at {%latex classes=latex-inline%}$i${%endlatex%} need to add up
-to the number of travelers departing from {%latex classes=latex-inline%}$i${%endlatex%}.
+This represents the constraint that the tickets starting at <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math></span> need to add up
+to the number of travelers departing from <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math></span>.
 
-{% latex %}
-    \begin{equation*}
-    \sum_{i} x_{ij} = t_j \:\:\: \forall j
-    \end{equation*}
-{% endlatex %}
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><msub><mi>t</mi><mi>j</mi></msub><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mo>∀</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">
+\sum_{i} x_{ij} = t_j \:\:\: \forall j
+</annotation></semantics></math>
 
-This represents the constraint that the tickets destined for {%latex classes=latex-inline%}$j${%endlatex%} need to add
-up to the number of travelers arriving at {%latex classes=latex-inline%}$j${%endlatex%}. You can combine these
-constraints into the matrix form {%latex classes=latex-inline%}$Ax = b${%endlatex%} quite easily. We can define {%latex classes=latex-inline%}$b${%endlatex%} as
-simply a vector containing all {%latex classes=latex-inline%}$s_i${%endlatex%} followed by all {%latex classes=latex-inline%}$t_i${%endlatex%}. The vector {%latex classes=latex-inline%}$x${%endlatex%}
-will contain the variables {%latex classes=latex-inline%}$x_{ij}${%endlatex%} in row-major order. The matrix {%latex classes=latex-inline%}$A${%endlatex%} is
+This represents the constraint that the tickets destined for <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math></span> need to add
+up to the number of travelers arriving at <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math></span>. You can combine these
+constraints into the matrix form <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">Ax = b</annotation></semantics></math></span> quite easily. We can define <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math></span> as
+simply a vector containing all <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>i</mi></msub><annotation encoding="application/x-tex">s_i</annotation></semantics></math></span> followed by all <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>t</mi><mi>i</mi></msub><annotation encoding="application/x-tex">t_i</annotation></semantics></math></span>. The vector <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math></span>
+will contain the variables <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">x_{ij}</annotation></semantics></math></span> in row-major order. The matrix <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span> is
 best visualized by the following table, for a simple 3-station example.
 
 |             | 11 | 12 | 13 | 21 | 22 | 23 | 31 | 32 | 33 |
@@ -70,7 +66,7 @@ best visualized by the following table, for a simple 3-station example.
 | Ends at 2   |  0 |  1 |  0 |  0 |  1 |  0 |  0 |  1 |  0 |
 | Ends at 3   |  0 |  0 |  1 |  0 |  0 |  1 |  0 |  0 |  1 |
 
-The other constraints are that the {%latex classes=latex-inline%}$x_{ij}${%endlatex%} need to be positive integers. That
+The other constraints are that the <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">x_{ij}</annotation></semantics></math></span> need to be positive integers. That
 "integer" part makes this an integer linear program, which is much harder to
 solve than a normal one, unless you happen to have a totally unimodular problem.
 We'll get to that in a moment.
@@ -151,7 +147,7 @@ be integer anyway.
 All minimum cost flow linear programs are totally unimodular. Our problem can be
 transformed into a minimum cost flow problem. However, the linear program we
 made up and the linear program we would get from the minimum cost flow version
-of the problem are not the same (there are at least {%latex classes=latex-inline%}$2n${%endlatex%} more variables in the
+of the problem are not the same (there are at least <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">2n</annotation></semantics></math></span> more variables in the
 minimum cost flow version: one for each arc between the source/sink and the
 stations). So even though we know that our linear program *should* have a
 totally unimodular constraint matrix, we don't have a solid argument relying
@@ -160,28 +156,28 @@ solely on the constraint matrix.
 Thankfully, it's not too hard. Quoting the Wikipedia[^1] article
 on [Unimodularity][un]:
 
-> Let {%latex classes=latex-inline%}$A${%endlatex%} be a {%latex classes=latex-inline%}$m${%endlatex%} by {%latex classes=latex-inline%}$n${%endlatex%} matrix whose rows can be partitioned into two
-> disjoint sets {%latex classes=latex-inline%}$B${%endlatex%} and {%latex classes=latex-inline%}$C${%endlatex%}. Then, the following four conditions together
-> are sufficient for {%latex classes=latex-inline%}$A${%endlatex%} to be totally unimodular:
+> Let <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span> be a <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math></span> by <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math></span> matrix whose rows can be partitioned into two
+> disjoint sets <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math></span> and <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math></span>. Then, the following four conditions together
+> are sufficient for <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span> to be totally unimodular:
 >
-> 1. Every column of {%latex classes=latex-inline%}$A${%endlatex%} contains at most two non-zero entries.
+> 1. Every column of <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span> contains at most two non-zero entries.
 >
-> 2. Every entry in {%latex classes=latex-inline%}$A${%endlatex%} is 0, +1, or -1.
+> 2. Every entry in <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span> is 0, +1, or -1.
 >
-> 3. If two non-zero entries in a column of {%latex classes=latex-inline%}$A${%endlatex%} have the same sign, then the
->    row of one is in {%latex classes=latex-inline%}$B${%endlatex%}, and the other is in {%latex classes=latex-inline%}$C${%endlatex%}.
+> 3. If two non-zero entries in a column of <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span> have the same sign, then the
+>    row of one is in <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math></span>, and the other is in <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math></span>.
 >
-> 4. If two non-zero entries in a column of {%latex classes=latex-inline%}$A${%endlatex%} have opposite signs, then the
->    rows of both are in {%latex classes=latex-inline%}$B${%endlatex%}, or both in {%latex classes=latex-inline%}$C${%endlatex%}.
+> 4. If two non-zero entries in a column of <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span> have opposite signs, then the
+>    rows of both are in <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math></span>, or both in <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math></span>.
 
 Our constraint matrix satisfies this exactly!  Let's take this step by step.
 
-1. Every column of {%latex classes=latex-inline%}$A${%endlatex%} does contain at most two non-zero entries, because each
+1. Every column of <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span> does contain at most two non-zero entries, because each
    column appears in exactly two constraints: one for the starting station and
    one for the ending station.
-2. Every entry of {%latex classes=latex-inline%}$A${%endlatex%} is either 0 or 1.
-3. If we let {%latex classes=latex-inline%}$B${%endlatex%} be the set of rows corresponding to the source constraints,
-   and {%latex classes=latex-inline%}$C${%endlatex%} be the set of rows corresponding to the destination constraints,
+2. Every entry of <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span> is either 0 or 1.
+3. If we let <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math></span> be the set of rows corresponding to the source constraints,
+   and <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math></span> be the set of rows corresponding to the destination constraints,
    then each pair of constraints will be assigned properly.
 4. There are no opposite sign entries!
 

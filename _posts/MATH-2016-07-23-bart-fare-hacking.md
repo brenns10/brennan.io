@@ -75,38 +75,38 @@ have a classic optimization problem. In particular, this problem can be
 expressed as an **Integer Linear Program**.
 
 [Linear programs][linprog] are math problems where you are trying to choose
-values for a vector (i.e. a list) of variables <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math></span>, such that you minimize a
-cost function. Typically, each variable <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span> in <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math></span> has an associated cost
-<span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>i</mi></msub><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span>, and so the cost function is just the sum of the <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math></span>'s times their
+values for a vector (i.e. a list) of variables $x$, such that you minimize a
+cost function. Typically, each variable $x_i$ in $x$ has an associated cost
+$c_i$, and so the cost function is just the sum of the $x$'s times their
 costs. But, you have to satisfy some constraints, which are usually expressed as
 equations, like this:
 
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mi>⋯</mi><mo>+</mo><msub><mi>a</mi><mi>n</mi></msub><msub><mi>x</mi><mi>n</mi></msub><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">
+$$
 a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = b
-</annotation></semantics></math>
+$$
 
 We can have lots of constraints we need to satisfy, so we typically number the
-constraints from one to <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math></span>. We can compactly write all the constraints using
+constraints from one to $m$. We can compactly write all the constraints using
 a matrix form like this:
 
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">
+$$
 A x = b
-</annotation></semantics></math>
+$$
 
-Here, <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span> is an <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math></span> row (one for each constraint) by <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math></span> column (one for
-each variable) matrix containing the coefficients <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math></span> from all the
-constraints. Usually we also have the constraint that <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x \ge 0</annotation></semantics></math></span>, and for
-integer linear programs, we also need to make sure that our solutions for <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math></span>
+Here, $A$ is an $m$ row (one for each constraint) by $n$ column (one for
+each variable) matrix containing the coefficients $a$ from all the
+constraints. Usually we also have the constraint that $x \ge 0$, and for
+integer linear programs, we also need to make sure that our solutions for $x$
 are integers. Since linear programs are pretty common problems to solve, there
 are plenty of existing solvers that can solve them *reasonably* quickly. If you
-can write a problem as a linear program and come up with <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span>, <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math></span>, and the
-costs <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math></span>, you can use these linear programming libraries to solve your
+can write a problem as a linear program and come up with $A$, $b$, and the
+costs $c$, you can use these linear programming libraries to solve your
 problem for you.  So let's formulate this as an integer linear program!
 
-In this particular problem, we have a variable <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math></span> for every single pair of
-stations you could start at and end at. <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math></span> will represent how many tickets we
+In this particular problem, we have a variable $x$ for every single pair of
+stations you could start at and end at. $x$ will represent how many tickets we
 buy for that start/end pair. There are 45 BART stations, which means that we
-have <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>45</mn><mn>2</mn></msup><mo>=</mo><mn>2025</mn></mrow><annotation encoding="application/x-tex">45^2 = 2025</annotation></semantics></math></span> different variables. The cost for each variable is provided
+have $45^2 = 2025$ different variables. The cost for each variable is provided
 in a fare schedule, available from BART's [website][bart-fares]. The one value
 that is missing from this schedule is the cost of a trip that starts and ends at
 the same station. You'd think that this would be free, but people would take
@@ -120,21 +120,21 @@ them mathematically. The first constraint was that the number of tickets
 starting at any station has to be equal to the number of travelers starting at
 that station. So, the constraint is:
 
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mrow><mi>x</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> starting at station </mtext><mspace width="0.333em"></mspace></mrow><mi>i</mi></mrow></munder><mi>x</mi><mo>=</mo><msub><mi>b</mi><mrow><mi>i</mi><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">
+$$
 \sum_{x\text{ starting at station }i} x = b_{i1}
-</annotation></semantics></math>
+$$
 
 We have one of these constraints for each station. We'll call them the *source*
 constraints. The second type of constraint was that the number of tickets ending
 at any station has to be equal to the number of travelers who want to go to that
 station:
 
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mrow><mi>x</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> ending at station </mtext><mspace width="0.333em"></mspace></mrow><mi>i</mi></mrow></munder><mi>x</mi><mo>=</mo><msub><mi>b</mi><mrow><mi>i</mi><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">
+$$
 \sum_{x\text{ ending at station }i} x = b_{i2}
-</annotation></semantics></math>
+$$
 
 And these are our *destination* constraints. Together, the source and
-destination constraints can be represented in using the matrix form <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">Ax=b</annotation></semantics></math></span>.
+destination constraints can be represented in using the matrix form $Ax=b$.
 The matrix is pretty large, with 90 rows and 2025 columns! Regardless of how big
 it is, this should mean that we're done. We can use a linear programming library
 to solve the problem.
@@ -151,7 +151,7 @@ that hard. For some problems, if you just "forget" the constraint that your
 solutions should be integers, and solve the problem as a normal linear program,
 you'll always get integer solutions anyway.
 
-This happens whenever your constraint matrix <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></span> is [totally unimodular][]. I
+This happens whenever your constraint matrix $A$ is [totally unimodular][]. I
 won't explain what that is, but it turns out that our matrix is
 unimodular![^fn-unimodular] So this means that we *can* just use a linear
 programming library to solve it. In fact, here is the code I used to do it:
@@ -246,20 +246,20 @@ single hill, but in 2025 dimensional space!
 So how do we find our way up this 2025 dimensional hill? To answer that
 question, let's represent our problem a bit differently: with a matrix. We'll
 label both the rows and the columns with stations: the rows are the starting
-stations, and the columns are ending stations. A number <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math></span> in row <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math></span>,
-column <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math></span> means that <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math></span> people are riding from station <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math></span> to station
-<span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math></span>. We'll call this our traveler matrix, <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math></span>. Here's a small example with
+stations, and the columns are ending stations. A number $x$ in row $i$,
+column $j$ means that $x$ people are riding from station $i$ to station
+$j$. We'll call this our traveler matrix, $T$. Here's a small example with
 four stations:
 
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
+$$
 T =
 \begin{bmatrix}
-0 &amp; 0 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 1 &amp; 0 &amp; 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
 \end{bmatrix}
-</annotation></semantics></math>
+$$
 
 In this example, one traveler wants to go from station 1 to 3, and another wants
 to go from station 4 to 2. If you imagine the stations in a line, it's a bit
@@ -268,17 +268,17 @@ easier to visualize.
 ![bart-number-line]
 
 If you imagine that the fare is $1 for every "link" in this simple train route,
-then the fare matrix <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math></span> would look something like this:
+then the fare matrix $F$ would look something like this:
 
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
+$$
 F =
 \begin{bmatrix}
-0 &amp; 1 &amp; 2 &amp; 3 \\
-1 &amp; 0 &amp; 1 &amp; 2 \\
-2 &amp; 1 &amp; 0 &amp; 1 \\
-3 &amp; 2 &amp; 1 &amp; 0 \\
+0 & 1 & 2 & 3 \\
+1 & 0 & 1 & 2 \\
+2 & 1 & 0 & 1 \\
+3 & 2 & 1 & 0 \\
 \end{bmatrix}
-</annotation></semantics></math>
+$$
 
 You could get the total fare for everyone in this little system by taking each
 element in the "traveler matrix" and multiplying it with its corresponding
@@ -287,7 +287,7 @@ example travelers, the total fare is $4.
 
 [^fn-frobenius]:
     Incidentally, this is called the Frobenius product, and you would write it
-    as <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>T</mi><mo>,</mo><mi>F</mi><msub><mo stretchy="false" form="postfix">⟩</mo><mi>F</mi></msub></mrow><annotation encoding="application/x-tex">\langle T, F \rangle_F</annotation></semantics></math></span>. But I had to look that up on
+    as $\langle T, F \rangle_F$. But I had to look that up on
     [Wikipedia][frobenius-product]; there's no reason anyone should know that
     off the top of their head.
 
@@ -303,28 +303,28 @@ row and column sums: simply find two entries in different rows and columns that
 are greater than zero. They form two corners of a rectangle in the matrix.
 Subtract however many tickets you want from both those entries, and add them to
 the other two corners of the rectangle. Let's do this with the previous example
-<span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math></span>:
+$T$:
 
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>𝟎</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>𝟏</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>𝟏</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>𝟎</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mo>→</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>𝟏</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>𝟎</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>𝟎</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>𝟏</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
+$$
 \begin{bmatrix}
-0 &amp; \mathbf{0} &amp; \mathbf{1} &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; \mathbf{1} &amp; \mathbf{0} &amp; 0 \\
+0 & \mathbf{0} & \mathbf{1} & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & \mathbf{1} & \mathbf{0} & 0 \\
 \end{bmatrix}
 \to
 \begin{bmatrix}
-0 &amp; \mathbf{1} &amp; \mathbf{0} &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; \mathbf{0} &amp; \mathbf{1} &amp; 0 \\
+0 & \mathbf{1} & \mathbf{0} & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & \mathbf{0} & \mathbf{1} & 0 \\
 \end{bmatrix}
-</annotation></semantics></math>
+$$
 
 If we look back at the fare matrix, we can see that this transformation actually
 lowered the total fare of the system from 4 to 2! This is because we went from
-having tickets <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>→</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">1 \to 3</annotation></semantics></math></span> and <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>→</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">4 \to 2</annotation></semantics></math></span>, which both cost $2 to simply having
-tickets <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1 \to 2</annotation></semantics></math></span> and <span><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>→</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">4 \to 3</annotation></semantics></math></span>, which both cost $1.
+having tickets $1 \to 3$ and $4 \to 2$, which both cost $2 to simply having
+tickets $1 \to 2$ and $4 \to 3$, which both cost $1.
 
 And in fact, that's pretty much the whole algorithm! All my custom algorithm
 does is look in the matrix for pairs where it can perform this swap, and do it

@@ -37,11 +37,11 @@ the privacy of readers, and it's time for me to correct that.
 
 In order to include fancy equations like the following:
 
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>π</mi></mrow></msup><mo>+</mo><mn>1</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">
+$$
     \begin{equation*}
       e^{i \pi} + 1 = 0
     \end{equation*}
-</annotation></semantics></math>
+$$
 
 I had been using [MathJax][] to render the equations in the browser. Now I just
 render them to images and embed them. I lose out on a few features (text

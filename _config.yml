@@ -18,18 +18,10 @@ permalink: pretty
 
 kramdown:
   input: GFM
-  math_engine: mathjax
   hard_wrap: false
 
-exclude: ["CNAME", "README.md"]
-
-disqus: stephenbrennan
-analytics: UA-58675248-2
-
-# Liquid-LaTeX plugin
-liquid_latex:
-  debug: false
-  density: 200
-  output_directory: /res/latex
-  temp_filename: "latex_temp"
-  usepackages: "amsmath"
+exclude:
+  - README.md
+  - Makefile
+  - _generate_mathml.py
+  - _posts/MATH-*
